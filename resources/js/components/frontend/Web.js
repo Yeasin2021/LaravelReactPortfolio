@@ -1,9 +1,10 @@
 import React from 'react'
+import Pricing from './elements/Pricing';
 
 const Web = () => {
   return (
     <div>
-        <h1>Hello React</h1>
+        <Pricing />
     </div>
   )
 }

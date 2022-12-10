@@ -1,0 +1,242 @@
+{
+  "about": [
+    {
+      "header": "About Me",
+      "title": "Sit sint consectetur velit quisquam cupiditate impedit suscipit alias",
+      "name": "Laura Thomso",
+      "website": "www.example.com",
+      "phone": "+123 456 7890",
+      "city": "New York, USA",
+      "age": "30",
+      "Degree": "Master",
+      "PhEmailone": "email@example.com",
+      "Freelance": "Available",
+      "happyClientOne": "Happy Clients",
+      "happyClientTwo": "consequuntur voluptas nostrum aliquid ipsam architecto ut.",
+      "projectOne": "Projects",
+      "projectTwo": "adipisci atque cum quia aspernatur totam laudantium et quia dere tan",
+      "experienceOne": "Years of experience",
+      "experienceTwo": "aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel",
+      "awardsOne": "Awards",
+      "awardsTwo": "rerum asperiores dolor alias quo reprehenderit eum et nemo pad der",
+      "image": "assets/img/me.jpg"
+    }
+  ],
+  "testimonial": [
+    {
+      "bacgroundImage": "assets/img/testimonials-bg.jpg",
+      "image1": "assets/img/testimonials/testimonials-1.jpg",
+      "header1": "Saul Goodman",
+      "title1": "Ceo & Founder",
+      "description1": "Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.",
+      "image2": "assets/img/testimonials/testimonials-2.jpg",
+      "header2": "Sara Wilsson",
+      "title2": "Designer",
+      "description2": "Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.",
+      "image3": "assets/img/testimonials/testimonials-3.jpg",
+      "header3": "Jena Karlis",
+      "title3": "Store Owner",
+      "description3": "Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.",
+      "image4": "assets/img/testimonials/testimonials-4.jpg",
+      "header4": "Matt Brandon",
+      "title4": "Freelancer",
+      "description4": "Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam."
+    }
+  ],
+  "footer": [
+    {
+      "header": "Laura Thomson",
+      "title": "Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.",
+      "twitter": "bx bxl-twitter",
+      "facebook": "bx bxl-facebook",
+      "instagram": "bx bxl-instagram",
+      "skype": "bx bxl-skype",
+      "linkedin": "bx bxl-linkedin",
+      "copyrigt_one": "Copyright",
+      "copyrigt_two": "Laura",
+      "copyrigt_three": ". All Rights Reserved",
+      "design_one": "Designed by",
+      "design_two": "BootstrapMade",
+      "image": "assets/img/footer-bg.jpg"
+    }
+  ],
+  "header": [
+    {
+      "title": "Laura Thomson",
+      "description": "I'm a Professional Photographer In New York City",
+      "image": "assets/img/hero-bg.jpg",
+      "icon": "bi bi-chevron-down",
+      "dropdown_icon": "bi bi-chevron-down"
+    }
+  ],
+  "service": [
+    {
+      "service_header": "My Services",
+      "service_title": "Sit sint consectetur velit quisquam cupiditate impedit suscipit alias"
+    },
+    {
+      "id": 1,
+      "service_icon": "bi bi-balloon-heart-fill",
+      "service_title": "Lorem Ipsum",
+      "service_description": "Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident"
+    },
+    {
+      "id": 2,
+      "service_icon": "bi bi-file-earmark-richtext",
+      "service_title": "Sed ut perspiciatis",
+      "service_description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    },
+    {
+      "id": 3,
+      "service_icon": "bi bi-speedometer",
+      "service_title": "Magni Dolores",
+      "service_description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    },
+    {
+      "id": 4,
+      "service_icon": "bi bi-globe-asia-australia",
+      "service_title": "Nemo Enim",
+      "service_description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque"
+    }
+  ],
+  "pricing": [
+    {
+      "cardTitle": "Fee",
+      "cardFee": "0",
+      "cardCourseOne": "Aida dere",
+      "cardCourseTwo": "Nec feugiat nisl",
+      "cardCourseThree": "Nulla at volutpat dola",
+      "cardCourseFour": "Pharetra massa",
+      "cardCourseFive": "Massa ultricies mi"
+    },
+    {
+      "cardTitle": "Business",
+      "cardFee": "19",
+      "cardCourseOne": "Aida dere",
+      "cardCourseTwo": "Nec feugiat nisl",
+      "cardCourseThree": "Nulla at volutpat dola",
+      "cardCourseFour": "Pharetra massa",
+      "cardCourseFive": "Massa ultricies mi"
+    },
+    {
+      "cardTitle": "Developer",
+      "cardFee": "29",
+      "cardCourseOne": "Aida dere",
+      "cardCourseTwo": "Nec feugiat nisl",
+      "cardCourseThree": "Nulla at volutpat dola",
+      "cardCourseFour": "Pharetra massa",
+      "cardCourseFive": "Massa ultricies mi"
+    },
+    {
+      "cardTitle": "Ultimate",
+      "cardFee": "49",
+      "cardCourseOne": "Aida dere",
+      "cardCourseTwo": "Nec feugiat nisl",
+      "cardCourseThree": "Nulla at volutpat dola",
+      "cardCourseFour": "Pharetra massa",
+      "cardCourseFive": "Massa ultricies mi"
+    }
+  ],
+  "contact": [
+    {
+      "title": "Sit sint consectetur velit quisquam cupiditate impedit suscipit alias",
+      "contactEmail": "contact@example.com",
+      "contactPhone": "+1 5589 55488 55",
+      "icons": [
+        "bi bi-twitter",
+        "bi bi-facebook",
+        "bi bi-instagram",
+        "bi bi-skype",
+        "bi bi-linkedin"
+      ]
+    }
+  ],
+  "resume": [
+    {
+      "title_one": "Sumary",
+      "key_word_one": "Alice Barkley",
+      "details": "Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.",
+      "address": "Portland par 127,Orlando, FL",
+      "phone": "(123) 456-7891",
+      "mail": "alice.barkley@example.com",
+      "title_two": "Education",
+      "degree1": "Master of Fine Arts & Graphic Design",
+      "session1": "2015 - 2016",
+      "innstitue1": "Rochester Institute of Technology, Rochester, NY",
+      "details1": "Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend",
+      "degree2": "Bachelor of Fine Arts & Graphic Design",
+      "session2": "2010 - 2014",
+      "innstitue2": "Rochester Institute of Technology, Rochester, NY",
+      "details2": "Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend",
+      "title_three": "Professional Experience",
+      "resume_item_1": "Senior graphic design specialist",
+      "resume_item_2": "2019 - Present",
+      "resume_item_3": "Experion, New York, NY ",
+      "des_1": "Lead in the design, development, and implementation of the graphic, layout, and production communication materials",
+      "des_2": "Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project.",
+      "des_3": "Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design",
+      "des_4": "Oversee the efficient use of production project budgets ranging from $2,000 - $25,000",
+      "resume_item_4": "Graphic design specialist",
+      "resume_item_5": "2017 - 2018",
+      "resume_item_6": "Stepping Stone Advertising, New York, NY",
+      "des_5": "Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).",
+      "des_6": "Managed up to 5 projects or tasks at a given time while under pressure",
+      "des_7": "Recommended and consulted with clients on the most appropriate graphic design",
+      "des_8": "Created 4+ design presentations and proposals a month for clients and account managers"
+    }
+  ],
+  "portfolio": [
+    {
+      "header": "App 1",
+      "title": "App",
+      "image": "assets/img/portfolio/portfolio-1.jpg",
+      "header_1": "Web 3",
+      "title_1": "Web",
+      "image_1": "assets/img/portfolio/portfolio-2.jpg",
+      "header_2": "App 2",
+      "title_2": "App",
+      "image_2": "assets/img/portfolio/portfolio-3.jpg",
+      "header_3": "Card 2",
+      "title_3": "Card",
+      "image_3": "assets/img/portfolio/portfolio-4.jpg",
+      "header_4": "Web 2",
+      "title_4": "Web",
+      "image_4": "assets/img/portfolio/portfolio-5.jpg",
+      "header_5": "App 3",
+      "title_5": "App",
+      "image_5": "assets/img/portfolio/portfolio-6.jpg",
+      "header_6": "Card 1",
+      "title_6": "Card",
+      "image_6": "assets/img/portfolio/portfolio-7.jpg",
+      "header_7": "Card 3",
+      "title_7": "Card",
+      "image_7": "assets/img/portfolio/portfolio-8.jpg",
+      "header_8": "Web 3",
+      "title_8": "Web",
+      "image_8": "assets/img/portfolio/portfolio-9.jpg"
+    }
+  ],
+  "contactMessage": [
+    {
+      "id": 1,
+      "name": "Yeasin Hossain",
+      "email": "abc@gmail.com",
+      "subject": "How to bacome a rich man",
+      "message": "Hello , I Have some problem ! "
+    },
+    {
+      "name": "Yeasin Hossain",
+      "email": "momenur@gmail.com",
+      "subject": "JavaScript ",
+      "message": "formHandaler",
+      "id": 2
+    },
+    {
+      "name": "Yeasin Hossain",
+      "email": "yeasin18801@gmail.com",
+      "subject": "JavaScript ",
+      "message": "Lead in the design, development, and implementation of the graphic, layout, and production communication materials",
+      "id": 3
+    }
+  ]
+}
