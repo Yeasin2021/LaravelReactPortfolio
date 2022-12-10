@@ -13,5 +13,5 @@ require('./bootstrap');
  */
 
 require('./components/WebBack');
-// require('./components/frontend/Web');
+
 

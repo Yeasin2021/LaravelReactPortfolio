@@ -5323,7 +5323,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 __webpack_require__(/*! ./components/WebBack */ "./resources/js/components/WebBack.js");
-// require('./components/frontend/Web');
 
 /***/ }),
 
