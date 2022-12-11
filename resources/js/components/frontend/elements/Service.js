@@ -3,10 +3,10 @@ import  ServiceData  from '../data/Service.json'
 import ServiceDetails from './ServiceDetails'
 
 const Service = () => {
-  
+
 const [items,setItems]  = useState(null);
 useEffect(()=>{
-  fetch("http://localhost:8000/service")
+  fetch("http://localhost:8081/service")
   .then((response)=>{return response.json()})
   .then((data)=> setItems(data))
 },[])
@@ -27,24 +27,24 @@ useEffect(()=>{
 
         <div className="row">
             {
-                items && items.slice(1).map((item,index) => <ServiceDetails key={index} 
-                ServiceTitle={item.service_title} 
+                items && items.slice(1).map((item,index) => <ServiceDetails key={index}
+                ServiceTitle={item.service_title}
                 ServiceIcon={item.service_icon}
-                ServiceDescription={item.service_description} 
+                ServiceDescription={item.service_description}
                 />)
-                
+
             }
 
            {/* <div className="row">
             {
-                ServiceData.slice(1).map((Service,index) => <ServiceDetails key={index} 
-                ServiceTitle={Service.service_title} 
+                ServiceData.slice(1).map((Service,index) => <ServiceDetails key={index}
+                ServiceTitle={Service.service_title}
                 ServiceIcon={Service.service_icon}
-                ServiceDescription={Service.service_description} 
+                ServiceDescription={Service.service_description}
                 />)
-                
+
             } */}
-            
+
             {/* data render Another way  */}
             {/* {
 
@@ -56,17 +56,17 @@ useEffect(()=>{
                             <h4 className="title"><a href="">{Service.service_title}</a></h4>
                             <p className="description">{Service.service_description}</p>
                             </div>
-                        </div> 
+                        </div>
                     )
                 })
-                
+
             } */}
-    
+
         </div>
 
       </div>
     </section>
-    
+
     </div>
   )
 }
