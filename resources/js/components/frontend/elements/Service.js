@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react'
-import  ServiceData  from '../data/Service.json'
 import ServiceDetails from './ServiceDetails'
 
 const Service = () => {
