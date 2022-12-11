@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import item from '../data/Resume.json';
-import Data from '../data/TestTwo.json';
+
 
 const Resume = () => {
 
