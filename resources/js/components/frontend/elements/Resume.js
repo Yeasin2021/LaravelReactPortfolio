@@ -6,14 +6,14 @@ const Resume = () => {
 
   const [items,setItems] = useState(null);
   useEffect(()=>{
-    fetch("http://localhost:8000/resume")
+    fetch("http://localhost:8081/resume")
     .then((res)=>{return res.json()})
     .then((data)=>setItems(data))
     .catch(error => console.warn(error))
   },[]);
 
   return (
-    
+
       <div id="resume" className="resume" style={{ marginTop:'5%' }}>
       <div className="container">
         <div className="section-title">
@@ -85,7 +85,7 @@ const Resume = () => {
 
           </div>
         </div> */}
-        
+
        {
         items && items.map((item,index)=>{
           return(
@@ -160,7 +160,7 @@ const Resume = () => {
 
       </div>
     </div>
-    
+
   )
 }
 
