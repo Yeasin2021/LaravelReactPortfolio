@@ -3,12 +3,14 @@ import About from './elements/About';
 import Header from './elements/Header';
 
 import Pricing from './elements/Pricing';
+import Resume from './elements/Resume';
 
 const Web = () => {
   return (
     <div>
         {/* <Header /> */}
         <About />
+        <Resume />
         <Pricing />
     </div>
   )
