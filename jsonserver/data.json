@@ -64,7 +64,7 @@
     {
       "title": "Laura Thomson",
       "description": "I'm a Professional Photographer In New York City",
-      "image": "assets/img/hero-bg.jpg",
+      "image": "frontend/assets/img/hero-bg.jpg",
       "icon": "bi bi-chevron-down",
       "dropdown_icon": "bi bi-chevron-down"
     }
