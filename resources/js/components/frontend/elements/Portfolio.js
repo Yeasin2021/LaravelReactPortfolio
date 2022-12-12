@@ -3,18 +3,18 @@ import React,{useState,useEffect} from 'react'
 const Portfolio = () => {
   const [items,setItems]  = useState([]);
   useEffect(()=>{
-    const url = "http://localhost:8000/portfolio";
+    const url = "http://localhost:8081/portfolio";
     fetch(url)
     .then(res=>{return res.json()})
     .then(data => setItems(data))
     .catch(error => console.warn(error))
   },[])
-  
+
   return (
     <div>
        <section id="portfolio" className="portfolio">
       <div className="container">
-      
+
         <div className="section-title">
           <span>My Portfolio</span>
           <h2>My Portfolio</h2>
@@ -32,7 +32,7 @@ const Portfolio = () => {
           items && items.map((item,index)=>{
             return(
               <div className="row portfolio-container" key={index}>
-                
+
 
                   <div className="col-lg-4 col-md-6 portfolio-item filter-app" >
                     <div className="portfolio-img"><img src={item.image} className="img-fluid" alt="" /></div>
@@ -125,7 +125,7 @@ const Portfolio = () => {
                   </div>
 
                 </div>
-             
+
             )
           })
         }
