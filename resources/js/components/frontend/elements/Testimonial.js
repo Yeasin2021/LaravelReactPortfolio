@@ -10,11 +10,11 @@ import "swiper/css/navigation";
 
 const Testimonial = () => {
 
-  
+
  const [items,setItems] = useState(null);
 
  useEffect(() =>{
-    fetch("http://localhost:8000/testimonial")
+    fetch("http://localhost:8081/testimonial")
     .then(response => {
       return response.json()
     })
@@ -22,10 +22,10 @@ const Testimonial = () => {
       setItems(data)
     })
  },[]);
-  
+
 
   return (
-    
+
     <section id="testimonials" className="testimonials">
       <div className="container position-relative">
 
@@ -122,7 +122,7 @@ const Testimonial = () => {
               )
             })
           }
-         
+
           </div>
           <div className="swiper-pagination"></div>
         </div>
@@ -218,11 +218,11 @@ const Testimonial = () => {
 
     // </Swiper>
     // </div>
-    
- 
-      
-        
-   
+
+
+
+
+
   )
 }
 
