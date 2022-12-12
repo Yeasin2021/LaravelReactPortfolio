@@ -1,3 +1,4 @@
+
 import React from 'react'
 import About from './elements/About';
 import Header from './elements/Header';
@@ -11,13 +12,15 @@ import Testimonial from './elements/Testimonial';
 const Web = () => {
   return (
     <div>
-        {/* <Header /> */}
-        <About />
-        <Resume />
-        <Service />
-        <Testimonial />
-        <Portfolio />
-        <Pricing />
+        <Header />
+        <div className='main'>
+            <About />
+            <Resume />
+            <Service />
+            <Testimonial />
+            <Portfolio />
+            <Pricing />
+        </div>
     </div>
   )
 }

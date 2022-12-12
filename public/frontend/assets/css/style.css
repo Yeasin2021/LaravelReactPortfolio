@@ -1,13 +1,11 @@
-/**
-* Template Name: Laura - v4.9.1
-* Template URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -32,9 +30,7 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
-/*--------------------------------------------------------------
-# Back to top button
---------------------------------------------------------------*/
+
 .back-to-top {
   position: fixed;
   visibility: hidden;
@@ -68,18 +64,19 @@ h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
+.header {
   z-index: 997;
   transition: all 0.5s;
   height: 80px;
-  background: rgba(25, 28, 31, 0.8);
+  background: rgb(71, 73, 76);
+
 }
 
-#header.header-transparent {
+.header.header-transparent {
   background: transparent;
 }
 
-#header.header-scrolled {
+.header.header-scrolled {
   height: 60px;
   background: rgba(25, 28, 31, 0.8);
 }
@@ -88,7 +85,7 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -100,6 +97,10 @@ h6 {
   display: flex;
   list-style: none;
   align-items: center;
+  /* new add 11-19-2022 */
+  justify-content: center;
+  /* height: 20px; */
+
 }
 
 .navbar li {
@@ -115,11 +116,13 @@ h6 {
   color: #fff;
   white-space: nowrap;
   transition: 0.3s;
-  font-size: 12px;
+  font-size: 14px;
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
+  /* new add 11-19-2022 */
+  margin-top: 5px;
 }
 
 .navbar a i,
@@ -205,7 +208,7 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -313,15 +316,15 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
+.hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top right;
+  /* background: url("../public/img/hero-bg.jpg") top right; */
   background-size: cover;
   position: relative;
 }
 
-#hero:before {
+.hero:before {
   content: "";
   background: rgba(0, 0, 0, 0.65);
   position: absolute;
@@ -331,7 +334,7 @@ h6 {
   right: 0;
 }
 
-#hero .hero-container {
+.hero .hero-container {
   position: absolute;
   bottom: 0;
   top: 0;
@@ -344,14 +347,14 @@ h6 {
   padding: 0 15px;
 }
 
-#hero h1 {
+.hero h1 {
   margin: 0 0 10px 0;
   font-size: 64px;
   font-family: "Satisfy", serif;
   color: #fff;
 }
 
-#hero h2 {
+.hero h2 {
   color: #eee;
   margin-bottom: 50px;
   font-size: 13px;
@@ -360,32 +363,33 @@ h6 {
   text-transform: uppercase;
 }
 
-#hero .btn-scroll {
+.hero .btn-scroll {
   transition: 0.4s;
   color: rgba(255, 255, 255, 0.6);
   animation: up-down 1s ease-in-out infinite alternate-reverse both;
 }
 
-#hero .btn-scroll i {
+.hero .btn-scroll i {
   font-size: 48px;
+
 }
 
-#hero .btn-scroll:hover {
+.hero .btn-scroll:hover {
   color: #ffb727;
 }
 
 @media (min-width: 1024px) {
-  #hero {
+  .hero {
     background-attachment: fixed;
   }
 }
 
 @media (max-width: 575px) {
-  #hero h1 {
+  .hero h1 {
     font-size: 40px;
   }
 
-  #hero h2 {
+  .hero h2 {
     text-align: center;
     margin-bottom: 30px;
   }
@@ -534,6 +538,13 @@ section {
 /*--------------------------------------------------------------
 # About Me
 --------------------------------------------------------------*/
+/* added 11/20/2022 */
+.main{
+  position: relation;
+  /* position: absolute; */
+  margin-top:50%;
+}
+
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
@@ -611,9 +622,12 @@ section {
 }
 
 .about .image {
-  background: url("../img/me.jpg") center center no-repeat;
+  /* background: url("../public/img/me.jpg") center center no-repeat; */
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
   min-height: 500px;
+
 }
 
 .about .skills-content {
@@ -774,7 +788,7 @@ section {
 --------------------------------------------------------------*/
 .testimonials {
   padding: 80px 0;
-  background: url("../img/testimonials-bg.jpg") no-repeat;
+  background: url("../public/img/testimonials-bg.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -1306,8 +1320,8 @@ section {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-#footer {
-  background: url("../img/footer-bg.jpg") top center no-repeat;
+.footer {
+  /* background: url("../public/img/footer-bg.jpg") top center no-repeat; */
   background-size: cover;
   color: #fff;
   font-size: 14px;
@@ -1316,7 +1330,7 @@ section {
   position: relative;
 }
 
-#footer::before {
+.footer::before {
   content: "";
   position: absolute;
   left: 0;
@@ -1326,11 +1340,11 @@ section {
   background: rgba(0, 0, 0, 0.6);
 }
 
-#footer .container {
+.footer .container {
   position: relative;
 }
 
-#footer h3 {
+.footer h3 {
   font-size: 36px;
   font-weight: 700;
   color: #fff;
@@ -1340,18 +1354,18 @@ section {
   margin: 0 0 15px 0;
 }
 
-#footer p {
+.footer p {
   font-size: 15;
   font-style: italic;
   padding: 0;
   margin: 0 0 40px 0;
 }
 
-#footer .social-links {
+.footer .social-links {
   margin: 0 0 40px 0;
 }
 
-#footer .social-links a {
+.footer .social-links a {
   font-size: 18px;
   display: inline-block;
   background: #ffb727;
@@ -1364,18 +1378,19 @@ section {
   width: 36px;
   height: 36px;
   transition: 0.3s;
+
 }
 
-#footer .social-links a:hover {
+.footer .social-links a:hover {
   background: #f3a200;
   color: #fff;
   text-decoration: none;
 }
 
-#footer .copyright {
+.footer .copyright {
   margin: 0 0 5px 0;
 }
 
-#footer .credits {
+.footer .credits {
   font-size: 13px;
 }
