@@ -6006,7 +6006,7 @@ var Portfolio = function Portfolio() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
                   children: item.title
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                  href: "frontend/assets/img/portfolio/portfolio-1.jpg",
+                  href: "{{asset('frontend/assets/img/portfolio/portfolio-1.jpg')}}",
                   "data-gallery": "portfolioGallery",
                   className: "portfolio-lightbox preview-link",
                   title: "App 1",

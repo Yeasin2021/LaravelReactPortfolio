@@ -25,7 +25,7 @@
     <script src="{{ asset('frontend') }}/assets/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="{{ asset('frontend') }}/assets/vendor/php-email-form/validate.js"></script>
     <script src="{{ asset('frontend') }}/assets/vendor/swiper/swiper-bundle.min.js"></script>
-
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> --}}
     <script src="{{ asset('frontend') }}/assets/js/main.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

@@ -39,7 +39,7 @@ const Portfolio = () => {
                     <div className="portfolio-info">
                       <h4>{item.header}</h4>
                       <p>{item.title}</p>
-                      <a href="frontend/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 1"><i className="bx bx-plus"></i></a>
+                      <a href="{{asset('frontend/assets/img/portfolio/portfolio-1.jpg')}}" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 1"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
                   </div>
