@@ -1,6 +1,7 @@
 import React from 'react'
 import About from './elements/About';
 import Header from './elements/Header';
+import Portfolio from './elements/Portfolio';
 
 import Pricing from './elements/Pricing';
 import Resume from './elements/Resume';
@@ -15,6 +16,7 @@ const Web = () => {
         <Resume />
         <Service />
         <Testimonial />
+        <Portfolio />
         <Pricing />
     </div>
   )
