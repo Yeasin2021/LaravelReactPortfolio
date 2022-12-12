@@ -5,6 +5,7 @@ import Header from './elements/Header';
 import Pricing from './elements/Pricing';
 import Resume from './elements/Resume';
 import Service from './elements/Service';
+import Testimonial from './elements/Testimonial';
 
 const Web = () => {
   return (
@@ -13,6 +14,7 @@ const Web = () => {
         <About />
         <Resume />
         <Service />
+        <Testimonial />
         <Pricing />
     </div>
   )
