@@ -6741,6 +6741,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Testimonial = function Testimonial() {
+  var setImag = {
+    backgroundImage: "URL(\"frontend/assets/img/testimonials-bg.jpg\")"
+  };
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState2 = _slicedToArray(_useState, 2),
     items = _useState2[0],
@@ -6750,6 +6753,7 @@ var Testimonial = function Testimonial() {
       return response.json();
     }).then(function (data) {
       setItems(data);
+      console.log(data);
     });
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("section", {

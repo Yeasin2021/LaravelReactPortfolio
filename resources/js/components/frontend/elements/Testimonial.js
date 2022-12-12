@@ -10,6 +10,9 @@ import "swiper/css/navigation";
 
 const Testimonial = () => {
 
+  const setImag = {
+    backgroundImage : `URL("frontend/assets/img/testimonials-bg.jpg")`
+  }
 
  const [items,setItems] = useState(null);
 
@@ -20,6 +23,7 @@ const Testimonial = () => {
     })
     .then(data => {
       setItems(data)
+      console.log(data)
     })
  },[]);
 
@@ -27,9 +31,11 @@ const Testimonial = () => {
   return (
 
     <section id="testimonials" className="testimonials">
+
       <div className="container position-relative">
 
         <div className="swiper testimonials-slider " data-aos="fade-up" data-aos-delay="100">
+          
           <div className="swiper-wrapper">
           {
             items && items.map((item,index) => {
@@ -115,7 +121,7 @@ const Testimonial = () => {
 
       </div>
     </section>
-    
+
   )
 }
 
