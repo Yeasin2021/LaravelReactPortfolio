@@ -39,7 +39,7 @@ const Portfolio = () => {
                     <div className="portfolio-info">
                       <h4>{item.header}</h4>
                       <p>{item.title}</p>
-                      <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 1"><i className="bx bx-plus"></i></a>
+                      <a href="frontend/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 1"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
                   </div>
@@ -49,7 +49,7 @@ const Portfolio = () => {
                     <div className="portfolio-info">
                       <h4>{item.header_1}</h4>
                       <p>{item.title_1}</p>
-                      <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 3"><i className="bx bx-plus"></i></a>
+                      <a href="frontend/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 3"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
                   </div>
@@ -59,7 +59,7 @@ const Portfolio = () => {
                     <div className="portfolio-info">
                       <h4>{item.header_2}</h4>
                       <p>{item.titl_2}</p>
-                      <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 2"><i className="bx bx-plus"></i></a>
+                      <a href="frontend/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 2"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
                   </div>
@@ -69,7 +69,7 @@ const Portfolio = () => {
                     <div className="portfolio-info">
                       <h4>{item.header_3}</h4>
                       <p>{item.title_1}</p>
-                      <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 2"><i className="bx bx-plus"></i></a>
+                      <a href="frontend/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 2"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
                   </div>
@@ -79,7 +79,7 @@ const Portfolio = () => {
                     <div className="portfolio-info">
                       <h4>{item.header_4}</h4>
                       <p>{item.title_4}</p>
-                      <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 2"><i className="bx bx-plus"></i></a>
+                      <a href="frontend/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 2"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ const Portfolio = () => {
                     <div className="portfolio-info">
                       <h4>{item.header_5}</h4>
                       <p>{item.title_5}</p>
-                      <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 3"><i className="bx bx-plus"></i></a>
+                      <a href="frontend/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 3"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
                   </div>
@@ -99,7 +99,7 @@ const Portfolio = () => {
                     <div className="portfolio-info">
                       <h4>{item.header_6}</h4>
                       <p>{item.title_6}</p>
-                      <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 1"><i className="bx bx-plus"></i></a>
+                      <a href="frontend/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 1"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
                   </div>
@@ -109,7 +109,7 @@ const Portfolio = () => {
                     <div className="portfolio-info">
                       <h4>{item.header_7}</h4>
                       <p>{item.title_7}</p>
-                      <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 3"><i className="bx bx-plus"></i></a>
+                      <a href="frontend/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 3"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
                   </div>
@@ -119,7 +119,7 @@ const Portfolio = () => {
                     <div className="portfolio-info">
                       <h4>{item.header_8}</h4>
                       <p>{item.title_8}</p>
-                      <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 3"><i className="bx bx-plus"></i></a>
+                      <a href="frontend/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 3"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
                   </div>
