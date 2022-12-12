@@ -104,20 +104,6 @@ const Testimonial = () => {
                       </div>
                     </div>
                 </SwiperSlide>
-                {/* <SwiperSlide>
-                <div className="swiper-slide">
-                      <div className="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-5.jpg" className="testimonial-img" alt="" />
-                        <h3>John Larson</h3>
-                        <h4>Entrepreneur</h4>
-                        <p>
-                          <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                          Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                          <i className="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                      </div>
-                    </div>
-                </SwiperSlide> */}
                  </Swiper>
               )
             })
