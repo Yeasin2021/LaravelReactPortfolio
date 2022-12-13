@@ -1,6 +1,8 @@
 
 import React from 'react'
 import About from './elements/About';
+import ContactMessage from './elements/ContactMessage';
+import Contacts from './elements/Contacts';
 import Header from './elements/Header';
 import Portfolio from './elements/Portfolio';
 
@@ -20,6 +22,7 @@ const Web = () => {
             <Testimonial />
             <Portfolio />
             <Pricing />
+            <Contacts />
         </div>
     </div>
   )
