@@ -10,10 +10,7 @@ import "swiper/css/navigation";
 
 const Testimonial = () => {
 
-  const setImag = {
-    backgroundImage : `URL("frontend/assets/img/testimonials-bg.jpg")`
-  }
-
+ 
  const [items,setItems] = useState(null);
 
  useEffect(() =>{

@@ -6741,9 +6741,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Testimonial = function Testimonial() {
-  var setImag = {
-    backgroundImage: "URL(\"frontend/assets/img/testimonials-bg.jpg\")"
-  };
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState2 = _slicedToArray(_useState, 2),
     items = _useState2[0],
