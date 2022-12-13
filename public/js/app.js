@@ -6753,7 +6753,6 @@ var Testimonial = function Testimonial() {
       return response.json();
     }).then(function (data) {
       setItems(data);
-      console.log(data);
     });
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("section", {
