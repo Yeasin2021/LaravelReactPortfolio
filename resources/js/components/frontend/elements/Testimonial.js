@@ -30,12 +30,12 @@ const Testimonial = () => {
 
   return (
 
-    <section id="testimonials" className="testimonials">
+    <section id="testimonials" className="testimonials" style ={ { backgroundImage: "url('testimonials-bg.jpg')" } }>
 
       <div className="container position-relative">
 
         <div className="swiper testimonials-slider " data-aos="fade-up" data-aos-delay="100">
-          
+
           <div className="swiper-wrapper">
           {
             items && items.map((item,index) => {

@@ -6759,6 +6759,9 @@ var Testimonial = function Testimonial() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("section", {
     id: "testimonials",
     className: "testimonials",
+    style: {
+      backgroundImage: "url('testimonials-bg.jpg')"
+    },
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
       className: "container position-relative",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
