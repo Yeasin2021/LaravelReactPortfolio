@@ -4,7 +4,7 @@ import ContactMessage from './ContactMessage';
 const Contacts = () => {
   const [items,setItems] = useState(null);
   useEffect(()=> {
-    fetch("http://localhost:8000/contact")
+    fetch("http://localhost:8081/contact")
     .then((response)=>{return response.json()})
     .then(data=>setItems(data))
   },[])
@@ -43,7 +43,7 @@ const Contacts = () => {
                         </div>
                        ))
                     }
-                    
+
                   </div>
                 </div>
               </div>
