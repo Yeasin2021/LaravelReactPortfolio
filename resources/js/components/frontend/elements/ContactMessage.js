@@ -1,3 +1,5 @@
+import { reset } from 'laravel-mix/src/Log';
+import { values } from 'lodash';
 import React,{useState,useEffect} from 'react'
 
 const ContactMessage = () => {
@@ -21,11 +23,14 @@ const ContactMessage = () => {
         .then((response)=>{console.warn("Result",response)})
         .catch(error=>console.warn("Have Some Error: "+error))
 
+
     }
+
+    
 
   return (
     <div>
-      <form onSubmit={formHandaler} role="form" className="php-email-form">
+      <form onSubmit={formHandaler} role="form" className="php-email-form" id='messageForm'>
 
               <div className="row">
                 <div className="col-md-6 form-group">

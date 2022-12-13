@@ -223,20 +223,6 @@
       "email": "abc@gmail.com",
       "subject": "How to bacome a rich man",
       "message": "Hello , I Have some problem ! "
-    },
-    {
-      "name": "Yeasin Hossain",
-      "email": "momenur@gmail.com",
-      "subject": "JavaScript ",
-      "message": "formHandaler",
-      "id": 2
-    },
-    {
-      "name": "Yeasin Hossain",
-      "email": "yeasin18801@gmail.com",
-      "subject": "JavaScript ",
-      "message": "Lead in the design, development, and implementation of the graphic, layout, and production communication materials",
-      "id": 3
     }
   ]
 }
