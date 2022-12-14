@@ -9,7 +9,8 @@ const Header = () => {
     .then(data => setItems(data))
   },[]);
   return (
-    <div className='header'>
+    <div>
+      <div className='header'>
   <header  className="fixed-top d-flex justify-content-center align-items-center header-transparent">
 
     <nav id="navbar"  className="navbar">
@@ -60,6 +61,7 @@ const Header = () => {
 
 
 
+    </div>
     </div>
   )
 }
