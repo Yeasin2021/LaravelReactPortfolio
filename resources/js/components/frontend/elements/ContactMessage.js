@@ -9,6 +9,7 @@ const ContactMessage = () => {
     const [subject,setSubject] = useState("");
     const [message,setMessage] = useState("");
 
+    // useRef Hooks declare
     const userName = useRef();
     const userEmail = useRef();
     const userSubject = useRef();
@@ -27,7 +28,7 @@ const ContactMessage = () => {
         })
         .then((response)=>{console.warn("Result",response)})
         .catch(error=>console.warn("Have Some Error: "+error))
-
+        //Form data Remove from inputs field after form submission by useRef hooks
         userName.current.value = '';
         userEmail.current.value = '';
         userSubject.current.value = '';

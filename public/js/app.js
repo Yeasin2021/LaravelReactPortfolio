@@ -5966,6 +5966,8 @@ var ContactMessage = function ContactMessage() {
     _useState8 = _slicedToArray(_useState7, 2),
     message = _useState8[0],
     setMessage = _useState8[1];
+
+  // useRef Hooks declare
   var userName = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)();
   var userEmail = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)();
   var userSubject = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)();
@@ -5990,6 +5992,7 @@ var ContactMessage = function ContactMessage() {
     })["catch"](function (error) {
       return console.warn("Have Some Error: " + error);
     });
+    //Form data Remove from inputs field after form submission by useRef hooks
     userName.current.value = '';
     userEmail.current.value = '';
     userSubject.current.value = '';
