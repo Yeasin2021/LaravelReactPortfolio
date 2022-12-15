@@ -1,6 +1,6 @@
 import { reset } from 'laravel-mix/src/Log';
 import { values } from 'lodash';
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useRef} from 'react'
 
 const ContactMessage = () => {
 
@@ -9,11 +9,16 @@ const ContactMessage = () => {
     const [subject,setSubject] = useState("");
     const [message,setMessage] = useState("");
 
+    const userName = useRef();
+    const userEmail = useRef();
+    const userSubject = useRef();
+    const userMessage = useRef();
+
     const formHandaler = (event) =>{
         event.preventDefault();
         const data = {name,email,subject,message};
         const url = "http://localhost:8081/contactMessage";
-        fetch(url,{
+        const api = fetch(url,{
             method:"POST",
             headers:{
                 'content-type':'application/json'
@@ -23,28 +28,30 @@ const ContactMessage = () => {
         .then((response)=>{console.warn("Result",response)})
         .catch(error=>console.warn("Have Some Error: "+error))
 
+        userName.current.value = '';
+        userEmail.current.value = '';
+        userSubject.current.value = '';
+        userMessage.current.value = '';
 
     }
 
-    
-
   return (
     <div>
-      <form onSubmit={formHandaler} role="form" className="php-email-form" id='messageForm'>
+      <form onSubmit={formHandaler} role="form" className="php-email-form" id='messageForm' name='formdata'>
 
               <div className="row">
                 <div className="col-md-6 form-group">
-                  <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" value={name} onChange={(e)=>setName(e.target.value)}  required />
+                  <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" value={name} onChange={(e)=>setName(e.target.value)} ref={userName} required />
                 </div>
                 <div className="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" className="form-control" name="email" id="email" placeholder="Your Email" value={email} onChange={(e)=>setEmail(e.target.value)} required />
+                  <input type="email" className="form-control" name="email" id="email" placeholder="Your Email" value={email} onChange={(e)=>setEmail(e.target.value)} ref={userEmail} required />
                 </div>
               </div>
               <div className="form-group mt-3">
-                <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" value={subject} onChange={(e)=>setSubject(e.target.value)} required />
+                <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" value={subject} onChange={(e)=>setSubject(e.target.value)} ref={userSubject} required />
               </div>
               <div className="form-group mt-3">
-                <textarea className="form-control" name="message" rows="6" placeholder="Message" value={message} onChange={(e)=>setMessage(e.target.value)} required></textarea>
+                <textarea className="form-control" name="message" rows="6" placeholder="Message" value={message} onChange={(e)=>setMessage(e.target.value)} ref={userMessage} required></textarea>
               </div>
               <div className="my-3">
                 <div className="loading">Loading</div>

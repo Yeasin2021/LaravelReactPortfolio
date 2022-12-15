@@ -5966,6 +5966,10 @@ var ContactMessage = function ContactMessage() {
     _useState8 = _slicedToArray(_useState7, 2),
     message = _useState8[0],
     setMessage = _useState8[1];
+  var userName = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)();
+  var userEmail = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)();
+  var userSubject = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)();
+  var userMessage = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)();
   var formHandaler = function formHandaler(event) {
     event.preventDefault();
     var data = {
@@ -5975,7 +5979,7 @@ var ContactMessage = function ContactMessage() {
       message: message
     };
     var url = "http://localhost:8081/contactMessage";
-    fetch(url, {
+    var api = fetch(url, {
       method: "POST",
       headers: {
         'content-type': 'application/json'
@@ -5986,6 +5990,10 @@ var ContactMessage = function ContactMessage() {
     })["catch"](function (error) {
       return console.warn("Have Some Error: " + error);
     });
+    userName.current.value = '';
+    userEmail.current.value = '';
+    userSubject.current.value = '';
+    userMessage.current.value = '';
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
@@ -5993,6 +6001,7 @@ var ContactMessage = function ContactMessage() {
       role: "form",
       className: "php-email-form",
       id: "messageForm",
+      name: "formdata",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "row",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -6007,6 +6016,7 @@ var ContactMessage = function ContactMessage() {
             onChange: function onChange(e) {
               return setName(e.target.value);
             },
+            ref: userName,
             required: true
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -6021,6 +6031,7 @@ var ContactMessage = function ContactMessage() {
             onChange: function onChange(e) {
               return setEmail(e.target.value);
             },
+            ref: userEmail,
             required: true
           })
         })]
@@ -6036,6 +6047,7 @@ var ContactMessage = function ContactMessage() {
           onChange: function onChange(e) {
             return setSubject(e.target.value);
           },
+          ref: userSubject,
           required: true
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -6049,6 +6061,7 @@ var ContactMessage = function ContactMessage() {
           onChange: function onChange(e) {
             return setMessage(e.target.value);
           },
+          ref: userMessage,
           required: true
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
