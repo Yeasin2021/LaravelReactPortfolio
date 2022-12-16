@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// any route setup without home (/) route
+// any route setup without home (/) route; is called base Route
 Route::get('/{path?}', function () {
     return view('welcome');
 });

@@ -15,7 +15,7 @@ import Footer from './elements/Footer';
 const Web = () => {
   return (
     <div>
-        <Header />
+    <Header />
         <div className='main'>
             <About />
             <Resume />
@@ -25,7 +25,7 @@ const Web = () => {
             <Pricing />
             <Contacts />
         </div>
-            <Footer />
+    <Footer />
     </div>
   )
 }
