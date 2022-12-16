@@ -12,43 +12,43 @@
     <link href="{{ asset('frontend/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet">
     {{-- backend --}}
-    <link rel="icon" href="{{ asset('back-end') }}/img/mini_logo.png" type="image/png" />
+    <link rel="icon" href="{{ asset('back-end/img/mini_logo.png') }}" type="image/png" />
 
-		<link rel="stylesheet" href="{{ asset('back-end') }}/css/bootstrap1.min.css" />
-
-
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/themefy_icon/themify-icons.css" />
-
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/niceselect/css/nice-select.css" />
-
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/owl_carousel/css/owl.carousel.css" />
-
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/gijgo/gijgo.min.css" />
-
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/font_awesome/css/all.min.css" />
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/tagsinput/tagsinput.css" />
-
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/datepicker/date-picker.css" />
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/vectormap-home/vectormap-2.0.2.css" />
-
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/scroll/scrollable.css" />
-
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/datatable/css/jquery.dataTables.min.css" />
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/datatable/css/responsive.dataTables.min.css" />
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/datatable/css/buttons.dataTables.min.css" />
+		<link rel="stylesheet" href="{{ asset('back-end/css/bootstrap1.min.css') }}" />
 
 
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/text_editor/summernote-bs4.css" />
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/themefy_icon/themify-icons.css') }}" />
 
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/morris/morris.css" />
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/niceselect/css/nice-select.css') }}" />
 
-		<link rel="stylesheet" href="{{ asset('back-end') }}/vendors/material_icon/material-icons.css" />
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/owl_carousel/css/owl.carousel.css') }}" />
 
-		<link rel="stylesheet" href="{{ asset('back-end') }}/css/metisMenu.css" />
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/gijgo/gijgo.min.css') }}" />
+
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/font_awesome/css/all.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/tagsinput/tagsinput.css') }}" />
+
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/datepicker/date-picker.css') }}" />
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/vectormap-home/vectormap-2.0.2.css') }}" />
+
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/scroll/scrollable.css') }}" />
+
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/datatable/css/jquery.dataTables.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/datatable/css/responsive.dataTables.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/datatable/css/buttons.dataTables.min.css') }}" />
 
 
-		<link rel="stylesheet" href="{{ asset('back-end') }}/css/style1.css" />
-		<link rel="stylesheet" href="{{ asset('back-end') }}/css/colors/default.css" id="colorSkinCSS" />
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/text_editor/summernote-bs4.css') }}" />
+
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/morris/morris.css') }}" />
+
+		<link rel="stylesheet" href="{{ asset('back-end/vendors/material_icon/material-icons.css') }}" />
+
+		<link rel="stylesheet" href="{{ asset('back-end/css/metisMenu.css') }}" />
+
+
+		<link rel="stylesheet" href="{{ asset('back-end/css/style1.css') }}" />
+		<link rel="stylesheet" href="{{ asset('back-end/css/colors/default.css') }}" id="colorSkinCSS" />
     <title>Document</title>
 </head>
 <body>
