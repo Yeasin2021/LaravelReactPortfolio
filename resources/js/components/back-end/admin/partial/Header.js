@@ -2,8 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div>
-        <div className="header_iner d-flex justify-content-between align-items-center">
+    <div className="header_iner d-flex justify-content-between align-items-center">
                 <div className="sidebar_icon d-lg-none">
                     <i className="ti-menu"></i>
                 </div>
@@ -126,12 +125,7 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-
-
-
-
-    </div>
+        </div>
   )
 }
 
