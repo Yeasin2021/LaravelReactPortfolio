@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use Illuminate\Http\Request;
-use App\Http\Controllers\ServiceController;
+
 
 class ServiceController extends Controller
 {
@@ -16,7 +16,7 @@ class ServiceController extends Controller
     public function index()
     {
         //show all data into the card
-        $services = ServiceController::all();
+        $services = Service::all();
         return response()->json(['status'=>200,'services'=>$services]);
     }
 
