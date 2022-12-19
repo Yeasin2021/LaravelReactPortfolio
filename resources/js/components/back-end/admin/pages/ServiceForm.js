@@ -25,7 +25,10 @@ const ServiceForm = () => {
             </div>
             <div className="form-group">
                 <label htmlFor="exampleInputCardTitle">Card Title</label>
-                <input type="text" className="form-control" id="exampleInputCardTitle" placeholder="Enter Card Title" name='card_title' />
+                <input type="text" className="form-control"
+                id="exampleInputCardTitle" placeholder="Enter Card Title"
+                name='card_title'
+                onChange={(e)=> setField(e.target.value)} />
             </div>
             <div className="form-group">
                 <label htmlFor="exampleInputCardDes">Card Description</label>

@@ -9203,7 +9203,10 @@ var ServiceForm = function ServiceForm() {
               className: "form-control",
               id: "exampleInputCardTitle",
               placeholder: "Enter Card Title",
-              name: "card_title"
+              name: "card_title",
+              onChange: function onChange(e) {
+                return setField(e.target.value);
+              }
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "form-group",
