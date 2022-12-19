@@ -9202,6 +9202,9 @@ var ServiceForm = function ServiceForm() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
         type: "submit",
         "class": "btn btn-primary",
+        style: {
+          marginTop: "10px"
+        },
         children: "Submit"
       })]
     })

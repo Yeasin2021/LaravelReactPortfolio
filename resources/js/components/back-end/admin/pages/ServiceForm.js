@@ -10,6 +10,7 @@ const ServiceForm = () => {
   }
   return (
     <div className='container' style={ formStyleOne }>
+        
        <form>
             <div class="form-group">
                 <label htmlFor="exampleInputCardicon">Card-Icon</label>
@@ -24,7 +25,7 @@ const ServiceForm = () => {
                 <input type="text" class="form-control" id="exampleInputCardDes" placeholder="Enter Card Title" name='card_description' />
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" style={{ marginTop:"10px" }}>Submit</button>
         </form>
     </div>
   )
