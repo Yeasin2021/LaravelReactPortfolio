@@ -9166,40 +9166,38 @@ var ServiceForm = function ServiceForm() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         "class": "form-group",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-          "for": "exampleInputEmail1",
-          children: "Email address"
+          htmlFor: "exampleInputCardicon",
+          children: "Card-Icon"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-          type: "email",
+          type: "text",
           "class": "form-control",
-          id: "exampleInputEmail1",
-          "aria-describedby": "emailHelp",
-          placeholder: "Enter email"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
-          id: "emailHelp",
-          "class": "form-text text-muted",
-          children: "We'll never share your email with anyone else."
+          id: "exampleInputCardicon",
+          placeholder: "Enter Card icon",
+          name: "card_icon"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         "class": "form-group",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-          "for": "exampleInputPassword1",
-          children: "Password"
+          htmlFor: "exampleInputCardTitle",
+          children: "Card Title"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-          type: "password",
+          type: "text",
           "class": "form-control",
-          id: "exampleInputPassword1",
-          placeholder: "Password"
+          id: "exampleInputCardTitle",
+          placeholder: "Enter Card Title",
+          name: "card_title"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        "class": "form-check",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-          type: "checkbox",
-          "class": "form-check-input",
-          id: "exampleCheck1"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-          "class": "form-check-label",
-          "for": "exampleCheck1",
-          children: "Check me out"
+        "class": "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+          htmlFor: "exampleInputCardDes",
+          children: "Card Description"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          type: "text",
+          "class": "form-control",
+          id: "exampleInputCardDes",
+          placeholder: "Enter Card Title",
+          name: "card_description"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
         type: "submit",
