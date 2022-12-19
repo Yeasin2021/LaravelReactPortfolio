@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const ServiceForm = () => {
   const formStyleOne = {
@@ -8,6 +8,8 @@ const ServiceForm = () => {
     margin: '25px 25px 25px 25px',
     position: 'relative'
   }
+  const [field,setField] = useState('');
+  console.log(field);
   return (
     <div className='container' style={ formStyleOne }>
   <div className="row">
@@ -15,7 +17,11 @@ const ServiceForm = () => {
     <form>
             <div className="form-group">
                 <label htmlFor="exampleInputCardicon">Card-Icon</label>
-                <input type="text" className="form-control" id='exampleInputCardicon'  placeholder="Enter Card icon" name='card_icon'/>
+                <input type="text" className="form-control"
+                 id='exampleInputCardicon'
+                 placeholder="Enter Card icon"
+                 name='card_icon'
+                 onChange={(e)=> setField(e.target.value)}/>
             </div>
             <div className="form-group">
                 <label htmlFor="exampleInputCardTitle">Card Title</label>
