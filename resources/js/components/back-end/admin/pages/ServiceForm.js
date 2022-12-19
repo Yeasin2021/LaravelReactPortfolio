@@ -8,40 +8,47 @@ const ServiceForm = () => {
     margin: '25px 25px 25px 25px',
     position: 'relative'
   }
-  const [field,setField] = useState('');
-  console.log(field);
+  const [title,setTitle] = useState('');
+  const [icon,setIcon] = useState('');
+  const [description,setDescription] = useState('');
+  const onSubmit = (event) =>{
+    event.preventDefault();
+    console.log(icon+ "---" + title +"---"+ description);
+  }
+
   return (
     <div className='container' style={ formStyleOne }>
-  <div className="row">
-    <div className="col-sm">
-    <form>
-            <div className="form-group">
-                <label htmlFor="exampleInputCardicon">Card-Icon</label>
-                <input type="text" className="form-control"
-                 id='exampleInputCardicon'
-                 placeholder="Enter Card icon"
-                 name='card_icon'
-                 onChange={(e)=> setField(e.target.value)}/>
+        <div className="row">
+            <div className="col-sm">
+                <form onSubmit={onSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputCardicon">Card-Icon</label>
+                        <input type="text" className="form-control"
+                        id='exampleInputCardicon'
+                        placeholder="Enter Card icon"
+                        name='card_icon'
+                        onChange={(e)=> setTitle(e.target.value)}/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputCardTitle">Card Title</label>
+                        <input type="text" className="form-control"
+                        id="exampleInputCardTitle" placeholder="Enter Card Title"
+                        name='card_title'
+                        onChange={(e)=> setIcon(e.target.value)} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputCardDes">Card Description</label>
+                        <input type="text" className="form-control"
+                        id="exampleInputCardDes"
+                        placeholder="Enter Card Title"
+                        name='card_description'
+                        onChange={(e)=> setDescription(e.target.value)}/>
+                    </div>
+
+                    <button type="submit" className="btn btn-primary" style={{ marginTop:"10px" }}>Submit</button>
+                </form>
             </div>
-            <div className="form-group">
-                <label htmlFor="exampleInputCardTitle">Card Title</label>
-                <input type="text" className="form-control"
-                id="exampleInputCardTitle" placeholder="Enter Card Title"
-                name='card_title'
-                onChange={(e)=> setField(e.target.value)} />
-            </div>
-            <div className="form-group">
-                <label htmlFor="exampleInputCardDes">Card Description</label>
-                <input type="text" className="form-control" id="exampleInputCardDes" placeholder="Enter Card Title" name='card_description' />
-            </div>
-
-            <button type="submit" className="btn btn-primary" style={{ marginTop:"10px" }}>Submit</button>
-        </form>
-    </div>
-
-  </div>
-
-
+        </div>
     </div>
   )
 }

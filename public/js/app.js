@@ -9167,9 +9167,20 @@ var ServiceForm = function ServiceForm() {
   };
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState2 = _slicedToArray(_useState, 2),
-    field = _useState2[0],
-    setField = _useState2[1];
-  console.log(field);
+    title = _useState2[0],
+    setTitle = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState4 = _slicedToArray(_useState3, 2),
+    icon = _useState4[0],
+    setIcon = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState6 = _slicedToArray(_useState5, 2),
+    description = _useState6[0],
+    setDescription = _useState6[1];
+  var onSubmit = function onSubmit(event) {
+    event.preventDefault();
+    console.log(icon + "---" + title + "---" + description);
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     className: "container",
     style: formStyleOne,
@@ -9178,6 +9189,7 @@ var ServiceForm = function ServiceForm() {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "col-sm",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+          onSubmit: onSubmit,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
@@ -9190,7 +9202,7 @@ var ServiceForm = function ServiceForm() {
               placeholder: "Enter Card icon",
               name: "card_icon",
               onChange: function onChange(e) {
-                return setField(e.target.value);
+                return setTitle(e.target.value);
               }
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -9205,7 +9217,7 @@ var ServiceForm = function ServiceForm() {
               placeholder: "Enter Card Title",
               name: "card_title",
               onChange: function onChange(e) {
-                return setField(e.target.value);
+                return setIcon(e.target.value);
               }
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -9218,7 +9230,10 @@ var ServiceForm = function ServiceForm() {
               className: "form-control",
               id: "exampleInputCardDes",
               placeholder: "Enter Card Title",
-              name: "card_description"
+              name: "card_description",
+              onChange: function onChange(e) {
+                return setDescription(e.target.value);
+              }
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
             type: "submit",
