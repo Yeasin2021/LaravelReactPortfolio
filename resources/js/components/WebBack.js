@@ -7,6 +7,7 @@ import Web from './frontend/Web';
 
 
 function WebBack() {
+    
     return (
         <div>
             {/* <Web /> */}
@@ -15,7 +16,7 @@ function WebBack() {
                     <Route path='/' element={<Web />} />
                     <Route element={<Dashboard />}>
                         {/* <Route path='/dashboard' element={<Dashboard />} /> */}
-                        <Route path='/dashboard/serviceform' element={<ServiceForm />} />
+                        <Route path='/dashboard' element={<ServiceForm />} />
                     </Route>
 
                     {/* <Route path='/dashboardform' element={<ServiceForm />} /> */}

@@ -9087,7 +9087,7 @@ function WebBack() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_back_end_admin_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {}),
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-            path: "/dashboard/serviceform",
+            path: "/dashboard",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_back_end_admin_pages_ServiceForm__WEBPACK_IMPORTED_MODULE_3__["default"], {})
           })
         })]
@@ -9152,8 +9152,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ServiceForm = function ServiceForm() {
-  // alert("baler life")
+  var formStyleOne = {
+    justifyContent: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    margin: '25px 25px 25px 25px',
+    position: 'relative'
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "container",
+    style: formStyleOne,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         "class": "form-group",

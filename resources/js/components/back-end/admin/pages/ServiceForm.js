@@ -1,9 +1,15 @@
 import React from 'react'
 
 const ServiceForm = () => {
-    // alert("baler life")
+  const formStyleOne = {
+    justifyContent: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    margin: '25px 25px 25px 25px',
+    position: 'relative'
+  }
   return (
-    <div>
+    <div className='container' style={ formStyleOne }>
        <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
