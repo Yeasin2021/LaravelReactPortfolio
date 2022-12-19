@@ -10,23 +10,29 @@ const ServiceForm = () => {
   }
   return (
     <div className='container' style={ formStyleOne }>
-        
-       <form>
-            <div class="form-group">
+  <div className="row">
+    <div className="col-sm">
+    <form>
+            <div className="form-group">
                 <label htmlFor="exampleInputCardicon">Card-Icon</label>
-                <input type="text" class="form-control" id='exampleInputCardicon'  placeholder="Enter Card icon" name='card_icon'/>
+                <input type="text" className="form-control" id='exampleInputCardicon'  placeholder="Enter Card icon" name='card_icon'/>
             </div>
-            <div class="form-group">
+            <div className="form-group">
                 <label htmlFor="exampleInputCardTitle">Card Title</label>
-                <input type="text" class="form-control" id="exampleInputCardTitle" placeholder="Enter Card Title" name='card_title' />
+                <input type="text" className="form-control" id="exampleInputCardTitle" placeholder="Enter Card Title" name='card_title' />
             </div>
-            <div class="form-group">
+            <div className="form-group">
                 <label htmlFor="exampleInputCardDes">Card Description</label>
-                <input type="text" class="form-control" id="exampleInputCardDes" placeholder="Enter Card Title" name='card_description' />
+                <input type="text" className="form-control" id="exampleInputCardDes" placeholder="Enter Card Title" name='card_description' />
             </div>
 
-            <button type="submit" class="btn btn-primary" style={{ marginTop:"10px" }}>Submit</button>
+            <button type="submit" className="btn btn-primary" style={{ marginTop:"10px" }}>Submit</button>
         </form>
+    </div>
+
+  </div>
+
+
     </div>
   )
 }
