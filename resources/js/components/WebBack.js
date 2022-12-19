@@ -13,13 +13,13 @@ function WebBack() {
             <Router>
                 <Routes>
                     <Route path='/' element={<Web />} />
-                    {/* <Route element={<Dashboard />}>
-                        <Route path='/dashboard' element={<Dashboard />} />
+                    <Route element={<Dashboard />}>
+                        {/* <Route path='/dashboard' element={<Dashboard />} /> */}
                         <Route path='/dashboard/serviceform' element={<ServiceForm />} />
-                    </Route> */}
+                    </Route>
 
                     {/* <Route path='/dashboardform' element={<ServiceForm />} /> */}
-                    <Route path='/dashboard' element={<Dashboard />}></Route>
+                    {/* <Route path='/dashboard' element={<Dashboard />}></Route> */}
                 </Routes>
             </Router>
         </div>
