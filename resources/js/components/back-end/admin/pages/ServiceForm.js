@@ -16,6 +16,10 @@ const ServiceForm = () => {
     console.log(icon+ "---" + title +"---"+ description);
   }
 
+  console.log(icon);
+  console.log(title);
+  console.log(description);
+
   return (
     <div className='container' style={ formStyleOne }>
         <div className="row">
