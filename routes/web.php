@@ -22,6 +22,13 @@ Route::get('/', function () {
 // Route::resource('service', ServiceController::class);
 
 // any route setup without home (/) route; is called base Route
-Route::get('/{path?}', function () {
+Route::get('/{path?}/{paths?}', function () {
     return view('welcome');
 });
+// Route::get('/{path?}', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/{path?}', function () {
+//     return view('welcome');
+// })->where('path', '.*');
