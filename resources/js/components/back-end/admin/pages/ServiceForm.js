@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios';
 
 const ServiceForm = () => {
   const formStyleOne = {
@@ -16,9 +17,9 @@ const ServiceForm = () => {
     console.log(icon+ "---" + title +"---"+ description);
   }
 
-  console.log(icon);
-  console.log(title);
-  console.log(description);
+//   console.log(icon);
+//   console.log(title);
+//   console.log(description);
 
   return (
     <div className='container' style={ formStyleOne }>
