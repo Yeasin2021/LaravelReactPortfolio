@@ -27,7 +27,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        //data store by this method
+
     }
 
     /**
@@ -38,7 +39,15 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //data store by this method
+        $all = $request->all();
+        $store = Service::create([
+            'card_icon' => $request->card_icon,
+            'card_title' => $request->card_title,
+            'card_description' => $request->card_description,
+        ]);
+        // dd($all);
+        return response()->json(['status'=>200]);
     }
 
     /**
