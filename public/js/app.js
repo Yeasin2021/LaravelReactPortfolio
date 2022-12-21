@@ -9177,10 +9177,6 @@ var ServiceForm = function ServiceForm() {
     margin: '25px 25px 25px 25px',
     position: 'relative'
   };
-  //   const [title,setTitle] = useState('');
-  //   const [icon,setIcon] = useState('');
-  //   const [description,setDescription] = useState('');
-
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       icon: "",
       title: "",
@@ -9189,8 +9185,6 @@ var ServiceForm = function ServiceForm() {
     _useState2 = _slicedToArray(_useState, 2),
     input = _useState2[0],
     setInput = _useState2[1];
-  //   const data = {icon,title,description};
-
   var onSubmit = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
       var response;
@@ -9204,7 +9198,6 @@ var ServiceForm = function ServiceForm() {
               return axios__WEBPACK_IMPORTED_MODULE_1___default().post('service', input);
             case 4:
               response = _context.sent;
-              //   const response = await axios.post('service',data);
               console.log(response);
               _context.next = 11;
               break;
@@ -9223,11 +9216,6 @@ var ServiceForm = function ServiceForm() {
       return _ref.apply(this, arguments);
     };
   }();
-
-  //   console.log(icon);
-  //   console.log(title);
-  //   console.log(description);
-
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "container",
     style: formStyleOne,

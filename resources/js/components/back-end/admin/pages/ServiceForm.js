@@ -9,9 +9,7 @@ const ServiceForm = () => {
     margin: '25px 25px 25px 25px',
     position: 'relative'
   }
-//   const [title,setTitle] = useState('');
-//   const [icon,setIcon] = useState('');
-//   const [description,setDescription] = useState('');
+
 
   const [input,setInput] = useState(
     {
@@ -20,24 +18,19 @@ const ServiceForm = () => {
         description: ""
     }
   )
-//   const data = {icon,title,description};
 
   const onSubmit = async (event) =>{
     event.preventDefault();
     try{
       const response = await axios.post('service',input);
-    //   const response = await axios.post('service',data);
       console.log(response);
-
     }catch(error){
       alert(error)
     }
     // console.log(icon+ "---" + title +"---"+ description);
   }
 
-//   console.log(icon);
-//   console.log(title);
-//   console.log(description);
+
 
   return (
     <div className='container' style={ formStyleOne }>
@@ -52,6 +45,7 @@ const ServiceForm = () => {
                         name='card_icon'
                         onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}
                        />
+                       {/* value={input.icon} only for edit page*/}
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputCardTitle">Card Title</label>
