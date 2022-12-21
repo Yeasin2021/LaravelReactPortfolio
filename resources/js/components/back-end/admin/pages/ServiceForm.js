@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useRef } from 'react'
 import axios from 'axios';
 
 const ServiceForm = () => {
@@ -10,7 +10,9 @@ const ServiceForm = () => {
     position: 'relative'
   }
 
-
+  const clearDataIcon = useRef();
+  const clearDataTitle = useRef();
+  const clearDataDescription = useRef();
   const [input,setInput] = useState(
     {
         icon : "",
@@ -23,6 +25,9 @@ const ServiceForm = () => {
     event.preventDefault();
     try{
       const response = await axios.post('service',input);
+      clearDataIcon.current.value = '';
+      clearDataTitle.current.value = '';
+      clearDataDescription.current.value = '';
       console.log(response);
     }catch(error){
       alert(error)
@@ -44,6 +49,7 @@ const ServiceForm = () => {
                         placeholder="Enter Card icon"
                         name='card_icon'
                         onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}
+                        ref={clearDataIcon}
                        />
                        {/* value={input.icon} only for edit page*/}
                     </div>
@@ -53,6 +59,7 @@ const ServiceForm = () => {
                         id="exampleInputCardTitle" placeholder="Enter Card Title"
                         name='card_title'
                         onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}
+                        ref={clearDataTitle}
                        />
                     </div>
                     <div className="form-group">
@@ -62,6 +69,7 @@ const ServiceForm = () => {
                         placeholder="Enter Card Title"
                         name='card_description'
                         onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}
+                        ref={clearDataDescription}
                         />
                     </div>
 

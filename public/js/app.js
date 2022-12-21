@@ -9177,6 +9177,9 @@ var ServiceForm = function ServiceForm() {
     margin: '25px 25px 25px 25px',
     position: 'relative'
   };
+  var clearDataIcon = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var clearDataTitle = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var clearDataDescription = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       icon: "",
       title: "",
@@ -9198,19 +9201,22 @@ var ServiceForm = function ServiceForm() {
               return axios__WEBPACK_IMPORTED_MODULE_1___default().post('service', input);
             case 4:
               response = _context.sent;
+              clearDataIcon.current.value = '';
+              clearDataTitle.current.value = '';
+              clearDataDescription.current.value = '';
               console.log(response);
-              _context.next = 11;
+              _context.next = 14;
               break;
-            case 8:
-              _context.prev = 8;
+            case 11:
+              _context.prev = 11;
               _context.t0 = _context["catch"](1);
               alert(_context.t0);
-            case 11:
+            case 14:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[1, 8]]);
+      }, _callee, null, [[1, 11]]);
     }));
     return function onSubmit(_x2) {
       return _ref.apply(this, arguments);
@@ -9238,7 +9244,8 @@ var ServiceForm = function ServiceForm() {
               name: "card_icon",
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
-              }
+              },
+              ref: clearDataIcon
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
@@ -9253,7 +9260,8 @@ var ServiceForm = function ServiceForm() {
               name: "card_title",
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
-              }
+              },
+              ref: clearDataTitle
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
@@ -9268,7 +9276,8 @@ var ServiceForm = function ServiceForm() {
               name: "card_description",
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
-              }
+              },
+              ref: clearDataDescription
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
             type: "submit",
