@@ -2,6 +2,10 @@ import React, { useState,useRef } from 'react'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Music from './coin.mp3';
+
+
+
 
 const ServiceForm = () => {
   const formStyleOne = {
@@ -11,6 +15,7 @@ const ServiceForm = () => {
     margin: '25px 25px 25px 25px',
     position: 'relative'
   }
+
 
   const clearDataIcon = useRef();
   const clearDataTitle = useRef();
@@ -32,11 +37,17 @@ const ServiceForm = () => {
       clearDataDescription.current.value = '';
       //   console.log(response);
       if(response.data.status == 200){
-        toast("Data Added Successfully!")
+        toast("Data Added Successfully 😲")
       }
     }catch(error){
       alert(error)
     }
+  }
+
+  const Sound = () =>{
+    const audio = new Audio('./coin.mp3');
+    audio.play();
+
   }
 
   const notify = () => toast("Wow so easy!");
