@@ -1,5 +1,7 @@
 import React, { useState,useRef } from 'react'
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ServiceForm = () => {
   const formStyleOne = {
@@ -28,17 +30,20 @@ const ServiceForm = () => {
       clearDataIcon.current.value = '';
       clearDataTitle.current.value = '';
       clearDataDescription.current.value = '';
-      console.log(response);
+      //   console.log(response);
+      if(response.data.status == 200){
+        toast("Data Added Successfully!")
+      }
     }catch(error){
       alert(error)
     }
-    // console.log(icon+ "---" + title +"---"+ description);
   }
 
-
+  const notify = () => toast("Wow so easy!");
 
   return (
     <div className='container' style={ formStyleOne }>
+        <ToastContainer />
         <div className="row">
             <div className="col-sm">
                 <form onSubmit={onSubmit}>
@@ -76,6 +81,8 @@ const ServiceForm = () => {
                     <button type="submit" className="btn btn-primary" style={{ marginTop:"10px" }}>Submit</button>
                 </form>
             </div>
+
+
         </div>
     </div>
   )
