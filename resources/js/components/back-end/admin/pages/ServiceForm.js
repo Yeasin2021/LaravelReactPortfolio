@@ -1,4 +1,4 @@
-import React, { useState,useRef } from 'react'
+import React, { useState,useRef,useEffect } from 'react'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,7 +12,7 @@ const ServiceForm = () => {
     justifyContent: 'center',
     display: 'flex',
     alignItems: 'center',
-    margin: '25px 25px 25px 25px',
+    margin: '25px 25px 25px 350px',
     position: 'relative'
   }
 
@@ -21,6 +21,7 @@ const ServiceForm = () => {
   const clearDataIcon = useRef();
   const clearDataTitle = useRef();
   const clearDataDescription = useRef();
+  const [items,setItems] = useState([]);
 
   const [input,setInput] = useState(
     {
@@ -31,11 +32,6 @@ const ServiceForm = () => {
   )
 
   const audio = new Audio(Music);
-  const start = () => {
-    audio.play()
-  }
-
-
 
   const onSubmit = async (event) =>{
     event.preventDefault();
@@ -55,8 +51,13 @@ const ServiceForm = () => {
   }
 
 
-
-  const notify = () => toast("Wow so easy!");
+  useEffect(()=>{
+    const dataShow = async () =>{
+        const data_response = await axios.get('service')
+        .then((result)=>setItems(result.data.services))
+    }
+    dataShow();
+  },[]);
 
   return (
     <div className='container' style={ formStyleOne }>
@@ -98,11 +99,51 @@ const ServiceForm = () => {
                     <button type="submit" className="btn btn-primary" style={{ marginTop:"10px" }}>Submit</button>
                 </form>
             </div>
-            {/* <button onClick={start}>Click</button> */}
-
-
 
         </div>
+
+        <div className="row">
+                <div className="col-sm"></div>
+                <div className="col-md-8">
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Serial No.</th>
+                                <th scope="col">User Id.</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {
+                            items.map((item,i)=>{
+                            return(
+                                <tr className='headlineText' key={i}>
+                                <th scope="row">{++i}</th>
+                                <th scope="row">{item.id}</th>
+                                <td>{item.card_icon}</td>
+                                <td>{item.card_title}</td>
+                                <td>{item.card_description}</td>
+                                <td>
+                                    {/* <Link to={`/service/${item.id}`}>
+                                        <button className='btn btn-primary mr-2'>Edit</button>
+                                    </Link> */}
+
+                                       {/* <button onClick={()=> {deleteUser(item.id);}} className='btn btn-danger'>Delete</button> */}
+
+                                </td>
+
+                                </tr>
+                            )
+                            })
+                        }
+
+                        </tbody>
+                    </table>
+                </div>
+                <div className="col-sm"></div>
+            </div>
+
     </div>
   )
 }
