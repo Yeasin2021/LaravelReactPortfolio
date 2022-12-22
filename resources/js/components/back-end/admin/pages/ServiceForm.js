@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import Music from './coin.mp3';
 import Music from './add1.wav';
+import MusicEdit from './edit.wav';
 
 
 
@@ -62,6 +63,13 @@ const ServiceForm = () => {
     }
     dataShow();
   },[render]);
+
+
+  const editSound = () =>{
+    const audioEdit = new Audio(MusicEdit);
+    toast.info("Edit page open")
+    audioEdit.play();
+  }
 
 //   return (
 //     <div className='container' style={ formStyleOne }>
@@ -199,7 +207,7 @@ return (
                           <td>{item.card_description}</td>
                           <td>
                             <Link to={`/service/${item.id}`}>
-                              <button className='btn btn-primary mr-2'>E</button>
+                              <button className='btn btn-primary mr-2' onClick={editSound}>E</button>
                             </Link>
 
                               <button onClick={()=> deleteUser(item.id)} className='btn btn-danger'>D</button>
