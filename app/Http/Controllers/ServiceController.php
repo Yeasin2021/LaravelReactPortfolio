@@ -40,13 +40,11 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         //data store by this method
-        $all = $request->all();
         $store = Service::create([
             'card_icon' => $request->card_icon,
             'card_title' => $request->card_title,
             'card_description' => $request->card_description,
         ]);
-        // dd($all);
         return response()->json(['status'=>200]);
     }
 
@@ -67,9 +65,10 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit($id)
     {
-        //
+        $service = Service::find($id);
+        return response()->json(['status'=>200,'service'=>$service]);
     }
 
     /**
