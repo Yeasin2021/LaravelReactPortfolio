@@ -9196,7 +9196,6 @@ var ServiceForm = function ServiceForm() {
     setInput = _useState2[1];
   var audio = new Audio(_coin_mp3__WEBPACK_IMPORTED_MODULE_4__["default"]);
   var start = function start() {
-    // class method access
     audio.play();
   };
   var onSubmit = /*#__PURE__*/function () {

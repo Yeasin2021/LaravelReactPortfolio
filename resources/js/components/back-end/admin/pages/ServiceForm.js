@@ -32,7 +32,6 @@ const ServiceForm = () => {
 
   const audio = new Audio(Music);
   const start = () => {
-    // class method access
     audio.play()
   }
 
