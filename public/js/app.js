@@ -9364,22 +9364,22 @@ var ServiceForm = function ServiceForm() {
   //   )
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    "class": "container",
+    className: "container",
     style: formStyleOne,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_2__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      "class": "row",
+      className: "row",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        "class": "col-md-4",
+        className: "col-md-4",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
           onSubmit: onSubmit,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            "class": "form-group",
+            className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
               "for": "exampleInputPhone",
               children: "Card Icon"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
               type: "text",
-              "class": "form-control",
+              className: "form-control",
               name: "card_icon",
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
@@ -9393,7 +9393,7 @@ var ServiceForm = function ServiceForm() {
               children: "Card Title"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
               type: "text",
-              "class": "form-control",
+              className: "form-control",
               name: "card_title",
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
@@ -9407,7 +9407,7 @@ var ServiceForm = function ServiceForm() {
               children: "Card Description"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
               type: "text",
-              "class": "form-control",
+              className: "form-control",
               name: "card_description",
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
@@ -9416,15 +9416,15 @@ var ServiceForm = function ServiceForm() {
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
             type: "submit",
-            "class": "btn btn-primary",
+            className: "btn btn-primary mt-2",
             children: "Submit"
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        "class": "col-md-6",
+        className: "col-md-6",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
           type: "text" /*onChange={Search}*/,
-          "class": "form-control",
+          className: "form-control",
           placeholder: "Search by Name"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("table", {
           "class": "table table-bordered table-dark mt-3",

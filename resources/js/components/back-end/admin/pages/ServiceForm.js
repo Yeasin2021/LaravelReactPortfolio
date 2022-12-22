@@ -154,30 +154,30 @@ const ServiceForm = () => {
 //   )
 
 return (
-    <div class="container" style={ formStyleOne }>
+    <div className="container" style={ formStyleOne }>
         <ToastContainer />
-        <div class="row">
-          <div class="col-md-4">
+        <div className="row">
+          <div className="col-md-4">
             <form onSubmit={onSubmit} >
-                <div class="form-group">
+                <div className="form-group">
                   <label for="exampleInputPhone">Card Icon</label>
-                  <input type="text" class="form-control" name="card_icon" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}  ref={clearDataIcon}  />
+                  <input type="text" className="form-control" name="card_icon" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}  ref={clearDataIcon}  />
                 </div>
                 <div class="form-group">
                   <label for="exampleInputAge">Card Title</label>
-                  <input type="text" class="form-control" name="card_title" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearDataTitle} />
+                  <input type="text" className="form-control" name="card_title" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearDataTitle} />
                 </div>
                 <div class="form-group">
                   <label for="exampleInputAge">Card Description</label>
-                  <input type="text" class="form-control" name="card_description" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearDataDescription}/>
+                  <input type="text" className="form-control" name="card_description" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearDataDescription}/>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary mt-2">Submit</button>
               </form>
           </div>
 
-          <div class="col-md-6">
+          <div className="col-md-6">
 
-          <input type="text" /*onChange={Search}*/ class="form-control" placeholder='Search by Name'/>
+          <input type="text" /*onChange={Search}*/ className="form-control" placeholder='Search by Name'/>
             <table class="table table-bordered table-dark mt-3">
                 <thead>
                   <tr className='headlineText'>
