@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Music from '../update.wav'
 
 const Edit = () => {
     const formStyleOne = {
@@ -10,11 +11,13 @@ const Edit = () => {
         display: 'flex',
         alignItems: 'center',
         margin: '25px 25px 25px 280px',
-        position: 'relative'
+        position: 'relative',
+
       }
 
     const {id} = useParams();
     const navigate = useNavigate();
+    const audio = new Audio(Music);
     const [input, setInput] = useState(
         {
             icon : "",
@@ -42,7 +45,8 @@ const Edit = () => {
         const updateUser = async (e) =>{
             e.preventDefault();
             await axios.put(`/service/${id}`,input);
-            toast.info("Data Updated !!");
+            toast("Data Updated Successfully 😲")
+            audio.play();
             navigate("/dashboard");
         }
 
@@ -54,19 +58,20 @@ const Edit = () => {
             <form onSubmit={updateUser}>
                 <div class="form-group">
                   <label for="exampleInputPhone">Icon</label>
-                  <input type="text" class="form-control" name="card_icon" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.card_icon} />
+                  <input type="text" id='exampleInputPhone' class="form-control" name="card_icon" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.card_icon} />
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPhone">Title</label>
-                  <input type="text" class="form-control" name="card_title" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.card_title} />
+                  <input type="text" id='exampleInputPhone' class="form-control" name="card_title" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.card_title} />
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPhone">Description</label>
-                  <input type="text" class="form-control" name="card_description" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.card_description} />
+                  <input type="text" id='exampleInputPhone' class="form-control" name="card_description" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.card_description} />
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
               </form>
           </div>
+
         </div>
       </div>
   )

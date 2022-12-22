@@ -78,9 +78,15 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, $id)
     {
-        //
+        $service = Service::find($id);
+        $service->update([
+            'card_icon' => $request->card_icon,
+            'card_title' => $request->card_title,
+            'card_description' => $request->card_description,
+        ]);
+        return response()->json(['status' => 200, 'service' => $service]);
     }
 
     /**
