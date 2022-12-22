@@ -155,20 +155,21 @@ const ServiceForm = () => {
 
 return (
     <div class="container" style={ formStyleOne }>
+        <ToastContainer />
         <div class="row">
           <div class="col-md-4">
             <form onSubmit={onSubmit} >
                 <div class="form-group">
                   <label for="exampleInputPhone">Card Icon</label>
-                  <input type="text" class="form-control" name="card_icon" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.icon} />
+                  <input type="text" class="form-control" name="card_icon" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}  ref={clearDataIcon}  />
                 </div>
                 <div class="form-group">
                   <label for="exampleInputAge">Card Title</label>
-                  <input type="text" class="form-control" name="card_title" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.title} />
+                  <input type="text" class="form-control" name="card_title" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearDataTitle} />
                 </div>
                 <div class="form-group">
                   <label for="exampleInputAge">Card Description</label>
-                  <input type="text" class="form-control" name="card_description" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.description} />
+                  <input type="text" class="form-control" name="card_description" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearDataDescription}/>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
@@ -198,10 +199,10 @@ return (
                           <td>{item.card_description}</td>
                           <td>
                             <Link to={`/service/${item.id}`}>
-                              <button className='btn btn-primary mr-2'>Edit</button>
+                              <button className='btn btn-primary mr-2'>E</button>
                             </Link>
 
-                              <button onClick={()=> deleteUser(item.id)} className='btn btn-danger'>Delete</button>
+                              <button onClick={()=> deleteUser(item.id)} className='btn btn-danger'>D</button>
 
                           </td>
 

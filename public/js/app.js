@@ -9363,10 +9363,10 @@ var ServiceForm = function ServiceForm() {
   //     </div>
   //   )
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     "class": "container",
     style: formStyleOne,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_2__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       "class": "row",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         "class": "col-md-4",
@@ -9384,7 +9384,7 @@ var ServiceForm = function ServiceForm() {
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
               },
-              value: input.icon
+              ref: clearDataIcon
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             "class": "form-group",
@@ -9398,7 +9398,7 @@ var ServiceForm = function ServiceForm() {
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
               },
-              value: input.title
+              ref: clearDataTitle
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             "class": "form-group",
@@ -9412,7 +9412,7 @@ var ServiceForm = function ServiceForm() {
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
               },
-              value: input.description
+              ref: clearDataDescription
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
             type: "submit",
@@ -9466,14 +9466,14 @@ var ServiceForm = function ServiceForm() {
                     to: "/service/".concat(item.id),
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                       className: "btn btn-primary mr-2",
-                      children: "Edit"
+                      children: "E"
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                     onClick: function onClick() {
                       return deleteUser(item.id);
                     },
                     className: "btn btn-danger",
-                    children: "Delete"
+                    children: "D"
                   })]
                 })]
               });
@@ -9481,7 +9481,7 @@ var ServiceForm = function ServiceForm() {
           })]
         })]
       })]
-    })
+    })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ServiceForm);
