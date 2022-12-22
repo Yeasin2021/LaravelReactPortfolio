@@ -1,4 +1,5 @@
 import React, { useState,useRef,useEffect } from 'react'
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -108,9 +109,11 @@ const ServiceForm = () => {
                     <table className="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">Serial No.</th>
-                                <th scope="col">User Id.</th>
-                                <th scope="col">Name</th>
+                                {/* <th scope="col">Serial No.</th> */}
+                                <th scope="col">Service Id.</th>
+                                <th scope="col">Card Icon</th>
+                                <th scope="col">Card Title</th>
+                                <th scope="col">Card Description</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -119,17 +122,17 @@ const ServiceForm = () => {
                             items.map((item,i)=>{
                             return(
                                 <tr className='headlineText' key={i}>
-                                <th scope="row">{++i}</th>
+                                {/* <th scope="row">{++i}</th> */}
                                 <th scope="row">{item.id}</th>
                                 <td>{item.card_icon}</td>
                                 <td>{item.card_title}</td>
                                 <td>{item.card_description}</td>
                                 <td>
-                                    {/* <Link to={`/service/${item.id}`}>
+                                    <Link to={`/service/${item.id}`}>
                                         <button className='btn btn-primary mr-2'>Edit</button>
-                                    </Link> */}
+                                    </Link>
 
-                                       {/* <button onClick={()=> {deleteUser(item.id);}} className='btn btn-danger'>Delete</button> */}
+                                       <button onClick={()=> {deleteUser(item.id);}} className='btn btn-danger'>Delete</button>
 
                                 </td>
 
