@@ -23,6 +23,7 @@ const ServiceForm = () => {
   const clearDataTitle = useRef();
   const clearDataDescription = useRef();
   const [items,setItems] = useState([]);
+  const [render,setRender] = useState(false);
 
   const [input,setInput] = useState(
     {
@@ -45,6 +46,7 @@ const ServiceForm = () => {
       if(response.data.status == 200){
         audio.play();
         toast("Data Added Successfully 😲")
+        setRender(true);
       }
     }catch(error){
       alert(error)
@@ -55,10 +57,10 @@ const ServiceForm = () => {
   useEffect(()=>{
     const dataShow = async () =>{
         const data_response = await axios.get('service')
-        .then((result)=>setItems(result.data.services))
+        .then((result)=>setItems(result.data.services));
     }
     dataShow();
-  },[]);
+  },[render]);
 
   return (
     <div className='container' style={ formStyleOne }>

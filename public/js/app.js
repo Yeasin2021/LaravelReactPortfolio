@@ -9192,14 +9192,18 @@ var ServiceForm = function ServiceForm() {
     _useState2 = _slicedToArray(_useState, 2),
     items = _useState2[0],
     setItems = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    render = _useState4[0],
+    setRender = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       icon: "",
       title: "",
       description: ""
     }),
-    _useState4 = _slicedToArray(_useState3, 2),
-    input = _useState4[0],
-    setInput = _useState4[1];
+    _useState6 = _slicedToArray(_useState5, 2),
+    input = _useState6[0],
+    setInput = _useState6[1];
   var audio = new Audio(_coin_mp3__WEBPACK_IMPORTED_MODULE_4__["default"]);
   var onSubmit = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
@@ -9221,6 +9225,7 @@ var ServiceForm = function ServiceForm() {
               if (response.data.status == 200) {
                 audio.play();
                 (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data Added Successfully 😲");
+                setRender(true);
               }
               _context.next = 14;
               break;
@@ -9265,7 +9270,7 @@ var ServiceForm = function ServiceForm() {
       };
     }();
     dataShow();
-  }, []);
+  }, [render]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "container",
     style: formStyleOne,
