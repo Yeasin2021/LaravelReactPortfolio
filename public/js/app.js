@@ -9217,7 +9217,7 @@ var ServiceForm = function ServiceForm() {
               clearDataDescription.current.value = '';
               //   console.log(response);
               if (response.data.status == 200) {
-                // audio.play();
+                audio.play();
                 (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data Added Successfully 😲");
               }
               _context.next = 14;
@@ -9243,9 +9243,9 @@ var ServiceForm = function ServiceForm() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "container",
     style: formStyleOne,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_2__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_2__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "col-sm",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
           onSubmit: onSubmit,
@@ -9306,10 +9306,7 @@ var ServiceForm = function ServiceForm() {
             children: "Submit"
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-        onClick: start,
-        children: "Click"
-      })]
+      })
     })]
   });
 };

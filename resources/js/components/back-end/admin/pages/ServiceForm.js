@@ -47,7 +47,7 @@ const ServiceForm = () => {
       clearDataDescription.current.value = '';
       //   console.log(response);
       if(response.data.status == 200){
-        // audio.play();
+        audio.play();
         toast("Data Added Successfully 😲")
       }
     }catch(error){
@@ -99,7 +99,7 @@ const ServiceForm = () => {
                     <button type="submit" className="btn btn-primary" style={{ marginTop:"10px" }}>Submit</button>
                 </form>
             </div>
-            <button onClick={start}>Click</button>
+            {/* <button onClick={start}>Click</button> */}
 
 
 
