@@ -9152,7 +9152,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
 /* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ "./node_modules/react-toastify/dist/ReactToastify.css");
 /* harmony import */ var _coin_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./coin.mp3 */ "./resources/js/components/back-end/admin/pages/coin.mp3");
-/* harmony import */ var _coin_mp3__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_coin_mp3__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -9195,6 +9194,11 @@ var ServiceForm = function ServiceForm() {
     _useState2 = _slicedToArray(_useState, 2),
     input = _useState2[0],
     setInput = _useState2[1];
+  var audio = new Audio(_coin_mp3__WEBPACK_IMPORTED_MODULE_4__["default"]);
+  var start = function start() {
+    // class method access
+    audio.play();
+  };
   var onSubmit = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
       var response;
@@ -9213,6 +9217,7 @@ var ServiceForm = function ServiceForm() {
               clearDataDescription.current.value = '';
               //   console.log(response);
               if (response.data.status == 200) {
+                // audio.play();
                 (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data Added Successfully 😲");
               }
               _context.next = 14;
@@ -9232,19 +9237,15 @@ var ServiceForm = function ServiceForm() {
       return _ref.apply(this, arguments);
     };
   }();
-  var Sound = function Sound() {
-    var audio = new Audio('./coin.mp3');
-    audio.play();
-  };
   var notify = function notify() {
     return (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Wow so easy!");
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "container",
     style: formStyleOne,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_2__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_2__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "row",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "col-sm",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
           onSubmit: onSubmit,
@@ -9305,7 +9306,10 @@ var ServiceForm = function ServiceForm() {
             children: "Submit"
           })]
         })
-      })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        onClick: start,
+        children: "Click"
+      })]
     })]
   });
 };
@@ -19418,6 +19422,21 @@ module.exports = function (cssWithMappingToString) {
 
   return list;
 };
+
+/***/ }),
+
+/***/ "./resources/js/components/back-end/admin/pages/coin.mp3":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/back-end/admin/pages/coin.mp3 ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "43a3fb56aa1a08daf687b1bad6f6d69a.mp3");
 
 /***/ }),
 
@@ -70954,16 +70973,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./resources/js/components/back-end/admin/pages/coin.mp3":
-/*!***************************************************************!*\
-  !*** ./resources/js/components/back-end/admin/pages/coin.mp3 ***!
-  \***************************************************************/
-/***/ (() => {
-
-throw new Error("Module parse failed: Unexpected character '�' (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n(Source code omitted for this binary file)");
-
-/***/ }),
-
 /***/ "./node_modules/dom7/dom7.esm.js":
 /*!***************************************!*\
   !*** ./node_modules/dom7/dom7.esm.js ***!
@@ -85175,6 +85184,11 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			if (!module.children) module.children = [];
 /******/ 			return module;
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */

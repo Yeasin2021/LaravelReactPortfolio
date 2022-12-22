@@ -17,9 +17,11 @@ const ServiceForm = () => {
   }
 
 
+
   const clearDataIcon = useRef();
   const clearDataTitle = useRef();
   const clearDataDescription = useRef();
+
   const [input,setInput] = useState(
     {
         icon : "",
@@ -27,6 +29,14 @@ const ServiceForm = () => {
         description: ""
     }
   )
+
+  const audio = new Audio(Music);
+  const start = () => {
+    // class method access
+    audio.play()
+  }
+
+
 
   const onSubmit = async (event) =>{
     event.preventDefault();
@@ -37,6 +47,7 @@ const ServiceForm = () => {
       clearDataDescription.current.value = '';
       //   console.log(response);
       if(response.data.status == 200){
+        // audio.play();
         toast("Data Added Successfully 😲")
       }
     }catch(error){
@@ -44,11 +55,7 @@ const ServiceForm = () => {
     }
   }
 
-  const Sound = () =>{
-    const audio = new Audio('./coin.mp3');
-    audio.play();
 
-  }
 
   const notify = () => toast("Wow so easy!");
 
@@ -92,6 +99,8 @@ const ServiceForm = () => {
                     <button type="submit" className="btn btn-primary" style={{ marginTop:"10px" }}>Submit</button>
                 </form>
             </div>
+            <button onClick={start}>Click</button>
+
 
 
         </div>
