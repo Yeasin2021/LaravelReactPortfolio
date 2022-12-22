@@ -9378,14 +9378,14 @@ var ServiceForm = function ServiceForm() {
                     to: "/service/".concat(item.id),
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                       className: "btn btn-primary mr-2",
-                      children: "Edit"
+                      children: "E"
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                     onClick: function onClick() {
                       deleteUser(item.id);
                     },
                     className: "btn btn-danger",
-                    children: "Delete"
+                    children: "D"
                   })]
                 })]
               }, i);

@@ -129,10 +129,10 @@ const ServiceForm = () => {
                                 <td>{item.card_description}</td>
                                 <td>
                                     <Link to={`/service/${item.id}`}>
-                                        <button className='btn btn-primary mr-2'>Edit</button>
+                                        <button className='btn btn-primary mr-2'>E</button>
                                     </Link>
 
-                                       <button onClick={()=> {deleteUser(item.id);}} className='btn btn-danger'>Delete</button>
+                                       <button onClick={()=> {deleteUser(item.id);}} className='btn btn-danger'>D</button>
 
                                 </td>
 
@@ -145,7 +145,7 @@ const ServiceForm = () => {
                     </table>
                 </div>
                 <div className="col-sm"></div>
-            </div>
+        </div>
 
     </div>
   )
