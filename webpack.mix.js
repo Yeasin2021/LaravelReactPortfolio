@@ -20,7 +20,7 @@ mix.js('resources/js/app.js', 'public/js')
         module: {
             rules: [
               {
-                test: /\.(mp4|avi|pdf|mp3)$/i,
+                test: /\.(mp4|avi|pdf|mp3|wav)$/i,
                 use: [
                   {
                     loader: 'file-loader',

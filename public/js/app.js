@@ -9152,7 +9152,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
 /* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ "./node_modules/react-toastify/dist/ReactToastify.css");
-/* harmony import */ var _coin_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./coin.mp3 */ "./resources/js/components/back-end/admin/pages/coin.mp3");
+/* harmony import */ var _add1_wav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./add1.wav */ "./resources/js/components/back-end/admin/pages/add1.wav");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -9174,6 +9174,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+// import Music from './coin.mp3';
 
 
 
@@ -9182,7 +9183,7 @@ var ServiceForm = function ServiceForm() {
     justifyContent: 'center',
     display: 'flex',
     alignItems: 'center',
-    margin: '25px 25px 25px 350px',
+    margin: '25px 25px 25px 280px',
     position: 'relative'
   };
   var clearDataIcon = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
@@ -9204,7 +9205,7 @@ var ServiceForm = function ServiceForm() {
     _useState6 = _slicedToArray(_useState5, 2),
     input = _useState6[0],
     setInput = _useState6[1];
-  var audio = new Audio(_coin_mp3__WEBPACK_IMPORTED_MODULE_4__["default"]);
+  var audio = new Audio(_add1_wav__WEBPACK_IMPORTED_MODULE_4__["default"]);
   var onSubmit = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
       var response;
@@ -9271,86 +9272,168 @@ var ServiceForm = function ServiceForm() {
     }();
     dataShow();
   }, [render]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    className: "container",
+
+  //   return (
+  //     <div className='container' style={ formStyleOne }>
+  //         <ToastContainer />
+  //         <div className="row">
+  //             <div className="col-sm">
+  //                 <form onSubmit={onSubmit}>
+  //                     <div className="form-group">
+  //                         <label htmlFor="exampleInputCardicon">Card-Icon</label>
+  //                         <input type="text" className="form-control"
+  //                         id='exampleInputCardicon'
+  //                         placeholder="Enter Card icon"
+  //                         name='card_icon'
+  //                         onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}
+  //                         ref={clearDataIcon}
+  //                        />
+  //                        {/* value={input.icon} only for edit page*/}
+  //                     </div>
+  //                     <div className="form-group">
+  //                         <label htmlFor="exampleInputCardTitle">Card Title</label>
+  //                         <input type="text" className="form-control"
+  //                         id="exampleInputCardTitle" placeholder="Enter Card Title"
+  //                         name='card_title'
+  //                         onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}
+  //                         ref={clearDataTitle}
+  //                        />
+  //                     </div>
+  //                     <div className="form-group">
+  //                         <label htmlFor="exampleInputCardDes">Card Description</label>
+  //                         <input type="text" className="form-control"
+  //                         id="exampleInputCardDes"
+  //                         placeholder="Enter Card Title"
+  //                         name='card_description'
+  //                         onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}
+  //                         ref={clearDataDescription}
+  //                         />
+  //                     </div>
+
+  //                     <button type="submit" className="btn btn-primary" style={{ marginTop:"10px" }}>Submit</button>
+  //                 </form>
+  //             </div>
+
+  //         </div>
+
+  //         <div className="row">
+  //                 <div className="col-sm"></div>
+  //                 <div className="col-md-8">
+  //                     <table className="table table-striped">
+  //                         <thead>
+  //                             <tr>
+  //                                 {/* <th scope="col">Serial No.</th> */}
+  //                                 <th scope="col">Service Id.</th>
+  //                                 <th scope="col">Card Icon</th>
+  //                                 <th scope="col">Card Title</th>
+  //                                 <th scope="col">Card Description</th>
+  //                                 <th scope="col">Action</th>
+  //                             </tr>
+  //                         </thead>
+  //                         <tbody>
+  //                         {
+  //                             items.map((item,i)=>{
+  //                             return(
+  //                                 <tr className='headlineText' key={i}>
+  //                                 {/* <th scope="row">{++i}</th> */}
+  //                                 <th scope="row">{item.id}</th>
+  //                                 <td>{item.card_icon}</td>
+  //                                 <td>{item.card_title}</td>
+  //                                 <td>{item.card_description}</td>
+  //                                 <td>
+  //                                     <Link to={`/service/${item.id}`}>
+  //                                         <button className='btn btn-primary mr-2'>E</button>
+  //                                     </Link>
+
+  //                                        <button onClick={()=> {deleteUser(item.id);}} className='btn btn-danger'>D</button>
+
+  //                                 </td>
+
+  //                                 </tr>
+  //                             )
+  //                             })
+  //                         }
+
+  //                         </tbody>
+  //                     </table>
+  //                 </div>
+  //                 <div className="col-sm"></div>
+  //         </div>
+
+  //     </div>
+  //   )
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    "class": "container",
     style: formStyleOne,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_2__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: "row",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "col-sm",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      "class": "row",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        "class": "col-md-4",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
           onSubmit: onSubmit,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "form-group",
+            "class": "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-              htmlFor: "exampleInputCardicon",
-              children: "Card-Icon"
+              "for": "exampleInputPhone",
+              children: "Card Icon"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
               type: "text",
-              className: "form-control",
-              id: "exampleInputCardicon",
-              placeholder: "Enter Card icon",
+              "class": "form-control",
               name: "card_icon",
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
               },
-              ref: clearDataIcon
+              value: input.icon
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "form-group",
+            "class": "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-              htmlFor: "exampleInputCardTitle",
+              "for": "exampleInputAge",
               children: "Card Title"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
               type: "text",
-              className: "form-control",
-              id: "exampleInputCardTitle",
-              placeholder: "Enter Card Title",
+              "class": "form-control",
               name: "card_title",
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
               },
-              ref: clearDataTitle
+              value: input.title
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "form-group",
+            "class": "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-              htmlFor: "exampleInputCardDes",
+              "for": "exampleInputAge",
               children: "Card Description"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
               type: "text",
-              className: "form-control",
-              id: "exampleInputCardDes",
-              placeholder: "Enter Card Title",
+              "class": "form-control",
               name: "card_description",
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
               },
-              ref: clearDataDescription
+              value: input.description
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
             type: "submit",
-            className: "btn btn-primary",
-            style: {
-              marginTop: "10px"
-            },
+            "class": "btn btn-primary",
             children: "Submit"
           })]
         })
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      className: "row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "col-sm"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "col-md-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("table", {
-          className: "table table-striped",
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        "class": "col-md-6",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          type: "text" /*onChange={Search}*/,
+          "class": "form-control",
+          placeholder: "Search by Name"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("table", {
+          "class": "table table-bordered table-dark mt-3",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("thead", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("tr", {
+              className: "headlineText",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                 scope: "col",
-                children: "Service Id."
+                children: "ID"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                 scope: "col",
                 children: "Card Icon"
@@ -9375,7 +9458,7 @@ var ServiceForm = function ServiceForm() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
                   children: item.card_icon
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
-                  children: item.card_title
+                  children: item.card_icon
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
                   children: item.card_description
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("td", {
@@ -9383,24 +9466,22 @@ var ServiceForm = function ServiceForm() {
                     to: "/service/".concat(item.id),
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                       className: "btn btn-primary mr-2",
-                      children: "E"
+                      children: "Edit"
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                     onClick: function onClick() {
-                      deleteUser(item.id);
+                      return deleteUser(item.id);
                     },
                     className: "btn btn-danger",
-                    children: "D"
+                    children: "Delete"
                   })]
                 })]
-              }, i);
+              });
             })
           })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "col-sm"
+        })]
       })]
-    })]
+    })
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ServiceForm);
@@ -19515,9 +19596,9 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
-/***/ "./resources/js/components/back-end/admin/pages/coin.mp3":
+/***/ "./resources/js/components/back-end/admin/pages/add1.wav":
 /*!***************************************************************!*\
-  !*** ./resources/js/components/back-end/admin/pages/coin.mp3 ***!
+  !*** ./resources/js/components/back-end/admin/pages/add1.wav ***!
   \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -19526,7 +19607,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "43a3fb56aa1a08daf687b1bad6f6d69a.mp3");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "07de398be9000512fd06f35f35eeb556.wav");
 
 /***/ }),
 
