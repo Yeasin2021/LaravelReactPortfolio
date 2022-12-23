@@ -9288,6 +9288,32 @@ var ServiceForm = function ServiceForm() {
     react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast.info("Edit page open");
     audioEdit.play();
   };
+  var deleteUser = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(id) {
+      var newItems;
+      return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default()["delete"]("/service/".concat(id));
+            case 2:
+              newItems = items.filter(function (item) {
+                return item.id !== id;
+              });
+              react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast.warning("Data Deleted Successfully");
+              setItems(newItems);
+            case 5:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+    return function deleteUser(_x3) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     className: "container",
     style: formStyleOne,

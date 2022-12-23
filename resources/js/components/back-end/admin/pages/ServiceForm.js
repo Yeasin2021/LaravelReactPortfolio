@@ -71,6 +71,16 @@ const ServiceForm = () => {
     audioEdit.play();
   }
 
+
+  const deleteUser = async (id) =>{
+    await axios.delete(`/service/${id}`);
+    const newItems = items.filter((item)=>{
+      return item.id !== id;
+    });
+    toast.warning("Data Deleted Successfully");
+    setItems(newItems);
+  }
+
 return (
     <div className="container" style={ formStyleOne }>
         <ToastContainer />
