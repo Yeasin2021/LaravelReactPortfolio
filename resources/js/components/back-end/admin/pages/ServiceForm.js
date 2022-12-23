@@ -85,7 +85,7 @@ const ServiceForm = () => {
         audioDel.play();
         setItems(newItems);
     }else{
-        console.log("no item deleted ");
+        toast.success("Data not Deleted from this Record");
     }
 
   }

@@ -9314,7 +9314,7 @@ var ServiceForm = function ServiceForm() {
               _context3.next = 11;
               break;
             case 10:
-              console.log("no item deleted ");
+              react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast.success("Data not Deleted from this Record");
             case 11:
             case "end":
               return _context3.stop();
@@ -9467,6 +9467,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
 /* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ "./node_modules/react-toastify/dist/ReactToastify.css");
 /* harmony import */ var _update_wav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../update.wav */ "./resources/js/components/back-end/admin/pages/update.wav");
@@ -9496,11 +9497,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var Edit = function Edit() {
   var formStyleOne = {
-    justifyContent: 'center',
-    display: 'flex',
-    alignItems: 'center',
-    margin: '25px 25px 25px 280px',
-    position: 'relative'
+    // justifyContent: 'center',
+    // display: 'flex',
+    // alignItems: 'center',
+    // margin: '25px 25px 25px 380px',
+    position: 'relative',
+    width: "763px"
   };
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useParams)(),
     id = _useParams.id;
@@ -9627,6 +9629,16 @@ var Edit = function Edit() {
             type: "submit",
             "class": "btn btn-primary mt-2",
             children: "Submit"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
+            to: "/dashboard",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+              type: "submit",
+              "class": "btn btn-success mt-2",
+              style: {
+                marginLeft: '10px'
+              },
+              children: "Back"
+            })
           })]
         })
       })
