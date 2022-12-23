@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 // import Music from './coin.mp3';
 import Music from './add1.wav';
 import MusicEdit from './edit.wav';
+import MusicDelete from './delete.wav';
 
 
 
@@ -73,12 +74,20 @@ const ServiceForm = () => {
 
 
   const deleteUser = async (id) =>{
-    await axios.delete(`/service/${id}`);
-    const newItems = items.filter((item)=>{
-      return item.id !== id;
-    });
-    toast.warning("Data Deleted Successfully");
-    setItems(newItems);
+
+    if(window.confirm("Delete this Item") == true){
+        const audioDel = new Audio(MusicDelete);
+        await axios.delete(`service/${id}`);
+        const newItems = items.filter((item)=>{
+        return item.id !== id;
+        });
+        toast.warning("Data Deleted Successfully");
+        audioDel.play();
+        setItems(newItems);
+    }else{
+        console.log("no item deleted ");
+    }
+
   }
 
 return (
