@@ -13,11 +13,8 @@ import MusicDelete from './delete.wav';
 
 const ServiceForm = () => {
   const formStyleOne = {
-    justifyContent: 'center',
-    display: 'flex',
-    alignItems: 'center',
-    margin: '25px 25px 25px 280px',
-    position: 'relative'
+    marginLeft: '22%',
+    // marginTop: '6%',
   }
 
 
@@ -115,7 +112,7 @@ return (
           <div className="col-md-6">
 
           <input type="text" /*onChange={Search}*/ className="form-control" placeholder='Search by Name'/>
-            <table class="table table-bordered table-dark mt-3">
+            <table class="table table-bordered text-black mt-3">
                 <thead>
                   <tr className='headlineText'>
                     <th scope="col">ID</th>
@@ -134,12 +131,12 @@ return (
                           <td>{item.card_icon}</td>
                           <td>{item.card_icon}</td>
                           <td>{item.card_description}</td>
-                          <td>
+                          <td className='d-flex'>
                             <Link to={`/service/${item.id}`}>
-                              <button className='btn btn-primary mr-2' onClick={editSound}>E</button>
+                              <button className='btn btn-primary' onClick={editSound}>E</button>
                             </Link>
 
-                              <button onClick={()=> deleteUser(item.id)} className='btn btn-danger'>D</button>
+                              <button onClick={()=> deleteUser(item.id)}  className='btn btn-danger ms-3'>D</button>
 
                           </td>
 
