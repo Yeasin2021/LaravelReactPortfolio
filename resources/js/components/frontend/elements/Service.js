@@ -29,6 +29,12 @@ useEffect(()=>{
           <p>{items && items[0].service_title}</p>
         </div> */}
 
+        <div className="section-title">
+          <span>My Services</span>
+          <h2>My Services</h2>
+          <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+        </div>
+
         <div className="row">
             {/* {
                 items && items.slice(1).map((item,index) => <ServiceDetails key={index}
