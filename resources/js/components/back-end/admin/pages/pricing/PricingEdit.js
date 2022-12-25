@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Music from '../update.wav'
 
-const Edit = () => {
+const PricingEdit = () => {
     const formStyleOne = {
         // justifyContent: 'center',
         // display: 'flex',
@@ -79,4 +79,4 @@ const Edit = () => {
   )
 }
 
-export default Edit
+export default PricingEdit
