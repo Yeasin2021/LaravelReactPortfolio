@@ -20,7 +20,7 @@ function WebBack() {
                         {/* <Route path='/dashboard' element={<Dashboard />} /> */}
                         <Route path='/dashboard' element={<ServiceForm />} />
                         <Route path='/service/:id' element={<Edit />} />
-                        <Route path='/pricing' element={<Pricing />} />
+                        <Route path='/pricing-index' element={<Pricing />} />
                     </Route>
 
                     {/* <Route path='/dashboardform' element={<ServiceForm />} /> */}

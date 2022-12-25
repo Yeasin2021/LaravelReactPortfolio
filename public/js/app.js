@@ -9097,7 +9097,7 @@ function WebBack() {
             path: "/service/:id",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_back_end_admin_pages_service_Edit__WEBPACK_IMPORTED_MODULE_4__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
-            path: "/pricing",
+            path: "/pricing-index",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_back_end_admin_pages_pricing_Pricing__WEBPACK_IMPORTED_MODULE_3__["default"], {})
           })]
         })]
@@ -9546,30 +9546,34 @@ var Pricing = function Pricing() {
               event.preventDefault();
               _context.prev = 1;
               _context.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default().post('service', input);
+              return axios__WEBPACK_IMPORTED_MODULE_1___default().post('pricing', input);
             case 4:
               response = _context.sent;
-              clearDataIcon.current.value = '';
-              clearDataTitle.current.value = '';
-              clearDataDescription.current.value = '';
+              clearTitle.current.value = '';
+              clearOne.current.value = '';
+              clearTwo.current.value = '';
+              clearThree.current.value = '';
+              clearFour.current.value = '';
+              clearFive.current.value = '';
+              clearFee.current.value = '';
               //   console.log(response);
               if (response.data.status == 200) {
                 audio.play();
                 (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data Added Successfully 😲");
                 setRender(true);
               }
-              _context.next = 14;
+              _context.next = 18;
               break;
-            case 11:
-              _context.prev = 11;
+            case 15:
+              _context.prev = 15;
               _context.t0 = _context["catch"](1);
               alert(_context.t0);
-            case 14:
+            case 18:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[1, 11]]);
+      }, _callee, null, [[1, 15]]);
     }));
     return function onSubmit(_x2) {
       return _ref.apply(this, arguments);
@@ -9585,7 +9589,7 @@ var Pricing = function Pricing() {
               case 0:
                 _context2.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().get('pricing').then(function (result) {
-                  return setItems(result.data.services);
+                  return setItems(result.data.pricingAll);
                 });
               case 2:
                 data_response = _context2.sent;
@@ -9797,7 +9801,7 @@ var Pricing = function Pricing() {
               })]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("tbody", {
-            children: items.map(function (item, i) {
+            children: items && items.map(function (item, i) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
                 className: "headlineText",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {

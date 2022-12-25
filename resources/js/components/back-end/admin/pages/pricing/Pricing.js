@@ -46,10 +46,14 @@ const Pricing = () => {
   const onSubmit = async (event) =>{
     event.preventDefault();
     try{
-      const response = await axios.post('service',input);
-      clearDataIcon.current.value = '';
-      clearDataTitle.current.value = '';
-      clearDataDescription.current.value = '';
+      const response = await axios.post('pricing',input);
+      clearTitle.current.value = '';
+      clearOne.current.value = '';
+      clearTwo.current.value = '';
+      clearThree.current.value = '';
+      clearFour.current.value = '';
+      clearFive.current.value = '';
+      clearFee.current.value = '';
       //   console.log(response);
       if(response.data.status == 200){
         audio.play();
@@ -65,7 +69,7 @@ const Pricing = () => {
   useEffect(()=>{
     const dataShow = async () =>{
         const data_response = await axios.get('pricing')
-        .then((result)=>setItems(result.data.services));
+        .then((result)=>setItems(result.data.pricingAll));
     }
     dataShow();
   },[render]);
@@ -152,7 +156,7 @@ return (
                 </thead>
                 <tbody>
                   {
-                    items.map((item,i)=>{
+                    items && items.map((item,i)=>{
                       return(
                         <tr className='headlineText'>
                           <th scope="row">{item.id}</th>

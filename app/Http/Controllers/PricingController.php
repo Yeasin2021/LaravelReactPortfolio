@@ -15,8 +15,8 @@ class PricingController extends Controller
      */
     public function index()
     {
-        $pricing = Pricing::get();
-        return response()->json(['status' => 200, 'pricing'=>$pricing]);
+        $pricingAll = Pricing::all();
+        return response()->json(['status' => 200, 'pricingAll'=>$pricingAll]);
     }
 
     /**
