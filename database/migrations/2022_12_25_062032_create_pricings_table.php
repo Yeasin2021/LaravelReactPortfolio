@@ -15,6 +15,13 @@ class CreatePricingsTable extends Migration
     {
         Schema::create('pricings', function (Blueprint $table) {
             $table->id();
+            $table->string('cardTitle')->nullable();
+            $table->string('cardCourseOne')->nullable();
+            $table->string('cardCourseTwo')->nullable();
+            $table->string('cardCourseThree')->nullable();
+            $table->string('cardCourseFour')->nullable();
+            $table->string('cardCourseFive')->nullable();
+            $table->integer('cardFee')->nullable();
             $table->timestamps();
         });
     }
