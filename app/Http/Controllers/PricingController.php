@@ -80,9 +80,19 @@ class PricingController extends Controller
      * @param  \App\Models\Pricing  $pricing
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pricing $pricing)
+    public function update(Request $request, $id)
     {
-        //
+        $p_update = Pricing::find($id);
+        $p_update->update([
+            'cardTitle' => $request->cardTitle,
+            'cardCourseOne' => $request->cardCourseOne,
+            'cardCourseTwo' => $request->cardCourseTwo,
+            'cardCourseThree' => $request->cardCourseThree,
+            'cardCourseFour' => $request->cardCourseFour,
+            'cardCourseFive' => $request->cardCourseFive,
+            'cardFee' => $request->cardFee,
+        ]);
+        return response()->json(['status' => 200, 'p_update' => $p_update]);
     }
 
     /**
