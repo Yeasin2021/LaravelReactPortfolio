@@ -21,9 +21,13 @@ const PricingEdit = () => {
     const audio = new Audio(Music);
     const [input, setInput] = useState(
         {
-            icon : "",
-            title: "",
-            description: ""
+            cardTitle : "",
+            cardCourseOne: "",
+            cardCourseTwo: "",
+            cardCourseThree: "",
+            cardCourseFour: "",
+            cardCourseFive: "",
+            cardFee: ""
         }
         );
 
@@ -32,8 +36,8 @@ const PricingEdit = () => {
 
                 const getSingleRecord = async () =>{
                 const response = await axios.get(`/pricing/${id}/edit`);
-                console.log(response.data.service)
-                setInput(response.data.service);
+                console.log(response.data.edit)
+                setInput(response.data.edit);
               };
 
               getSingleRecord();
@@ -58,16 +62,32 @@ const PricingEdit = () => {
           <div class="col-md-12">
             <form onSubmit={updateUser}>
                 <div class="form-group">
-                  <label for="exampleInputPhone">Icon</label>
-                  <input type="text" id='exampleInputPhone' class="form-control" name="card_icon" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.card_icon} />
+                  <label for="exampleInputPhone">Card Title</label>
+                  <input type="text" id='exampleInputPhone' class="form-control" name="cardTitle" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.cardTitle} />
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPhone">Title</label>
-                  <input type="text" id='exampleInputPhone' class="form-control" name="card_title" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.card_title} />
+                  <label for="exampleInputPhone">Course 1</label>
+                  <input type="text" id='exampleInputPhone' class="form-control" name="cardCourseOne" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.cardCourseOne} />
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPhone">Description</label>
-                  <input type="text" id='exampleInputPhone' class="form-control" name="card_description" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.card_description} />
+                  <label for="exampleInputPhone">Course 2</label>
+                  <input type="text" id='exampleInputPhone' class="form-control" name="cardCourseTwo" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.cardCourseTwo} />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPhone">Course 3</label>
+                  <input type="text" id='exampleInputPhone' class="form-control" name="cardCourseThree" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.cardCourseThree} />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPhone">Course 4</label>
+                  <input type="text" id='exampleInputPhone' class="form-control" name="cardCourseFour" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.cardCourseFour} />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPhone">Course 5</label>
+                  <input type="text" id='exampleInputPhone' class="form-control" name="cardCourseFive" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.cardCourseFive} />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPhone">Card Fee</label>
+                  <input type="text" id='exampleInputPhone' class="form-control" name="cardFee" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.cardFee} />
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
                 <Link to="/dashboard"><button type="submit" class="btn btn-success mt-2" style={{ marginLeft:'10px' }}>Back</button></Link>

@@ -9102,7 +9102,7 @@ function WebBack() {
             path: "/pricing-index",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_back_end_admin_pages_pricing_Pricing__WEBPACK_IMPORTED_MODULE_3__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
-            path: "/pricing/:id",
+            path: "/price/:id",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_back_end_admin_pages_pricing_PricingEdit__WEBPACK_IMPORTED_MODULE_4__["default"], {})
           })]
         })]
@@ -9829,7 +9829,7 @@ var Pricing = function Pricing() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("td", {
                   className: "d-flex",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
-                    to: "/pricing/".concat(item.id),
+                    to: "/price/".concat(item.id),
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                       className: "btn btn-primary",
                       onClick: editSound,
@@ -9912,9 +9912,13 @@ var PricingEdit = function PricingEdit() {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
   var audio = new Audio(_update_wav__WEBPACK_IMPORTED_MODULE_4__["default"]);
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
-      icon: "",
-      title: "",
-      description: ""
+      cardTitle: "",
+      cardCourseOne: "",
+      cardCourseTwo: "",
+      cardCourseThree: "",
+      cardCourseFour: "",
+      cardCourseFive: "",
+      cardFee: ""
     }),
     _useState2 = _slicedToArray(_useState, 2),
     input = _useState2[0],
@@ -9932,8 +9936,8 @@ var PricingEdit = function PricingEdit() {
                   return axios__WEBPACK_IMPORTED_MODULE_1___default().get("/pricing/".concat(id, "/edit"));
                 case 2:
                   response = _context.sent;
-                  console.log(response.data.service);
-                  setInput(response.data.service);
+                  console.log(response.data.edit);
+                  setInput(response.data.edit);
                 case 5:
                 case "end":
                   return _context.stop();
@@ -9987,46 +9991,106 @@ var PricingEdit = function PricingEdit() {
             "class": "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
               "for": "exampleInputPhone",
-              children: "Icon"
+              children: "Card Title"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
               type: "text",
               id: "exampleInputPhone",
               "class": "form-control",
-              name: "card_icon",
+              name: "cardTitle",
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
               },
-              value: input.card_icon
+              value: input.cardTitle
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             "class": "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
               "for": "exampleInputPhone",
-              children: "Title"
+              children: "Course 1"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
               type: "text",
               id: "exampleInputPhone",
               "class": "form-control",
-              name: "card_title",
+              name: "cardCourseOne",
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
               },
-              value: input.card_title
+              value: input.cardCourseOne
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             "class": "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
               "for": "exampleInputPhone",
-              children: "Description"
+              children: "Course 2"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
               type: "text",
               id: "exampleInputPhone",
               "class": "form-control",
-              name: "card_description",
+              name: "cardCourseTwo",
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
               },
-              value: input.card_description
+              value: input.cardCourseTwo
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            "class": "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+              "for": "exampleInputPhone",
+              children: "Course 3"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+              type: "text",
+              id: "exampleInputPhone",
+              "class": "form-control",
+              name: "cardCourseThree",
+              onChange: function onChange(e) {
+                return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
+              },
+              value: input.cardCourseThree
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            "class": "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+              "for": "exampleInputPhone",
+              children: "Course 4"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+              type: "text",
+              id: "exampleInputPhone",
+              "class": "form-control",
+              name: "cardCourseFour",
+              onChange: function onChange(e) {
+                return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
+              },
+              value: input.cardCourseFour
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            "class": "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+              "for": "exampleInputPhone",
+              children: "Course 5"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+              type: "text",
+              id: "exampleInputPhone",
+              "class": "form-control",
+              name: "cardCourseFive",
+              onChange: function onChange(e) {
+                return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
+              },
+              value: input.cardCourseFive
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            "class": "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+              "for": "exampleInputPhone",
+              children: "Card Fee"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+              type: "text",
+              id: "exampleInputPhone",
+              "class": "form-control",
+              name: "cardFee",
+              onChange: function onChange(e) {
+                return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
+              },
+              value: input.cardFee
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
             type: "submit",

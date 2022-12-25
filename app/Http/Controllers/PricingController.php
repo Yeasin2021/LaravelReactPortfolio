@@ -67,10 +67,10 @@ class PricingController extends Controller
      * @param  \App\Models\Pricing  $pricing
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pricing $pricing,$id)
+    public function edit($id)
     {
-        $pricingEdit = Service::find($id);
-        return response()->json(['status'=>200,'pricingEdit'=>$pricingEdit]);
+        $edit = Pricing::find($id);
+        return response()->json(['status'=>200,'edit'=>$edit]);
     }
 
     /**
