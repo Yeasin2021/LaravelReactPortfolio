@@ -156,9 +156,13 @@ return (
                       return(
                         <tr className='headlineText'>
                           <th scope="row">{item.id}</th>
-                          <td>{item.card_icon}</td>
-                          <td>{item.card_icon}</td>
-                          <td>{item.card_description}</td>
+                          <td>{item.cardTitle}</td>
+                          <td>{item.cardCourseOne}</td>
+                          <td>{item.cardCourseTwo}</td>
+                          <td>{item.cardCourseThree}</td>
+                          <td>{item.cardCourseFour}</td>
+                          <td>{item.cardCourseFive}</td>
+                          <td>{item.cardFee}</td>
                           <td className='d-flex'>
                             <Link to={`/service/${item.id}`}>
                               <button className='btn btn-primary' onClick={editSound}>E</button>
