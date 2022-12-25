@@ -19,6 +19,7 @@ const Pricing = () => {
 
 
 
+  const clearTitle= useRef();
   const clearOne= useRef();
   const clearTwo = useRef();
   const clearThree = useRef();
@@ -101,16 +102,32 @@ return (
           <div className="col-md-4">
             <form onSubmit={onSubmit} >
                 <div className="form-group">
-                  <label for="exampleInputPhone">Card Icon</label>
-                  <input type="text" className="form-control" name="card_icon" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}  ref={clearDataIcon}  />
+                  <label for="exampleInputPhone">Card Title</label>
+                  <input type="text" className="form-control" name="cardTitle" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}  ref={clearTitle}  />
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputAge">Card Title</label>
-                  <input type="text" className="form-control" name="card_title" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearDataTitle} />
+                  <label for="exampleInputAge">Card Course One</label>
+                  <input type="text" className="form-control" name="cardCourseOne" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearOne} />
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputAge">Card Description</label>
-                  <input type="text" className="form-control" name="card_description" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearDataDescription}/>
+                  <label for="exampleInputAge">Card Course Two</label>
+                  <input type="text" className="form-control" name="cardCourseTwo" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearTwo}/>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputAge">Card Course Three</label>
+                  <input type="text" className="form-control" name="cardCourseThree" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearThree}/>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputAge">Card Course Four</label>
+                  <input type="text" className="form-control" name="cardCourseFour" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearFour}/>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputAge">Card Course Five</label>
+                  <input type="text" className="form-control" name="cardCourseFive" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearFive}/>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputAge">Card Fee</label>
+                  <input type="text" className="form-control" name="cardFee" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={clearFee}/>
                 </div>
                 <button type="submit" className="btn btn-primary mt-2">Submit</button>
               </form>
