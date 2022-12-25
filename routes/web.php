@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PricingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', function () {
 
 
 Route::resource('service', ServiceController::class);
+Route::resource('pricing', PricingController::class);
 
 // Route::resource('service', ServiceController::class);
 
