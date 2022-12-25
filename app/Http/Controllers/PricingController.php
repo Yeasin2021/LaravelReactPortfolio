@@ -101,7 +101,7 @@ class PricingController extends Controller
      * @param  \App\Models\Pricing  $pricing
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pricing $pricing,$id)
+    public function destroy($id)
     {
         $delete = Pricing::find($id);
         $delete->delete();
