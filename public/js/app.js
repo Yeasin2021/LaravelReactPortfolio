@@ -9966,7 +9966,7 @@ var PricingEdit = function PricingEdit() {
             case 3:
               (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data Updated Successfully 😲");
               audio.play();
-              navigate("/dashboard");
+              navigate("/pricing-index");
             case 6:
             case "end":
               return _context2.stop();

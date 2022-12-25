@@ -52,7 +52,7 @@ const PricingEdit = () => {
             await axios.put(`/pricing/${id}`,input);
             toast("Data Updated Successfully 😲")
             audio.play();
-            navigate("/dashboard");
+            navigate("/pricing-index");
         }
 
   return (
