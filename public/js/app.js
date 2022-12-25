@@ -9829,7 +9829,7 @@ var Pricing = function Pricing() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("td", {
                   className: "d-flex",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
-                    to: "/service/".concat(item.id),
+                    to: "/pricing/".concat(item.id),
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                       className: "btn btn-primary",
                       onClick: editSound,
@@ -9929,7 +9929,7 @@ var PricingEdit = function PricingEdit() {
               switch (_context.prev = _context.next) {
                 case 0:
                   _context.next = 2;
-                  return axios__WEBPACK_IMPORTED_MODULE_1___default().get("/service/".concat(id, "/edit"));
+                  return axios__WEBPACK_IMPORTED_MODULE_1___default().get("/pricing/".concat(id, "/edit"));
                 case 2:
                   response = _context.sent;
                   console.log(response.data.service);
@@ -9958,7 +9958,7 @@ var PricingEdit = function PricingEdit() {
             case 0:
               e.preventDefault();
               _context2.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default().put("/service/".concat(id), input);
+              return axios__WEBPACK_IMPORTED_MODULE_1___default().put("/pricing/".concat(id), input);
             case 3:
               (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data Updated Successfully 😲");
               audio.play();

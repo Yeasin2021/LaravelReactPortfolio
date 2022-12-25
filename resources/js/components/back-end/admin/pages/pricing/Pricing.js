@@ -168,7 +168,7 @@ return (
                           <td>{item.cardCourseFive}</td>
                           <td>{item.cardFee}</td>
                           <td className='d-flex'>
-                            <Link to={`/service/${item.id}`}>
+                            <Link to={`/pricing/${item.id}`}>
                               <button className='btn btn-primary' onClick={editSound}>E</button>
                             </Link>
 

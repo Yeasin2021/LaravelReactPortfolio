@@ -31,7 +31,7 @@ const PricingEdit = () => {
             try{
 
                 const getSingleRecord = async () =>{
-                const response = await axios.get(`/service/${id}/edit`);
+                const response = await axios.get(`/pricing/${id}/edit`);
                 console.log(response.data.service)
                 setInput(response.data.service);
               };
@@ -45,7 +45,7 @@ const PricingEdit = () => {
 
         const updateUser = async (e) =>{
             e.preventDefault();
-            await axios.put(`/service/${id}`,input);
+            await axios.put(`/pricing/${id}`,input);
             toast("Data Updated Successfully 😲")
             audio.play();
             navigate("/dashboard");
