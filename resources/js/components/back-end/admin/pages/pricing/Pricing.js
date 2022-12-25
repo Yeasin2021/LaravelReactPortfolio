@@ -12,7 +12,6 @@ import MusicDelete from '../sound/delete.wav';
 
 const Pricing = () => {
   const formStyleOne = {
-    // marginLeft: '10%',
     marginLeft: '220px',
     marginTop: '4%',
   }

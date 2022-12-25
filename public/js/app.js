@@ -9509,7 +9509,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var Pricing = function Pricing() {
   var formStyleOne = {
-    // marginLeft: '10%',
     marginLeft: '220px',
     marginTop: '4%'
   };
