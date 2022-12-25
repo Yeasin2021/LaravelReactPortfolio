@@ -37,7 +37,17 @@ class PricingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //data store by this method
+        $store = Pricing::create([
+            'cardTitle' => $request->cardTitle,
+            'cardCourseOne' => $request->cardCourseOne,
+            'cardCourseTwo' => $request->cardCourseTwo,
+            'cardCourseThree' => $request->cardCourseThree,
+            'cardCourseFour' => $request->cardCourseFour,
+            'cardCourseFive' => $request->cardCourseFive,
+            'cardFee' => $request->cardFee,
+        ]);
+        return response()->json(['status'=>200]);
     }
 
     /**
