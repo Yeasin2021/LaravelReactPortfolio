@@ -140,9 +140,13 @@ return (
                 <thead>
                   <tr className='headlineText'>
                     <th scope="col">ID</th>
-                    <th scope="col">Card Icon</th>
                     <th scope="col">Card Title</th>
-                    <th scope="col">Card Description</th>
+                    <th scope="col">Card Course 1</th>
+                    <th scope="col">Card Course 2</th>
+                    <th scope="col">Card Course 3</th>
+                    <th scope="col">Card Course 4</th>
+                    <th scope="col">Card Course 5</th>
+                    <th scope="col">Card Fee</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
