@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pricing;
 use Illuminate\Http\Request;
 
+
 class PricingController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class PricingController extends Controller
      */
     public function index()
     {
-        //
+        $pricing = Pricing::get();
+        return response()->json(['status' => 200, 'pricing'=>$pricing]);
     }
 
     /**
