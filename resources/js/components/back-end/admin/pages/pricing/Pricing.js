@@ -3,11 +3,6 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import Music from './coin.mp3';
-// import Music from '../sound/add1.wav';
-// import MusicEdit from '../sound/edit.wav';
-// import MusicDelete from '../sound/delete.wav';
-
 import Music from '../sound/add1.wav';
 import MusicEdit from '../sound/edit.wav';
 import MusicDelete from '../sound/delete.wav';
@@ -24,17 +19,24 @@ const Pricing = () => {
 
 
 
-  const clearDataIcon = useRef();
-  const clearDataTitle = useRef();
-  const clearDataDescription = useRef();
+  const clearOne= useRef();
+  const clearTwo = useRef();
+  const clearThree = useRef();
+  const clearFour = useRef();
+  const clearFive = useRef();
+  const clearFee = useRef();
   const [items,setItems] = useState([]);
   const [render,setRender] = useState(false);
 
   const [input,setInput] = useState(
     {
-        icon : "",
-        title: "",
-        description: ""
+        cardTitle : "",
+        cardCourseOne: "",
+        cardCourseTwo: "",
+        cardCourseThree: "",
+        cardCourseFour: "",
+        cardCourseFive: "",
+        cardFee: ""
     }
   )
 

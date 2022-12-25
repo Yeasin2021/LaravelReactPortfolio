@@ -9497,11 +9497,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-// import Music from './coin.mp3';
-// import Music from '../sound/add1.wav';
-// import MusicEdit from '../sound/edit.wav';
-// import MusicDelete from '../sound/delete.wav';
-
 
 
 
@@ -9513,9 +9508,12 @@ var Pricing = function Pricing() {
     marginLeft: '220px',
     marginTop: '4%'
   };
-  var clearDataIcon = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  var clearDataTitle = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  var clearDataDescription = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var clearOne = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var clearTwo = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var clearThree = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var clearFour = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var clearFive = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var clearFee = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
     items = _useState2[0],
@@ -9525,9 +9523,13 @@ var Pricing = function Pricing() {
     render = _useState4[0],
     setRender = _useState4[1];
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
-      icon: "",
-      title: "",
-      description: ""
+      cardTitle: "",
+      cardCourseOne: "",
+      cardCourseTwo: "",
+      cardCourseThree: "",
+      cardCourseFour: "",
+      cardCourseFive: "",
+      cardFee: ""
     }),
     _useState6 = _slicedToArray(_useState5, 2),
     input = _useState6[0],
