@@ -64,7 +64,7 @@ const Pricing = () => {
 
   useEffect(()=>{
     const dataShow = async () =>{
-        const data_response = await axios.get('service')
+        const data_response = await axios.get('pricing')
         .then((result)=>setItems(result.data.services));
     }
     dataShow();
@@ -82,7 +82,7 @@ const Pricing = () => {
 
     if(window.confirm("Delete this Item") == true){
         const audioDel = new Audio(MusicDelete);
-        await axios.delete(`service/${id}`);
+        await axios.delete(`pricing/${id}`);
         const newItems = items.filter((item)=>{
         return item.id !== id;
         });

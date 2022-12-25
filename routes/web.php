@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 
 Route::resource('service', ServiceController::class);
+
 Route::resource('pricing', PricingController::class);
 
 // Route::resource('service', ServiceController::class);

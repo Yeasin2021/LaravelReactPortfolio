@@ -9584,7 +9584,7 @@ var Pricing = function Pricing() {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('service').then(function (result) {
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('pricing').then(function (result) {
                   return setItems(result.data.services);
                 });
               case 2:
@@ -9620,7 +9620,7 @@ var Pricing = function Pricing() {
               }
               audioDel = new Audio(_sound_delete_wav__WEBPACK_IMPORTED_MODULE_6__["default"]);
               _context3.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default()["delete"]("service/".concat(id));
+              return axios__WEBPACK_IMPORTED_MODULE_1___default()["delete"]("pricing/".concat(id));
             case 4:
               newItems = items.filter(function (item) {
                 return item.id !== id;
