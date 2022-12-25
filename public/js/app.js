@@ -9099,6 +9099,9 @@ function WebBack() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
             path: "/pricing-index",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_back_end_admin_pages_pricing_Pricing__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+            path: "/pricing/:id",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_back_end_admin_pages_pricing_Pricing__WEBPACK_IMPORTED_MODULE_3__["default"], {})
           })]
         })]
       })
