@@ -3,10 +3,17 @@ import React,{useState,useEffect} from 'react'
 const Pricing = () => {
 
   const [items,setItems] = useState(null);
-  useEffect(()=>{
-    fetch("http://localhost:8081/pricing")
-    .then((response)=>{return response.json()})
-    .then(data => setItems(data))
+//   useEffect(()=>{
+//     fetch("http://localhost:8081/pricing")
+//     .then((response)=>{return response.json()})
+//     .then(data => setItems(data))
+//   },[]);
+useEffect(()=>{
+    const dataShow = async () =>{
+        const data_response = await axios.get('pricing')
+        .then((result)=>setItems(result.data.pricingAll));
+    }
+    dataShow();
   },[]);
 
   return (
