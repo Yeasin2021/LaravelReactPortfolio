@@ -9,6 +9,7 @@ import PricingEdit from './back-end/admin/pages/pricing/PricingEdit';
 import Edit from './back-end/admin/pages/service/Edit';
 import ServiceForm from './back-end/admin/pages/ServiceForm';
 import Web from './frontend/Web';
+import EditContact from './back-end/admin/pages/contact/EditContact';
 
 
 function WebBack() {
@@ -26,6 +27,7 @@ function WebBack() {
                         <Route path='/pricing-index' element={<Pricing />} />
                         <Route path='/price/:id' element={<PricingEdit />} />
                         <Route path='/contacts' element={<Contact />} />
+                        <Route path='/contacts/:id' element={<EditContact />} />
 
                     </Route>
 

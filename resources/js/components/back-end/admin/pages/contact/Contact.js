@@ -74,7 +74,7 @@ return (
                           <td>{item.icon_four}</td>
                           <td>{item.icon_five}</td>
                           <td className='d-flex'>
-                            <Link to={`/contact/${item.id}`}>
+                            <Link to={`/contacts/${item.id}`}>
                               <button className='btn btn-primary' onClick={editSound}>E</button>
                             </Link>
 

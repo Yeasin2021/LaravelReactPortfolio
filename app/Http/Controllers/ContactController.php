@@ -58,7 +58,8 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        //
+        $edit = Contact::find(1);
+        return response()->json(['status'=>200,'edit'=>$edit]);
     }
 
     /**
