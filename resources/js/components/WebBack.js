@@ -25,7 +25,7 @@ function WebBack() {
                         <Route path='/service/:id' element={<Edit />} />
                         <Route path='/pricing-index' element={<Pricing />} />
                         <Route path='/price/:id' element={<PricingEdit />} />
-                        <Route path='/contact' element={<Contact />} />
+                        <Route path='/contacts' element={<Contact />} />
 
                     </Route>
 

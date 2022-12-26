@@ -14,11 +14,17 @@ const Contact = () => {
   const [items,setItems] = useState([]);
 
   useEffect(()=>{
-    const dataShow = async () =>{
-        const data_response = await axios.get('contact')
-        .then((result)=>setItems(result.data.pricingAll));
+    try{
+        const dataShow = async () =>{
+            const data_response = await axios.get('contact')
+            .then((result)=>setItems(result.data.contact));
+            // console.log(data_response.contact)
+
+        }
+        dataShow();
+    }catch(error){
+        console.log(error)
     }
-    dataShow();
   },[]);
 
 
@@ -59,13 +65,14 @@ return (
                       return(
                         <tr className='headlineText'>
                           <th scope="row">{item.id}</th>
-                          <td>{item.cardTitle}</td>
-                          <td>{item.cardCourseOne}</td>
-                          <td>{item.cardCourseTwo}</td>
-                          <td>{item.cardCourseThree}</td>
-                          <td>{item.cardCourseFour}</td>
-                          <td>{item.cardCourseFive}</td>
-                          <td>{item.cardFee}</td>
+                          <td>{item.title}</td>
+                          <td>{item.contactEmail}</td>
+                          <td>{item.contactPhone}</td>
+                          <td>{item.icon_one}</td>
+                          <td>{item.icon_two}</td>
+                          <td>{item.icon_three}</td>
+                          <td>{item.icon_four}</td>
+                          <td>{item.icon_five}</td>
                           <td className='d-flex'>
                             <Link to={`/contact/${item.id}`}>
                               <button className='btn btn-primary' onClick={editSound}>E</button>

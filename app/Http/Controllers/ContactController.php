@@ -14,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contact = Contact::first();
+        $contact = Contact::get();
         return response()->json(['status'=>200,'contact'=>$contact]);
     }
 

@@ -9107,7 +9107,7 @@ function WebBack() {
             path: "/price/:id",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_back_end_admin_pages_pricing_PricingEdit__WEBPACK_IMPORTED_MODULE_5__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
-            path: "/contact",
+            path: "/contacts",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_back_end_admin_pages_contact_Contact__WEBPACK_IMPORTED_MODULE_2__["default"], {})
           })]
         })]
@@ -9509,31 +9509,35 @@ var Contact = function Contact() {
     items = _useState2[0],
     setItems = _useState2[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var dataShow = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var data_response;
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('contact').then(function (result) {
-                  return setItems(result.data.pricingAll);
-                });
-              case 2:
-                data_response = _context.sent;
-              case 3:
-              case "end":
-                return _context.stop();
+    try {
+      var dataShow = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+          var data_response;
+          return _regeneratorRuntime().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return axios__WEBPACK_IMPORTED_MODULE_1___default().get('contact').then(function (result) {
+                    return setItems(result.data.contact);
+                  });
+                case 2:
+                  data_response = _context.sent;
+                case 3:
+                case "end":
+                  return _context.stop();
+              }
             }
-          }
-        }, _callee);
-      }));
-      return function dataShow() {
-        return _ref.apply(this, arguments);
-      };
-    }();
-    dataShow();
+          }, _callee);
+        }));
+        return function dataShow() {
+          return _ref.apply(this, arguments);
+        };
+      }();
+      dataShow();
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
   var editSound = function editSound() {
     var audioEdit = new Audio(_sound_edit_wav__WEBPACK_IMPORTED_MODULE_4__["default"]);
@@ -9595,19 +9599,21 @@ var Contact = function Contact() {
                   scope: "row",
                   children: item.id
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
-                  children: item.cardTitle
+                  children: item.title
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
-                  children: item.cardCourseOne
+                  children: item.contactEmail
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
-                  children: item.cardCourseTwo
+                  children: item.contactPhone
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
-                  children: item.cardCourseThree
+                  children: item.icon_one
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
-                  children: item.cardCourseFour
+                  children: item.icon_two
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
-                  children: item.cardCourseFive
+                  children: item.icon_three
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
-                  children: item.cardFee
+                  children: item.icon_four
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
+                  children: item.icon_five
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("td", {
                   className: "d-flex",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
