@@ -3,11 +3,18 @@ import ContactMessage from './ContactMessage';
 
 const Contacts = () => {
   const [items,setItems] = useState(null);
-  useEffect(()=> {
-    fetch("http://localhost:8081/contact")
-    .then((response)=>{return response.json()})
-    .then(data=>setItems(data))
-  },[])
+//   useEffect(()=> {
+//     fetch("http://localhost:8081/contact")
+//     .then((response)=>{return response.json()})
+//     .then(data=>setItems(data))
+//   },[])
+useEffect(()=>{
+    const dataShow = async () =>{
+        const data_response = await axios.get('contact')
+        .then((result)=>setItems(result.data.contact));
+    }
+    dataShow();
+  },[]);
   return (
     <div>
       <section id="contact" className="contact">
@@ -32,17 +39,24 @@ const Contacts = () => {
                   <i className="bx bx-share-alt"></i>
                   <h3>Social Profiles</h3>
                   <div className="social-links">
-                    {
+                    {/* {
                        item.icons.map((icon,index)=>(
                         <div key={index}>
                             <a href="#" className="twitter"><i className={icon}></i></a>
-                            {/* <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
+                            <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
                             <a href="#" className="instagram"><i className="bi bi-instagram"></i></a>
                             <a href="#" className="google-plus"><i className="bi bi-skype"></i></a>
-                            <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a> */}
+                            <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a>
                         </div>
                        ))
-                    }
+                    } */}
+                    <div>
+                            <a href="#" className="twitter"><i className={item.icon_one}></i></a>
+                            <a href="#" className="facebook"><i className={item.icon_two}></i></a>
+                            <a href="#" className="instagram"><i className={item.icon_three}></i></a>
+                            <a href="#" className="google-plus"><i className={item.icon_four}></i></a>
+                            <a href="#" className="linkedin"><i className={item.icon_five}></i></a>
+                        </div>
 
                   </div>
                 </div>
