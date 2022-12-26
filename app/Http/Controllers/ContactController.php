@@ -69,9 +69,20 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request,$id)
     {
-        //
+        $updte = Contact::find($id);
+        $update->update([
+            "title" => $request->title,
+            "contactEmail" => $request->contactEmail,
+            "contactPhone" => $request->contactPhone,
+            "icon_one" => $request->icon_one,
+            "icon_two" => $request->icon_two,
+            "icon_three" => $request->icon_three,
+            "icon_four" => $request->icon_four,
+            "icon_five" => $request->icon_five
+        ]);
+        return response()->json(['status'=>200,'updte'=>$update]);
     }
 
     /**
