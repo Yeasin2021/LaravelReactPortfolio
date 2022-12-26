@@ -9906,7 +9906,7 @@ var EditContact = function EditContact() {
             "class": "btn btn-primary mt-2",
             children: "Submit"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-            to: "/dashboard",
+            to: "/contacts",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
               type: "submit",
               "class": "btn btn-success mt-2",

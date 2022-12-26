@@ -95,7 +95,7 @@ const EditContact = () => {
                   <input type="text" id='exampleInputPhone' class="form-control" name="icon_five" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} value={input.icon_five} />
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
-                <Link to="/dashboard"><button type="submit" class="btn btn-success mt-2" style={{ marginLeft:'10px' }}>Back</button></Link>
+                <Link to="/contacts"><button type="submit" class="btn btn-success mt-2" style={{ marginLeft:'10px' }}>Back</button></Link>
               </form>
           </div>
 
