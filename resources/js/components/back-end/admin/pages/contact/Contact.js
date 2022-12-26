@@ -15,7 +15,7 @@ const Contact = () => {
 
   useEffect(()=>{
     const dataShow = async () =>{
-        const data_response = await axios.get('pricing')
+        const data_response = await axios.get('contact')
         .then((result)=>setItems(result.data.pricingAll));
     }
     dataShow();
@@ -42,13 +42,14 @@ return (
                 <thead>
                   <tr className='headlineText'>
                     <th scope="col">ID</th>
-                    <th scope="col">Card Title</th>
-                    <th scope="col">Card Course 1</th>
-                    <th scope="col">Card Course 2</th>
-                    <th scope="col">Card Course 3</th>
-                    <th scope="col">Card Course 4</th>
-                    <th scope="col">Card Course 5</th>
-                    <th scope="col">Card Fee</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Contact Email</th>
+                    <th scope="col">Contact Phone</th>
+                    <th scope="col">Icon One</th>
+                    <th scope="col">Icon Two</th>
+                    <th scope="col">Icon Three</th>
+                    <th scope="col">Icon Four</th>
+                    <th scope="col">Icon Five</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
