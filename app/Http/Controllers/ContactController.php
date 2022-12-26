@@ -56,9 +56,9 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function edit($id)
     {
-        $edit = Contact::find(1);
+        $edit = Contact::find($id);
         return response()->json(['status'=>200,'edit'=>$edit]);
     }
 
@@ -71,8 +71,8 @@ class ContactController extends Controller
      */
     public function update(Request $request,$id)
     {
-        $updte = Contact::find($id);
-        $update->update([
+        $update_contact = Contact::find($id);
+        $update_contact->update([
             "title" => $request->title,
             "contactEmail" => $request->contactEmail,
             "contactPhone" => $request->contactPhone,
@@ -82,7 +82,7 @@ class ContactController extends Controller
             "icon_four" => $request->icon_four,
             "icon_five" => $request->icon_five
         ]);
-        return response()->json(['status'=>200,'updte'=>$update]);
+        return response()->json(['status'=>200,'update_contact'=>$update_contact]);
     }
 
     /**
