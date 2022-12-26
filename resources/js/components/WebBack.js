@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router , Routes, Route, Link } from "react-router-dom";
+import Contact from './back-end/admin/contact/Contact';
 import Dashboard from './back-end/admin/Dashboard';
 import Pricing from './back-end/admin/pages/pricing/Pricing';
 import PricingEdit from './back-end/admin/pages/pricing/PricingEdit';
@@ -24,6 +25,7 @@ function WebBack() {
                         <Route path='/service/:id' element={<Edit />} />
                         <Route path='/pricing-index' element={<Pricing />} />
                         <Route path='/price/:id' element={<PricingEdit />} />
+                        <Route path='/contact' element={<Contact />} />
                     </Route>
 
                     {/* <Route path='/dashboardform' element={<ServiceForm />} /> */}
