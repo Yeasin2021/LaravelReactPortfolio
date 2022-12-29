@@ -39,7 +39,7 @@ class MessageController extends Controller
         Message::create([
             'name'          =>  $request->name,
             'email'         =>  $request->email,
-            'phone'         =>  $request->phone,
+            'subject'       =>  $request->subject,
             'message'       =>  $request->message
         ]);
         return response()->json(['status'=>200]);
