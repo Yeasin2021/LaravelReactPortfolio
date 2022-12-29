@@ -1,6 +1,8 @@
 import { reset } from 'laravel-mix/src/Log';
 import { values } from 'lodash';
 import React,{useState,useEffect,useRef} from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactMessage = () => {
 
@@ -48,7 +50,7 @@ const ContactMessage = () => {
   return (
     <div>
       <form onSubmit={formHandaler} role="form" className="php-email-form" id='messageForm' name='formdata'>
-
+        <ToastContainer />
               <div className="row">
                 <div className="col-md-6 form-group">
                   <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" value={name} onChange={(e)=>setName(e.target.value)} ref={userName} required />
