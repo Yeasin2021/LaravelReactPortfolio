@@ -60,7 +60,7 @@ return (
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Contact Phone</th>
+                    <th scope="col">Subject</th>
                     <th scope="col">Message</th>
                     <th scope="col">Action</th>
                   </tr>

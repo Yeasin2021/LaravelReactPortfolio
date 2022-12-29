@@ -10067,7 +10067,7 @@ var Message = function Message() {
                 children: "Email"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                 scope: "col",
-                children: "Contact Phone"
+                children: "Subject"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                 scope: "col",
                 children: "Message"
