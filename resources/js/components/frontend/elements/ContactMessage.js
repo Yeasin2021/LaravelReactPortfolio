@@ -15,19 +15,28 @@ const ContactMessage = () => {
     const userSubject = useRef();
     const userMessage = useRef();
 
-    const formHandaler = (event) =>{
+    const formHandaler = async(event) =>{
         event.preventDefault();
-        const data = {name,email,subject,message};
-        const url = "http://localhost:8081/contactMessage";
-        const api = fetch(url,{
-            method:"POST",
-            headers:{
-                'content-type':'application/json'
-            },
-            body:JSON.stringify(data)
-        })
-        .then((response)=>{console.warn("Result",response)})
-        .catch(error=>console.warn("Have Some Error: "+error))
+        const input = {name,email,subject,message};
+        const response = await axios.post('message',input);
+        if(response.data.status == 200){
+            toast("Message Send Successfully");
+          }
+
+        // const data = {name,email,subject,message};
+        // const url = "http://localhost:8081/contactMessage";
+        // const api = fetch(url,{
+        //     method:"POST",
+        //     headers:{
+        //         'content-type':'application/json'
+        //     },
+        //     body:JSON.stringify(data)
+        // })
+        // .then((response)=>{console.warn("Result",response)})
+        // .catch(error=>console.warn("Have Some Error: "+error))
+
+
+
         //Form data Remove from inputs field after form submission by useRef hooks
         userName.current.value = '';
         userEmail.current.value = '';
