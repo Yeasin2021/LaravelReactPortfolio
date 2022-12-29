@@ -19,7 +19,7 @@ const Message = () => {
         const dataShow = async () =>{
             const data_response = await axios.get('message')
             .then((result)=>setItems(result.data.message));
-            // console.log(data_response.contact)
+            // console.log(data_response.message)
 
         }
         dataShow();
@@ -73,7 +73,7 @@ return (
                           <th scope="row">{item.id}</th>
                           <td>{item.name}</td>
                           <td>{item.email}</td>
-                          <td>{item.phone}</td>
+                          <td>{item.subject}</td>
                           <td>{item.message}</td>
                           <td className='d-flex'>
 
