@@ -69,9 +69,14 @@ class SliderController extends Controller
      * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Slider $slider)
+    public function update(Request $request, $id)
     {
-        //
+        $update = Slider::find($id);
+        $update->update([
+            'slider_title' => $request->slider_title,
+            'slider_header' => $request->slider_header,
+        ]);
+        return response()->json(['status'=>200,'update'=>$update]);
     }
 
     /**
