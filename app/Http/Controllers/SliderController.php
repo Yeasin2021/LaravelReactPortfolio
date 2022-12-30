@@ -14,7 +14,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+        $slider = Slider::all();
+        return response()->json(['status'=>200,'slider'=>$slider]);
     }
 
     /**
