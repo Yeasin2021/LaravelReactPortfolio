@@ -12,6 +12,7 @@ import Web from './frontend/Web';
 import EditContact from './back-end/admin/pages/contact/EditContact';
 import Message from './back-end/admin/pages/message/Message';
 import Slider from './back-end/admin/pages/slider/Slider';
+import SliderEdit from './back-end/admin/pages/slider/SliderEdit';
 
 
 function WebBack() {
@@ -32,6 +33,7 @@ function WebBack() {
                         <Route path='/contacts/:id' element={<EditContact />} />
                         <Route path='/message-list' element={<Message />} />
                         <Route path='/admin-slider' element={<Slider />} />
+                        <Route path='/admin-slider/:id' element={<SliderEdit />} />
 
                     </Route>
 

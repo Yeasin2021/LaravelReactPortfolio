@@ -56,9 +56,10 @@ class SliderController extends Controller
      * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function edit(Slider $slider)
+    public function edit($id)
     {
-        //
+        $edit = Slider::find($id);
+        return response()->json(['status'=>200,'edit'=>$edit]);
     }
 
     /**

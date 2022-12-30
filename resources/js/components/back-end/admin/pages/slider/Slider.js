@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Music from '../sound/add1.wav';
 import MusicEdit from '../sound/edit.wav';
-import MusicDelete from '../sound/delete.wav';
+
 
 const Slider = () => {
     const formStyleOne = {
@@ -106,7 +106,7 @@ const Slider = () => {
                               <td>{item.slider_header}</td>
                               <td>{item.slider_image}</td>
                               <td className='d-flex'>
-                                <Link to={`/slider/${item.id}`}>
+                                <Link to={`/admin-slider/${item.id}`}>
                                   <button className='btn btn-primary' onClick={editSound}>E</button>
                                 </Link>
 
