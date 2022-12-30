@@ -11236,14 +11236,45 @@ var SliderEdit = function SliderEdit() {
     input = _useState4[0],
     setInput = _useState4[1];
   var audio = new Audio(_sound_add1_wav__WEBPACK_IMPORTED_MODULE_4__["default"]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    try {
+      var getSingleRecord = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+          var response;
+          return _regeneratorRuntime().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return axios__WEBPACK_IMPORTED_MODULE_1___default().get("/slider/".concat(id, "/edit"));
+                case 2:
+                  response = _context.sent;
+                  console.log(response.data.edit);
+                  setInput(response.data.edit);
+                case 5:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+        return function getSingleRecord() {
+          return _ref.apply(this, arguments);
+        };
+      }();
+      getSingleRecord();
+    } catch (error) {
+      console.log(error);
+    }
+  }, [id]);
   var updateUser = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
-      return _regeneratorRuntime().wrap(function _callee$(_context) {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) {
-          switch (_context.prev = _context.next) {
+          switch (_context2.prev = _context2.next) {
             case 0:
               e.preventDefault();
-              _context.next = 3;
+              _context2.next = 3;
               return axios__WEBPACK_IMPORTED_MODULE_1___default().put("/slider/".concat(id), input);
             case 3:
               (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data Updated Successfully 😲");
@@ -11251,13 +11282,13 @@ var SliderEdit = function SliderEdit() {
               navigate("/admin-slider");
             case 6:
             case "end":
-              return _context.stop();
+              return _context2.stop();
           }
         }
-      }, _callee);
+      }, _callee2);
     }));
     return function updateUser(_x2) {
-      return _ref.apply(this, arguments);
+      return _ref2.apply(this, arguments);
     };
   }();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
@@ -11281,7 +11312,8 @@ var SliderEdit = function SliderEdit() {
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
               },
-              ref: sliderTitle
+              ref: sliderTitle,
+              value: input.slider_title
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             "class": "form-group",
@@ -11295,7 +11327,8 @@ var SliderEdit = function SliderEdit() {
               onChange: function onChange(e) {
                 return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
               },
-              ref: sliderHeader
+              ref: sliderHeader,
+              value: input.slider_header
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             "class": "form-group",

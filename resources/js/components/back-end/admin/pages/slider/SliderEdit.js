@@ -31,6 +31,22 @@ const SliderEdit = () => {
 
       const audio = new Audio(Music);
 
+      useEffect(()=>{
+        try{
+
+            const getSingleRecord = async () =>{
+            const response = await axios.get(`/slider/${id}/edit`);
+            console.log(response.data.edit)
+            setInput(response.data.edit);
+          };
+
+          getSingleRecord();
+
+        }catch(error){
+          console.log(error);
+        }
+    },[id]);
+
       const updateUser = async (e) =>{
         e.preventDefault();
         await axios.put(`/slider/${id}`,input);
@@ -49,11 +65,11 @@ const SliderEdit = () => {
                 <form onSubmit={updateUser} >
                     <div className="form-group">
                       <label for="exampleInputPhone">Slider Title</label>
-                      <input type="text" className="form-control" name="slider_title" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}  ref={sliderTitle}  />
+                      <input type="text" className="form-control" name="slider_title" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}  ref={sliderTitle}  value={input.slider_title}/>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputAge">Slider Header</label>
-                      <input type="text" className="form-control" name="slider_header" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={sliderHeader} />
+                      <input type="text" className="form-control" name="slider_header" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={sliderHeader} value={input.slider_header}/>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputAge">Slider Image</label>
