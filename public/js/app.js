@@ -11330,20 +11330,6 @@ var SliderEdit = function SliderEdit() {
               ref: sliderHeader,
               value: input.slider_header
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-            "class": "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-              "for": "exampleInputAge",
-              children: "Slider Image"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
-              type: "file",
-              className: "form-control",
-              name: "slider_image",
-              onChange: function onChange(e) {
-                return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.value)));
-              },
-              ref: sliderImage
-            })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
             type: "submit",
             className: "btn btn-primary mt-2",
@@ -13351,6 +13337,14 @@ var Header = function Header() {
       return setItems(data);
     });
   }, []);
+
+  // useEffect(()=>{
+  //     const dataShow = async () =>{
+  //         const data_response = await axios.get('slider')
+  //         .then((result)=>setItems(result.data.slider));
+  //     }
+  //     dataShow();
+  //   },[]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "header",

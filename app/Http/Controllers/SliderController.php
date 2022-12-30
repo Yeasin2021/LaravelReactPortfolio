@@ -72,9 +72,21 @@ class SliderController extends Controller
     public function update(Request $request, $id)
     {
         $update = Slider::find($id);
+
+        $filename = "";
+            if($request->hasFile('image')){
+                $image = $request->file('image');
+                    $filename = date('Ymdhms').'.'.$image->getClientOriginalExtension();
+                    $image->move('back-end/img/slider/',$filename);
+
+            }
+
+
+
         $update->update([
             'slider_title' => $request->slider_title,
             'slider_header' => $request->slider_header,
+            'slider_image' => $request->slider_image
         ]);
         return response()->json(['status'=>200,'update'=>$update]);
     }

@@ -8,6 +8,14 @@ const Header = () => {
     .then((res)=>{return res.json()})
     .then(data => setItems(data))
   },[]);
+
+// useEffect(()=>{
+//     const dataShow = async () =>{
+//         const data_response = await axios.get('slider')
+//         .then((result)=>setItems(result.data.slider));
+//     }
+//     dataShow();
+//   },[]);
   return (
     <div>
       <div className='header'>
@@ -52,6 +60,8 @@ const Header = () => {
           <div className="hero-container">
             <h1>{item.title}</h1>
             <h2>{item.description}</h2>
+            {/* <h1>{item.slider_title}</h1>
+            <h2>{item.slider_header}</h2> */}
             <a href="#about" className="btn-scroll scrollto" title="Scroll Down"><i className={item.icon}></i></a>
           </div>
         </div>
