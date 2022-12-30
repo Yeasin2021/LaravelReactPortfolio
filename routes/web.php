@@ -5,6 +5,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PricingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\SliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::resource('pricing', PricingController::class);
 Route::resource('contact', ContactController::class);
 
 Route::resource('message', MessageController::class);
+
+Route::resource('slider', SliderController::class);
 
 // Route::resource('service', ServiceController::class);
 
