@@ -11300,6 +11300,7 @@ var SliderEdit = function SliderEdit() {
         className: "col-md-8",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
           onSubmit: updateUser,
+          enctype: "multipart/form-data",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
@@ -11329,6 +11330,20 @@ var SliderEdit = function SliderEdit() {
               },
               ref: sliderHeader,
               value: input.slider_header
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            "class": "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+              "for": "exampleInputAge",
+              children: "Slider Image"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+              type: "file",
+              className: "form-control",
+              name: "slider_image",
+              onChange: function onChange(e) {
+                return setInput(_objectSpread(_objectSpread({}, input), {}, _defineProperty({}, e.target.name, e.target.files[0])));
+              },
+              ref: sliderImage
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
             type: "submit",

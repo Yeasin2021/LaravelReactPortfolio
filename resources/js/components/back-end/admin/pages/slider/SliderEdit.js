@@ -62,7 +62,7 @@ const SliderEdit = () => {
             <ToastContainer />
             <div className="row" style={ formStyleOne }>
               <div className="col-md-8">
-                <form onSubmit={updateUser} >
+                <form onSubmit={updateUser} enctype="multipart/form-data">
                     <div className="form-group">
                       <label for="exampleInputPhone">Slider Title</label>
                       <input type="text" className="form-control" name="slider_title" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}  ref={sliderTitle}  value={input.slider_title}/>
@@ -71,10 +71,10 @@ const SliderEdit = () => {
                       <label for="exampleInputAge">Slider Header</label>
                       <input type="text" className="form-control" name="slider_header" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={sliderHeader} value={input.slider_header}/>
                     </div>
-                    {/* <div class="form-group">
+                    <div class="form-group">
                       <label for="exampleInputAge">Slider Image</label>
-                      <input type="file" className="form-control" name="slider_image" onChange={(e)=> setInput({...input, [e.target.name]: e.target.files[0]})} ref={sliderImage} value={input.slider_image}/>
-                    </div> */}
+                      <input type="file" className="form-control" name="slider_image" onChange={(e)=> setInput({...input, [e.target.name]: e.target.files[0]})} ref={sliderImage}/>
+                    </div>
 
                     <button type="submit" className="btn btn-primary mt-2">Submit</button>
                   </form>

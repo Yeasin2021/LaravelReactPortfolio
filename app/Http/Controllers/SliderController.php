@@ -77,7 +77,7 @@ class SliderController extends Controller
             if($request->hasFile('image')){
                 $image = $request->file('image');
                     $filename = date('Ymdhms').'.'.$image->getClientOriginalExtension();
-                    $image->move('back-end/img/slider/',$filename);
+                    $image->move('back-end/img/slider',$filename);
 
             }
 
