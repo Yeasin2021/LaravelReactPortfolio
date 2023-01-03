@@ -21,13 +21,23 @@ const SliderEdit = () => {
       const sliderImage = useRef();
       const [items,setItems] = useState([]);
 
+
+      const [image,setImage] = useState('');
+      const [title,setTitle] = useState('');
+      const [header,setHeader] = useState('');
       const [input,setInput] = useState(
-        {
-            slider_title : "",
-            slider_header: "",
-            slider_image: ""
+       {
+        'slider_title': '',
+        'slider_header':'',
+
+       }
+      );
+
+        const imageHandaler = (e) =>{
+            console.log(e.target.files);
+            setImage(e.target.files[0]);
         }
-      )
+
 
       const audio = new Audio(Music);
 
@@ -49,7 +59,12 @@ const SliderEdit = () => {
 
       const updateUser = async (e) =>{
         e.preventDefault();
-        await axios.put(`/slider/${id}`,input);
+        const formData = new FormData();
+        // formData.append('slider_title',title);
+        // formData.append('slider_header',header);
+        formData.append('slider_image',image);
+        await axios.put(`/slider/${id}`,formData);
+        // await axios.put(`/slider/${id}`,formData);
         toast("Data Updated Successfully 😲")
         audio.play();
         navigate("/admin-slider");
@@ -62,18 +77,20 @@ const SliderEdit = () => {
             <ToastContainer />
             <div className="row" style={ formStyleOne }>
               <div className="col-md-8">
-                <form onSubmit={updateUser} enctype="multipart/form-data">
-                    <div className="form-group">
+                <form onSubmit={updateUser} encType="multipart/form-data">
+                    {/* <div className="form-group">
                       <label for="exampleInputPhone">Slider Title</label>
-                      <input type="text" className="form-control" name="slider_title" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})}  ref={sliderTitle}  value={input.slider_title}/>
-                    </div>
-                    <div class="form-group">
+                      <input type="text" className="form-control" name="title" onChange={(e)=> setTitle(e.target.value)}  ref={sliderTitle} />
+                    </div> */}
+                    {/* <div class="form-group">
                       <label for="exampleInputAge">Slider Header</label>
-                      <input type="text" className="form-control" name="slider_header" onChange={(e)=> setInput({...input, [e.target.name]: e.target.value})} ref={sliderHeader} value={input.slider_header}/>
-                    </div>
+                      <input type="text" className="form-control" name="header" onChange={(e)=> setHeader(e.target.value)} ref={sliderHeader} />
+                    </div> */}
                     <div class="form-group">
                       <label for="exampleInputAge">Slider Image</label>
-                      <input type="file" className="form-control" name="slider_image" onChange={(e)=> setInput({...input, [e.target.name]: e.target.files[0]})} ref={sliderImage}/>
+                      {/* <input type="file" className="form-control" name="slider_image" onChange={(e)=>setPhoto(e.target.files[0])} ref={sliderImage}/> */}
+                      <input type="file" name="slider_image" className="mb-4" onChange={imageHandaler}/>
+                      {console.log(image)}
                     </div>
 
                     <button type="submit" className="btn btn-primary mt-2">Submit</button>

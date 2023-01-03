@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ImageGallary;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Route::resource('service', ServiceController::class);
+
+
+Route::post('upload',[ImageGallary::class,'saveImage']);
+Route::get('list',[ImageGallary::class,'dataList']);
+Route::get('delete/{id}',[ImageGallary::class,'deleteImg']);
+
+

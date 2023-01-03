@@ -33,6 +33,12 @@ Route::resource('message', MessageController::class);
 
 Route::resource('slider', SliderController::class);
 
+
+// Route::get('image',function(){
+//     return view('image');
+// });
+
+
 // Route::resource('service', ServiceController::class);
 
 // any route setup without home (/) route; is called base Route

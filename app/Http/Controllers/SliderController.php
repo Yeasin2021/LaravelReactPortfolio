@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
+use Illuminate\Http\UploadedFile;
+use App\Exceptions\Handler;
+
 class SliderController extends Controller
 {
     /**
@@ -36,7 +39,25 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+
+
+        $images = $request->file('slider_image');
+        // dd($images);
+        if($images){
+            $fileName = time().'.'.$images->extension();
+            $images->move(public_path('image/comics_image'),$fileName);
+        }
+        $Image = Slider::create([
+            'slider_image' => $fileName,
+        ]);
+        return response()->json(['status'=>200,'Image'=>$Image]);
+
+
+
+
+
     }
 
     /**
@@ -71,24 +92,22 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $update = Slider::find($id);
 
-        $filename = "";
-            if($request->hasFile('image')){
-                $image = $request->file('image');
-                    $filename = date('Ymdhms').'.'.$image->getClientOriginalExtension();
-                    $image->move('back-end/img/slider',$filename);
+        $Image = Slider::find($id);
 
-            }
+        $images = $request->file('slider_image');
+        dd($images);
+        if($images){
+            $fileName = time().'.'.$images->extension();
+            $images->move(public_path('image/comics_image'),$fileName);
+        }
 
-
-
-        $update->update([
-            'slider_title' => $request->slider_title,
-            'slider_header' => $request->slider_header,
-            'slider_image' => $request->slider_image
+        $Image->update([
+            'slider_image' => $fileName,
         ]);
-        return response()->json(['status'=>200,'update'=>$update]);
+
+        return response()->json(['success'=>$fileName]);
+
     }
 
     /**
