@@ -11218,8 +11218,16 @@ var SliderAdd = function SliderAdd() {
   };
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState2 = _slicedToArray(_useState, 2),
-    image = _useState2[0],
-    setImage = _useState2[1];
+    title = _useState2[0],
+    setTitle = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState4 = _slicedToArray(_useState3, 2),
+    header = _useState4[0],
+    setHeader = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState6 = _slicedToArray(_useState5, 2),
+    image = _useState6[0],
+    setImage = _useState6[1];
   var imageHandaler = function imageHandaler(e) {
     console.log(e.target.files);
     setImage(e.target.files[0]);
@@ -11234,14 +11242,16 @@ var SliderAdd = function SliderAdd() {
               e.preventDefault();
               formData = new FormData();
               formData.append('slider_image', image);
+              formData.append('slider_title', title);
+              formData.append('slider_header', header);
               console.log(formData);
-              _context.next = 6;
+              _context.next = 8;
               return axios__WEBPACK_IMPORTED_MODULE_1___default().post('slider', formData);
-            case 6:
+            case 8:
               (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data added Successfully 😲");
               audio.play();
               navigate("/admin-slider-add");
-            case 9:
+            case 11:
             case "end":
               return _context.stop();
           }
@@ -11261,6 +11271,18 @@ var SliderAdd = function SliderAdd() {
         type: "file",
         name: "slider_image",
         onChange: imageHandaler
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+        type: "text",
+        name: "slider_title",
+        onChange: function onChange(e) {
+          return setTitle(e.target.value);
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+        type: "text",
+        name: "slider_header",
+        onChange: function onChange(e) {
+          return setHeader(e.target.value);
+        }
       }), console.log(image), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
         type: "submit",
         children: "Submit"
@@ -11318,127 +11340,98 @@ var SliderEdit = function SliderEdit() {
   };
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useParams)(),
     id = _useParams.id;
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useNavigate)();
-  var sliderTitle = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  var sliderHeader = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  var sliderImage = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+  //     const navigate = useNavigate();
+
+  //     const [slider_image,setImage] = useState(null);
+  //     const imageHandaler = (e) =>{
+  //         console.log(e.target.files);
+  //         setImage(e.target.files[0]);
+  //     }
+
+  //   const audio = new Audio(Music);
+  //   const updateUser = async (e) =>{
+  //     e.preventDefault();
+  //     const formData = new FormData();
+  //     formData.append('slider_image',slider_image);
+  //     await axios.put(`/slider/${id}`,formData);
+
+  //     // await axios.put(`/slider/${id}`,formData);
+  //     toast("Data Updated Successfully 😲")
+  //     audio.play();
+  //     navigate("/admin-slider");
+  // }
+
+  // return (
+  //     <div className="container">
+  //         <ToastContainer />
+  //         <div className="row" style={ formStyleOne }>
+  //           <div className="col-md-8">
+  //             <form onSubmit={updateUser} encType="multipart/form-data">
+  //                 <div class="form-group">
+  //                   <label for="exampleInputAge">Slider Image</label>
+  //                   <input type="file" name="slider_image" className="mb-4" onChange={imageHandaler}/>
+  //                   {console.log(slider_image)}
+
+  //                 </div>
+
+  //                 <button type="submit" className="btn btn-primary mt-2">Submit</button>
+  //               </form>
+  //           </div>
+
+  //         </div>
+  //       </div>
+  //   )
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState2 = _slicedToArray(_useState, 2),
-    items = _useState2[0],
-    setItems = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
-    _useState4 = _slicedToArray(_useState3, 2),
-    image = _useState4[0],
-    setImage = _useState4[1];
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
-    _useState6 = _slicedToArray(_useState5, 2),
-    title = _useState6[0],
-    setTitle = _useState6[1];
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
-    _useState8 = _slicedToArray(_useState7, 2),
-    header = _useState8[0],
-    setHeader = _useState8[1];
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
-      'slider_title': '',
-      'slider_header': ''
-    }),
-    _useState10 = _slicedToArray(_useState9, 2),
-    input = _useState10[0],
-    setInput = _useState10[1];
+    image = _useState2[0],
+    setImage = _useState2[1];
   var imageHandaler = function imageHandaler(e) {
     console.log(e.target.files);
     setImage(e.target.files[0]);
   };
-  var audio = new Audio(_sound_add1_wav__WEBPACK_IMPORTED_MODULE_4__["default"]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    try {
-      var getSingleRecord = /*#__PURE__*/function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-          var response;
-          return _regeneratorRuntime().wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  _context.next = 2;
-                  return axios__WEBPACK_IMPORTED_MODULE_1___default().get("/slider/".concat(id, "/edit"));
-                case 2:
-                  response = _context.sent;
-                  console.log(response.data.edit);
-                  setInput(response.data.edit);
-                case 5:
-                case "end":
-                  return _context.stop();
-              }
-            }
-          }, _callee);
-        }));
-        return function getSingleRecord() {
-          return _ref.apply(this, arguments);
-        };
-      }();
-      getSingleRecord();
-    } catch (error) {
-      console.log(error);
-    }
-  }, [id]);
-  var updateUser = /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
+  var submitForm = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
       var formData;
-      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context.prev = _context.next) {
             case 0:
               e.preventDefault();
-              formData = new FormData(); // formData.append('slider_title',title);
-              // formData.append('slider_header',header);
+              formData = new FormData();
               formData.append('slider_image', image);
-              _context2.next = 5;
+              console.log(formData);
+              _context.next = 6;
               return axios__WEBPACK_IMPORTED_MODULE_1___default().put("/slider/".concat(id), formData);
-            case 5:
-              // await axios.put(`/slider/${id}`,formData);
-              (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data Updated Successfully 😲");
+            case 6:
+              (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data added Successfully 😲");
               audio.play();
-              navigate("/admin-slider");
-            case 8:
+              navigate("/admin-slider-add");
+            case 9:
             case "end":
-              return _context2.stop();
+              return _context.stop();
           }
         }
-      }, _callee2);
+      }, _callee);
     }));
-    return function updateUser(_x2) {
-      return _ref2.apply(this, arguments);
+    return function submitForm(_x2) {
+      return _ref.apply(this, arguments);
     };
   }();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    className: "container",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_2__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      className: "row",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
+      onSubmit: submitForm,
       style: formStyleOne,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "col-md-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
-          onSubmit: updateUser,
-          encType: "multipart/form-data",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-            "class": "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-              "for": "exampleInputAge",
-              children: "Slider Image"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
-              type: "file",
-              name: "slider_image",
-              className: "mb-4",
-              onChange: imageHandaler
-            }), console.log(image)]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
-            type: "submit",
-            className: "btn btn-primary mt-2",
-            children: "Submit"
-          })]
-        })
-      })
-    })]
+      encType: "multipart/form-data",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+        type: "file",
+        name: "slider_image",
+        onChange: imageHandaler
+      }), console.log(image), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+        type: "submit",
+        children: "Submit"
+      })]
+    })
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SliderEdit);

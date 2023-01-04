@@ -13,7 +13,8 @@ const formStyleOne = {
     marginTop: '4%',
     }
 
-
+const [title,setTitle] = useState('');
+const [header,setHeader] = useState('');
 const [image,setImage] = useState('');
 const imageHandaler = (e) =>{
     console.log(e.target.files);
@@ -23,6 +24,8 @@ const submitForm = async (e) =>{
     e.preventDefault();
     const formData = new FormData();
     formData.append('slider_image',image);
+    formData.append('slider_title',title);
+    formData.append('slider_header',header);
     console.log(formData)
     await axios.post('slider',formData);
     toast("Data added Successfully 😲");
@@ -34,6 +37,8 @@ const submitForm = async (e) =>{
 
         <form onSubmit={submitForm} style={ formStyleOne } encType="multipart/form-data">
             <input type="file" name="slider_image" onChange={imageHandaler}/>
+            <input type="text" name="slider_title" onChange={(e)=>setTitle(e.target.value)} />
+            <input type="text" name="slider_header" onChange={(e)=>setHeader(e.target.value)}/>
             {console.log(image)}
             <button type='submit'>Submit</button>
         </form>

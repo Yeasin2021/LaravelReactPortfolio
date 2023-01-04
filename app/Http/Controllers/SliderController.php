@@ -28,7 +28,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -47,10 +47,12 @@ class SliderController extends Controller
         // dd($images);
         if($images){
             $fileName = time().'.'.$images->extension();
-            $images->move(public_path('image/comics_image'),$fileName);
+            $images->move(public_path('back-end/img/slider'),$fileName);
         }
         $Image = Slider::create([
             'slider_image' => $fileName,
+            'slider_title' => $request->slider_title,
+            'slider_header' => $request->slider_header,
         ]);
         return response()->json(['status'=>200,'Image'=>$Image]);
 
@@ -90,23 +92,28 @@ class SliderController extends Controller
      * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
 
-        $Image = Slider::find($id);
+        $Image = Slider::find(1);
 
-        $images = $request->file('slider_image');
+        $images = $request->hasFile('slider_image');
         dd($images);
+        $fileName ="";
         if($images){
             $fileName = time().'.'.$images->extension();
             $images->move(public_path('image/comics_image'),$fileName);
         }
 
         $Image->update([
-            'slider_image' => $fileName,
+            'slider_title' => 'Laura Thomson',
+            'slider_header' => 'I M A PROFESSIONAL PHOTOGRAPHER IN NEW YORK CITY',
+            'slider_image' => 'baler code.png',
         ]);
 
-        return response()->json(['success'=>$fileName]);
+        return response()->json(['success'=>200,'Image'=>$Image]);
+
+
 
     }
 
