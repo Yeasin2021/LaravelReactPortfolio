@@ -92,23 +92,30 @@ class SliderController extends Controller
      * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
 
-        $Image = Slider::find(1);
+        $Image = Slider::find($id);
 
-        $images = $request->hasFile('slider_image');
-        dd($images);
-        $fileName ="";
+        // $images = $request->hasFile('image');
+        // // dd($request);
+        // // $fileName ="";
+
+        //     $fileName = time().'.'.$images->getClientOriginalExtension();
+        //     $images->move(public_path('image/comics_image'),$fileName);
+
+        $images = $request->file('image');
+        // dd($images);
         if($images){
             $fileName = time().'.'.$images->extension();
-            $images->move(public_path('image/comics_image'),$fileName);
+            $images->move(public_path('back-end/img/slider'),$fileName);
         }
+
 
         $Image->update([
             'slider_title' => 'Laura Thomson',
             'slider_header' => 'I M A PROFESSIONAL PHOTOGRAPHER IN NEW YORK CITY',
-            'slider_image' => 'baler code.png',
+            'slider_image' => $fileName,
         ]);
 
         return response()->json(['success'=>200,'Image'=>$Image]);

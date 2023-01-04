@@ -11399,10 +11399,10 @@ var SliderEdit = function SliderEdit() {
             case 0:
               e.preventDefault();
               formData = new FormData();
-              formData.append('slider_image', image);
+              formData.append('image', image);
               console.log(formData);
               _context.next = 6;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default().put("/slider/".concat(id), formData);
+              return axios__WEBPACK_IMPORTED_MODULE_1___default().post("/slider-update/".concat(id), formData);
             case 6:
               (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data added Successfully 😲");
               audio.play();
@@ -11425,7 +11425,7 @@ var SliderEdit = function SliderEdit() {
       encType: "multipart/form-data",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
         type: "file",
-        name: "slider_image",
+        name: "image",
         onChange: imageHandaler
       }), console.log(image), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
         type: "submit",

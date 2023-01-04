@@ -33,6 +33,8 @@ Route::resource('message', MessageController::class);
 
 Route::resource('slider', SliderController::class);
 
+Route::post('slider-update/{id}',[SliderController::class,'update']);
+
 
 // Route::get('image',function(){
 //     return view('image');

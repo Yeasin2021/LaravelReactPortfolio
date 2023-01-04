@@ -74,9 +74,9 @@ const SliderEdit = () => {
     const submitForm = async (e) =>{
         e.preventDefault();
         const formData = new FormData();
-        formData.append('slider_image',image);
+        formData.append('image',image);
         console.log(formData)
-        await axios.put(`/slider/${id}`,formData);
+        await axios.post(`/slider-update/${id}`,formData);
         toast("Data added Successfully 😲");
         audio.play();
         navigate("/admin-slider-add");
@@ -85,7 +85,7 @@ const SliderEdit = () => {
         <div>
 
             <form onSubmit={submitForm} style={ formStyleOne } encType="multipart/form-data">
-                <input type="file" name="slider_image" onChange={imageHandaler}/>
+                <input type="file" name="image" onChange={imageHandaler}/>
                 {console.log(image)}
                 <button type='submit'>Submit</button>
             </form>
