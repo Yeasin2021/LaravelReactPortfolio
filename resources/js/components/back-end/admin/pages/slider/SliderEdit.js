@@ -13,31 +13,12 @@ const SliderEdit = () => {
         marginTop: '4%',
       }
 
-        const {id} = useParams();
-        const navigate = useNavigate();
-        const audio = new Audio(Music);
+    const {id} = useParams();
+    const navigate = useNavigate();
+    const audio = new Audio(Music);
 
-    //     const [slider_image,setImage] = useState(null);
-    //     const imageHandaler = (e) =>{
-    //         console.log(e.target.files);
-    //         setImage(e.target.files[0]);
-    //     }
-
-    //   const audio = new Audio(Music);
-    //   const updateUser = async (e) =>{
-    //     e.preventDefault();
-    //     const formData = new FormData();
-    //     formData.append('slider_image',slider_image);
-    //     await axios.put(`/slider/${id}`,formData);
-
-    //     // await axios.put(`/slider/${id}`,formData);
-    //     toast("Data Updated Successfully 😲")
-    //     audio.play();
-    //     navigate("/admin-slider");
-    // }
-
-    const [title,setTitle] = useState('');
-    const [header,setHeader] = useState('');
+    const [title,setTitle] = useState("");
+    const [header,setHeader] = useState("");
     const [image,setImage] = useState('');
     const imageHandaler = (e) =>{
         console.log(e.target.files);
@@ -57,22 +38,40 @@ const SliderEdit = () => {
     }
 
 
+
+        useEffect(()=>{
+            try{
+
+                const getSingleRecord = async () =>{
+                const response = await axios.get(`/slider/${id}/edit`);
+                console.log(response.data.edit)
+                setInput(response.data.edit);
+              };
+
+              getSingleRecord();
+
+            }catch(error){
+              console.log(error);
+            }
+        },[id]);
+
+
     return (
         <div className="container">
             <ToastContainer />
             <div className="row" style={ formStyleOne }>
-              <div className="col-md-8">
+              <div className="col-md-12">
                 <form onSubmit={submitForm} encType="multipart/form-data">
-                    <div class="form-group">
-                        <label for="exampleInputAge">Slider Title</label>
-                        <input type="text" name="slider_title" onChange={(e)=>setTitle(e.target.value)} />
+                    <div className="form-group">
+                        <label htmlFor="exampleInputAge">Slider Title</label>
+                        <input type="text" name="slider_title"  onChange={(e)=> setTitle(e.target.value)}  />
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputAge">Slider Header</label>
-                        <input type="text" name="slider_header" onChange={(e)=>setHeader(e.target.value)}/>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputAge">Slider Header</label>
+                        <input type="text" name="slider_header"  onChange={(e)=> setHeader(e.target.value)}/>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputAge">Slider Image</label>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputAge">Slider Image</label>
                         <input type="file" name="image" className="mb-4" onChange={imageHandaler}/>
                     </div>
 

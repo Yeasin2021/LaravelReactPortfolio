@@ -11345,31 +11345,11 @@ var SliderEdit = function SliderEdit() {
     id = _useParams.id;
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useNavigate)();
   var audio = new Audio(_sound_add1_wav__WEBPACK_IMPORTED_MODULE_4__["default"]);
-
-  //     const [slider_image,setImage] = useState(null);
-  //     const imageHandaler = (e) =>{
-  //         console.log(e.target.files);
-  //         setImage(e.target.files[0]);
-  //     }
-
-  //   const audio = new Audio(Music);
-  //   const updateUser = async (e) =>{
-  //     e.preventDefault();
-  //     const formData = new FormData();
-  //     formData.append('slider_image',slider_image);
-  //     await axios.put(`/slider/${id}`,formData);
-
-  //     // await axios.put(`/slider/${id}`,formData);
-  //     toast("Data Updated Successfully 😲")
-  //     audio.play();
-  //     navigate("/admin-slider");
-  // }
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState2 = _slicedToArray(_useState, 2),
     title = _useState2[0],
     setTitle = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState4 = _slicedToArray(_useState3, 2),
     header = _useState4[0],
     setHeader = _useState4[1];
@@ -11411,20 +11391,51 @@ var SliderEdit = function SliderEdit() {
       return _ref.apply(this, arguments);
     };
   }();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    try {
+      var getSingleRecord = /*#__PURE__*/function () {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+          var response;
+          return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  _context2.next = 2;
+                  return axios__WEBPACK_IMPORTED_MODULE_1___default().get("/slider/".concat(id, "/edit"));
+                case 2:
+                  response = _context2.sent;
+                  console.log(response.data.edit);
+                  setInput(response.data.edit);
+                case 5:
+                case "end":
+                  return _context2.stop();
+              }
+            }
+          }, _callee2);
+        }));
+        return function getSingleRecord() {
+          return _ref2.apply(this, arguments);
+        };
+      }();
+      getSingleRecord();
+    } catch (error) {
+      console.log(error);
+    }
+  }, [id]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     className: "container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_2__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "row",
       style: formStyleOne,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "col-md-8",
+        className: "col-md-12",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
           onSubmit: submitForm,
           encType: "multipart/form-data",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-            "class": "form-group",
+            className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-              "for": "exampleInputAge",
+              htmlFor: "exampleInputAge",
               children: "Slider Title"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
               type: "text",
@@ -11434,9 +11445,9 @@ var SliderEdit = function SliderEdit() {
               }
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-            "class": "form-group",
+            className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-              "for": "exampleInputAge",
+              htmlFor: "exampleInputAge",
               children: "Slider Header"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
               type: "text",
@@ -11446,9 +11457,9 @@ var SliderEdit = function SliderEdit() {
               }
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-            "class": "form-group",
+            className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-              "for": "exampleInputAge",
+              htmlFor: "exampleInputAge",
               children: "Slider Image"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
               type: "file",
