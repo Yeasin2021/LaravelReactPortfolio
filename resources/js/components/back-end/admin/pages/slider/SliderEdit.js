@@ -65,23 +65,6 @@ const SliderEdit = () => {
           </div>
       )
 
-
-
-
-
-
-
-    //   return (
-    //     <div>
-
-    //         <form onSubmit={submitForm} style={ formStyleOne } encType="multipart/form-data">
-    //             <input type="file" name="image" onChange={imageHandaler}/>
-    //             {console.log(image)}
-    //             <button type='submit'>Submit</button>
-    //         </form>
-
-    //     </div>
-    //   )
 }
 
 export default SliderEdit

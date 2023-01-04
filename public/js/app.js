@@ -11448,20 +11448,7 @@ var SliderEdit = function SliderEdit() {
       })
     })]
   });
-
-  //   return (
-  //     <div>
-
-  //         <form onSubmit={submitForm} style={ formStyleOne } encType="multipart/form-data">
-  //             <input type="file" name="image" onChange={imageHandaler}/>
-  //             {console.log(image)}
-  //             <button type='submit'>Submit</button>
-  //         </form>
-
-  //     </div>
-  //   )
 };
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SliderEdit);
 
 /***/ }),
