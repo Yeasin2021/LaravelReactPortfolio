@@ -3,19 +3,19 @@ import React,{useState,useEffect} from 'react';
 
 const Header = () => {
   const [items,setItems] = useState(null);
-  useEffect(()=>{
-    fetch("http://localhost:8081/header")
-    .then((res)=>{return res.json()})
-    .then(data => setItems(data))
-  },[]);
-
-// useEffect(()=>{
-//     const dataShow = async () =>{
-//         const data_response = await axios.get('slider')
-//         .then((result)=>setItems(result.data.slider));
-//     }
-//     dataShow();
+//   useEffect(()=>{
+//     fetch("http://localhost:8081/header")
+//     .then((res)=>{return res.json()})
+//     .then(data => setItems(data))
 //   },[]);
+
+useEffect(()=>{
+    const dataShow = async () =>{
+        const data_response = await axios.get('slider')
+        .then((result)=>setItems(result.data.slider));
+    }
+    dataShow();
+  },[]);
   return (
     <div>
       <div className='header'>
@@ -56,13 +56,11 @@ const Header = () => {
   {
       items && items.map((item,index) => {
         return(
-          <div className="hero"  style={{ backgroundImage: `url(${(item.image)})` }} key={index}>
+          <div className="hero"  style={{ backgroundImage: `url(back-end/img/slider/${(item.slider_image)})` }} key={index}>
           <div className="hero-container">
-            <h1>{item.title}</h1>
-            <h2>{item.description}</h2>
-            {/* <h1>{item.slider_title}</h1>
-            <h2>{item.slider_header}</h2> */}
-            <a href="#about" className="btn-scroll scrollto" title="Scroll Down"><i className={item.icon}></i></a>
+            <h1>{item.slider_title}</h1>
+            <h2>{item.slider_header}</h2>
+            <a href="#about" className="btn-scroll scrollto" title="Scroll Down"><i className="bi bi-chevron-down"></i></a>
           </div>
         </div>
         )
