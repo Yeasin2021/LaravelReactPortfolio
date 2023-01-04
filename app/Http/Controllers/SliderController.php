@@ -40,9 +40,6 @@ class SliderController extends Controller
     public function store(Request $request)
     {
 
-
-
-
         $images = $request->file('slider_image');
         // dd($images);
         if($images){
@@ -55,10 +52,6 @@ class SliderController extends Controller
             'slider_header' => $request->slider_header,
         ]);
         return response()->json(['status'=>200,'Image'=>$Image]);
-
-
-
-
 
     }
 

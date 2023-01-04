@@ -104,7 +104,9 @@ const Slider = () => {
                               <th scope="row">{item.id}</th>
                               <td>{item.slider_title}</td>
                               <td>{item.slider_header}</td>
-                              <td>{item.slider_image}</td>
+                              <td>
+                                <img width="50px" src={`back-end/img/slider/${item.slider_image}`} />
+                              </td>
                               <td className='d-flex'>
                                 <Link to={`/admin-slider/${item.id}`}>
                                   <button className='btn btn-primary' onClick={editSound}>E</button>
