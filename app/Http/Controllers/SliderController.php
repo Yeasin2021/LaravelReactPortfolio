@@ -99,8 +99,8 @@ class SliderController extends Controller
 
 
         $Image->update([
-            'slider_title' => 'Laura Thomson',
-            'slider_header' => 'I M A PROFESSIONAL PHOTOGRAPHER IN NEW YORK CITY',
+            'slider_title' => $request->slider_title,
+            'slider_header' => $request->slider_header,
             'slider_image' => $fileName,
         ]);
 

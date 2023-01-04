@@ -11364,31 +11364,18 @@ var SliderEdit = function SliderEdit() {
   //     navigate("/admin-slider");
   // }
 
-  // return (
-  //     <div className="container">
-  //         <ToastContainer />
-  //         <div className="row" style={ formStyleOne }>
-  //           <div className="col-md-8">
-  //             <form onSubmit={updateUser} encType="multipart/form-data">
-  //                 <div class="form-group">
-  //                   <label for="exampleInputAge">Slider Image</label>
-  //                   <input type="file" name="slider_image" className="mb-4" onChange={imageHandaler}/>
-  //                   {console.log(slider_image)}
-
-  //                 </div>
-
-  //                 <button type="submit" className="btn btn-primary mt-2">Submit</button>
-  //               </form>
-  //           </div>
-
-  //         </div>
-  //       </div>
-  //   )
-
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState2 = _slicedToArray(_useState, 2),
-    image = _useState2[0],
-    setImage = _useState2[1];
+    title = _useState2[0],
+    setTitle = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState4 = _slicedToArray(_useState3, 2),
+    header = _useState4[0],
+    setHeader = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState6 = _slicedToArray(_useState5, 2),
+    image = _useState6[0],
+    setImage = _useState6[1];
   var imageHandaler = function imageHandaler(e) {
     console.log(e.target.files);
     setImage(e.target.files[0]);
@@ -11402,15 +11389,17 @@ var SliderEdit = function SliderEdit() {
             case 0:
               e.preventDefault();
               formData = new FormData();
+              formData.append('slider_title', title);
+              formData.append('slider_header', header);
               formData.append('image', image);
               console.log(formData);
-              _context.next = 6;
+              _context.next = 8;
               return axios__WEBPACK_IMPORTED_MODULE_1___default().post("/slider-update/".concat(id), formData);
-            case 6:
-              (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data added Successfully 😲");
+            case 8:
+              (0,react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast)("Data Updated Successfully 😲");
               audio.play();
-              navigate("/admin-slider-add");
-            case 9:
+              navigate("/admin-slider");
+            case 11:
             case "end":
               return _context.stop();
           }
@@ -11421,22 +11410,74 @@ var SliderEdit = function SliderEdit() {
       return _ref.apply(this, arguments);
     };
   }();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
-      onSubmit: submitForm,
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    className: "container",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_2__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "row",
       style: formStyleOne,
-      encType: "multipart/form-data",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
-        type: "file",
-        name: "image",
-        onChange: imageHandaler
-      }), console.log(image), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
-        type: "submit",
-        children: "Submit"
-      })]
-    })
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "col-md-8",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
+          onSubmit: submitForm,
+          encType: "multipart/form-data",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            "class": "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+              "for": "exampleInputAge",
+              children: "Slider Title"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+              type: "text",
+              name: "slider_title",
+              onChange: function onChange(e) {
+                return setTitle(e.target.value);
+              }
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            "class": "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+              "for": "exampleInputAge",
+              children: "Slider Header"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+              type: "text",
+              name: "slider_header",
+              onChange: function onChange(e) {
+                return setHeader(e.target.value);
+              }
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            "class": "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+              "for": "exampleInputAge",
+              children: "Slider Image"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+              type: "file",
+              name: "image",
+              className: "mb-4",
+              onChange: imageHandaler
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+            type: "submit",
+            className: "btn btn-primary mt-2",
+            children: "Submit"
+          })]
+        })
+      })
+    })]
   });
+
+  //   return (
+  //     <div>
+
+  //         <form onSubmit={submitForm} style={ formStyleOne } encType="multipart/form-data">
+  //             <input type="file" name="image" onChange={imageHandaler}/>
+  //             {console.log(image)}
+  //             <button type='submit'>Submit</button>
+  //         </form>
+
+  //     </div>
+  //   )
 };
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SliderEdit);
 
 /***/ }),
