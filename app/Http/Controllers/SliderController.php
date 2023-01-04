@@ -97,13 +97,6 @@ class SliderController extends Controller
 
         $Image = Slider::find($id);
 
-        // $images = $request->hasFile('image');
-        // // dd($request);
-        // // $fileName ="";
-
-        //     $fileName = time().'.'.$images->getClientOriginalExtension();
-        //     $images->move(public_path('image/comics_image'),$fileName);
-
         $images = $request->file('image');
         // dd($images);
         if($images){
