@@ -14,7 +14,8 @@ const SliderEdit = () => {
       }
 
         const {id} = useParams();
-    //     const navigate = useNavigate();
+        const navigate = useNavigate();
+        const audio = new Audio(Music);
 
     //     const [slider_image,setImage] = useState(null);
     //     const imageHandaler = (e) =>{

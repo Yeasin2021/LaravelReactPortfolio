@@ -11343,7 +11343,8 @@ var SliderEdit = function SliderEdit() {
   };
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useParams)(),
     id = _useParams.id;
-  //     const navigate = useNavigate();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useNavigate)();
+  var audio = new Audio(_sound_add1_wav__WEBPACK_IMPORTED_MODULE_4__["default"]);
 
   //     const [slider_image,setImage] = useState(null);
   //     const imageHandaler = (e) =>{
