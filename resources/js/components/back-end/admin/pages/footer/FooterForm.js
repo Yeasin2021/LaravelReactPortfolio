@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 const FooterForm = () => {
 
@@ -6,6 +6,11 @@ const formStyleOne = {
     marginLeft: '300px',
     marginTop: '4%',
     }
+
+const [file,setFile] = useState();
+const imagePreviewFunction = (e) =>{
+    setFile(URL.createObjectURL(e.target.files[0]));
+}
 
   return (
     <div>
@@ -35,7 +40,8 @@ const formStyleOne = {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputImage">Footer Back Ground Image</label>
-                                    <input type="file" className="form-control" id="exampleInputImage" placeholder="Footer Image" name="image"/>
+                                    <input type="file" className="form-control" id="exampleInputImage" placeholder="Footer Image" name="image" onChange={imagePreviewFunction}/>
+                                    <img src={file} />
                                 </div>
                             </div>
                         </div>
