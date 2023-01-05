@@ -9962,6 +9962,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -9979,92 +9980,146 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var FooterForm = function FooterForm() {
   var formStyleOne = {
     marginLeft: '300px',
     marginTop: '4%'
   };
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
+    id = _useParams.id;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      title: "",
+      header: "",
+      copy_right: "",
+      developer_name: "",
+      icon_one: "",
+      icon_two: "",
+      icon_three: "",
+      icon_four: "",
+      icon_five: ""
+      // image:""
+    }),
     _useState2 = _slicedToArray(_useState, 2),
-    file = _useState2[0],
-    setFile = _useState2[1];
-  var imagePreviewFunction = function imagePreviewFunction(e) {
-    setFile(URL.createObjectURL(e.target.files[0]));
-  };
+    input = _useState2[0],
+    setInput = _useState2[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    try {
+      var getSingleRecord = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+          var response;
+          return _regeneratorRuntime().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return axios__WEBPACK_IMPORTED_MODULE_1___default().get("/footer/".concat(id, "/edit"));
+                case 2:
+                  response = _context.sent;
+                  console.log(response.data.edit);
+                  setInput(response.data.edit);
+                case 5:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+        return function getSingleRecord() {
+          return _ref.apply(this, arguments);
+        };
+      }();
+      getSingleRecord();
+    } catch (error) {
+      console.log(error);
+    }
+  }, [id]);
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState4 = _slicedToArray(_useState3, 2),
-    iconOne = _useState4[0],
-    setIconOne = _useState4[1];
+    file = _useState4[0],
+    setFile = _useState4[1];
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState6 = _slicedToArray(_useState5, 2),
-    iconTwo = _useState6[0],
-    setIconTwo = _useState6[1];
+    image = _useState6[0],
+    setImage = _useState6[1];
+  var imagePreviewFunction = function imagePreviewFunction(e) {
+    setFile(URL.createObjectURL(e.target.files[0]));
+    setImage(e.target.files[0]);
+  };
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState8 = _slicedToArray(_useState7, 2),
-    iconThree = _useState8[0],
-    setIconThree = _useState8[1];
+    iconOne = _useState8[0],
+    setIconOne = _useState8[1];
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState10 = _slicedToArray(_useState9, 2),
-    iconFour = _useState10[0],
-    setIconFour = _useState10[1];
+    iconTwo = _useState10[0],
+    setIconTwo = _useState10[1];
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState12 = _slicedToArray(_useState11, 2),
-    iconFive = _useState12[0],
-    setIconFive = _useState12[1];
+    iconThree = _useState12[0],
+    setIconThree = _useState12[1];
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState14 = _slicedToArray(_useState13, 2),
-    title = _useState14[0],
-    setTitle = _useState14[1];
+    iconFour = _useState14[0],
+    setIconFour = _useState14[1];
   var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState16 = _slicedToArray(_useState15, 2),
-    header = _useState16[0],
-    setHeader = _useState16[1];
+    iconFive = _useState16[0],
+    setIconFive = _useState16[1];
   var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState18 = _slicedToArray(_useState17, 2),
-    copyRight = _useState18[0],
-    setCopyRight = _useState18[1];
+    title = _useState18[0],
+    setTitle = _useState18[1];
   var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState20 = _slicedToArray(_useState19, 2),
-    developerName = _useState20[0],
-    setDeveloperName = _useState20[1];
+    header = _useState20[0],
+    setHeader = _useState20[1];
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState22 = _slicedToArray(_useState21, 2),
+    copyRight = _useState22[0],
+    setCopyRight = _useState22[1];
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState24 = _slicedToArray(_useState23, 2),
+    developerName = _useState24[0],
+    setDeveloperName = _useState24[1];
   var onSubmitForm = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
       var formData;
-      return _regeneratorRuntime().wrap(function _callee$(_context) {
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) {
-          switch (_context.prev = _context.next) {
+          switch (_context2.prev = _context2.next) {
             case 0:
               e.preventDefault();
-              _context.prev = 1;
+              _context2.prev = 1;
               formData = new FormData();
               formData.append('title', title);
               formData.append('header', header);
               formData.append('copyRight', copyRight);
               formData.append('developerName', developerName);
-              formData.append('image', file);
+              formData.append('image', image);
               formData.append('iconOne', iconOne);
               formData.append('iconTwo', iconTwo);
               formData.append('iconThree', iconThree);
               formData.append('iconFour', iconFour);
               formData.append('iconFive', iconFive);
-              _context.next = 15;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default().post('footer', formData);
+              _context2.next = 15;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default().put("/footer/".concat(id), formData);
             case 15:
-              _context.next = 20;
+              _context2.next = 20;
               break;
             case 17:
-              _context.prev = 17;
-              _context.t0 = _context["catch"](1);
-              console.log(_context.t0.message);
+              _context2.prev = 17;
+              _context2.t0 = _context2["catch"](1);
+              console.log(_context2.t0.message);
             case 20:
             case "end":
-              return _context.stop();
+              return _context2.stop();
           }
         }
-      }, _callee, null, [[1, 17]]);
+      }, _callee2, null, [[1, 17]]);
     }));
     return function onSubmitForm(_x2) {
-      return _ref.apply(this, arguments);
+      return _ref2.apply(this, arguments);
     };
   }();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -10075,6 +10130,7 @@ var FooterForm = function FooterForm() {
         style: formStyleOne,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
           onSubmit: onSubmitForm,
+          encType: "multipart/form-data",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "row",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -10096,7 +10152,8 @@ var FooterForm = function FooterForm() {
                       name: "title",
                       onChange: function onChange(e) {
                         return setTitle(e.target.value);
-                      }
+                      },
+                      value: input && input.title
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                     className: "form-group",
@@ -10111,7 +10168,8 @@ var FooterForm = function FooterForm() {
                       name: "header",
                       onChange: function onChange(e) {
                         return setHeader(e.target.value);
-                      }
+                      },
+                      value: input && input.header
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                     className: "form-group",
@@ -10126,7 +10184,8 @@ var FooterForm = function FooterForm() {
                       name: "copyRight",
                       onChange: function onChange(e) {
                         return setCopyRight(e.target.value);
-                      }
+                      },
+                      value: input && input.copy_right
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                     className: "form-group",
@@ -10141,7 +10200,8 @@ var FooterForm = function FooterForm() {
                       name: "developerName",
                       onChange: function onChange(e) {
                         return setDeveloperName(e.target.value);
-                      }
+                      },
+                      value: input && input.developer_name
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                     className: "form-group",
@@ -10181,7 +10241,8 @@ var FooterForm = function FooterForm() {
                       name: "icon_one",
                       onChange: function onChange(e) {
                         return setIconOne(e.target.value);
-                      }
+                      },
+                      value: input && input.icon_one
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
                       className: iconOne,
                       height: "15px",
@@ -10200,7 +10261,8 @@ var FooterForm = function FooterForm() {
                       name: "icon_two",
                       onChange: function onChange(e) {
                         return setIconTwo(e.target.value);
-                      }
+                      },
+                      value: input && input.icon_two
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
                       className: iconTwo,
                       height: "15px",
@@ -10219,7 +10281,8 @@ var FooterForm = function FooterForm() {
                       name: "icon_three",
                       onChange: function onChange(e) {
                         return setIconThree(e.target.value);
-                      }
+                      },
+                      value: input && input.icon_three
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
                       className: iconThree,
                       height: "15px",
@@ -10238,7 +10301,8 @@ var FooterForm = function FooterForm() {
                       name: "icon_four",
                       onChange: function onChange(e) {
                         return setIconFour(e.target.value);
-                      }
+                      },
+                      value: input && input.icon_four
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
                       className: iconFour,
                       height: "15px",
@@ -10257,7 +10321,8 @@ var FooterForm = function FooterForm() {
                       name: "icon_five",
                       onChange: function onChange(e) {
                         return setIconFive(e.target.value);
-                      }
+                      },
+                      value: input && input.icon_five
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
                       className: iconFive,
                       height: "15px",

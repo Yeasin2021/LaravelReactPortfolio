@@ -35,7 +35,25 @@ class FooterController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
+        $images = $request->file('image');
+        if($images){
+            $fileName = time().'.'.$images->extension();
+            $images->move(public_path('back-end/img/footer'),$fileName);
+        }
+        $footer = Footer::create([
+            'title' => $request->title,
+            'header' => $request->header,
+            'copy_right' => $request->copyRight,
+            'developer_name' => $request->developerName,
+            'icon_one' => $request->iconOne,
+            'icon_two' => $request->iconTwo,
+            'icon_three' => $request->iconThree,
+            'icon_four' => $request->iconFour,
+            'icon_five' => $request->iconFive,
+            'image' => $fileName
+        ]);
+        return response()->json(['status'=>200,'footer'=>$footer]);
     }
 
     /**
@@ -55,9 +73,10 @@ class FooterController extends Controller
      * @param  \App\Models\Footer  $footer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Footer $footer)
+    public function edit()
     {
-        //
+        $edit = Footer::find(1);
+        return response()->json(['status'=>200,'edit'=>$edit]);
     }
 
     /**
@@ -67,9 +86,28 @@ class FooterController extends Controller
      * @param  \App\Models\Footer  $footer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Footer $footer)
+    public function update(Request $request, Footer $footer, $id)
     {
-        //
+        // dd($request->all());
+        $footerUpdate = Footer::find($id);
+        $images = $request->file('image');
+        if($images){
+            $fileName = time().'.'.$images->extension();
+            $images->move(public_path('back-end/img/footer'),$fileName);
+        }
+        $footer = $footerUpdate->update([
+            'title' => $request->title,
+            'header' => $request->header,
+            'copy_right' => $request->copyRight,
+            'developer_name' => $request->developerName,
+            'icon_one' => $request->iconOne,
+            'icon_two' => $request->iconTwo,
+            'icon_three' => $request->iconThree,
+            'icon_four' => $request->iconFour,
+            'icon_five' => $request->iconFive,
+            'image' => $fileName
+        ]);
+        return response()->json(['status'=>200,'footer'=>$footer]);
     }
 
     /**
