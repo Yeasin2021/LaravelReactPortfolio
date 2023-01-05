@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Form } from 'react-router-dom';
+import axios from 'axios';
 
 const FooterForm = () => {
 
@@ -38,7 +38,7 @@ const onSubmitForm = async(e) =>{
         formData.append('iconThree',iconThree);
         formData.append('iconFour',iconFour);
         formData.append('iconFive',iconFive);
-        alert(formData);
+        await axios.post('footer',formData);
     }catch(error){
         console.log(error.message);
     }
