@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { Form } from 'react-router-dom';
 
 const FooterForm = () => {
 
@@ -17,8 +18,31 @@ const [iconTwo,setIconTwo] = useState();
 const [iconThree,setIconThree] = useState();
 const [iconFour,setIconFour] = useState();
 const [iconFive,setIconFive] = useState();
-const iconHandaler = (e) =>{
-    setIcon(e.target.value);
+
+const [title,setTitle] = useState();
+const [header,setHeader] = useState();
+const [copyRight,setCopyRight] = useState();
+const [developerName,setDeveloperName] = useState();
+
+const onSubmitForm = async(e) =>{
+    e.preventDefault();
+    try{
+        const formData = new FormData();
+        formData.append('title',title);
+        formData.append('header',header);
+        formData.append('copyRight',copyRight);
+        formData.append('developerName',developerName);
+        formData.append('image',file);
+        formData.append('iconOne',iconOne);
+        formData.append('iconTwo',iconTwo);
+        formData.append('iconThree',iconThree);
+        formData.append('iconFour',iconFour);
+        formData.append('iconFive',iconFive);
+        alert(formData);
+    }catch(error){
+        console.log(error.message);
+    }
+
 }
 
   return (
@@ -26,26 +50,26 @@ const iconHandaler = (e) =>{
         <div className="container">
             <div className="row" style={ formStyleOne }>
 
-                <form>
+                <form onSubmit={onSubmitForm}>
                     <div className="row">
                     <div className="col">
                         <div className="card">
                             <div className="card-body">
                                 <div className="form-group">
                                     <label htmlFor="exampleInputTitle">Footer Title</label>
-                                    <input type="text" className="form-control" id="exampleInputTitle" placeholder="title" name='title'/>
+                                    <input type="text" className="form-control" id="exampleInputTitle" placeholder="title" name='title' onChange={(e)=>setTitle(e.target.value)}/>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputHeader">Footer Header</label>
-                                    <input type="text" className="form-control" id="exampleInputHeader" placeholder="header" name='header'/>
+                                    <input type="text" className="form-control" id="exampleInputHeader" placeholder="header" name='header' onChange={(e)=>setHeader(e.target.value)}/>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputCopyRight">Footer CopyRight</label>
-                                    <input type="text" className="form-control" id="exampleInputCopyRight" placeholder="Copy Right" name='copy_right'/>
+                                    <input type="text" className="form-control" id="exampleInputCopyRight" placeholder="Copy Right" name='copyRight' onChange={(e)=>setCopyRight(e.target.value)}/>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputDesign">Desige By</label>
-                                    <input type="text" className="form-control" id="exampleInputDesign" placeholder="Desigenr's Name" name="developer_name"/>
+                                    <input type="text" className="form-control" id="exampleInputDesign" placeholder="Desigenr's Name" name="developerName" onChange={(e)=>setDeveloperName(e.target.value)}/>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputImage">Footer Back Ground Image</label>

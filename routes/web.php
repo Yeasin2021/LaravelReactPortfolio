@@ -6,6 +6,7 @@ use App\Http\Controllers\PricingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\FooterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,8 @@ Route::resource('message', MessageController::class);
 Route::resource('slider', SliderController::class);
 
 Route::post('slider-update/{id}',[SliderController::class,'update']);
+
+Route::resource('footer', FooterController::class);
 
 
 // Route::get('image',function(){
