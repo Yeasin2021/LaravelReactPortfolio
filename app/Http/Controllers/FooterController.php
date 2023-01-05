@@ -73,9 +73,9 @@ class FooterController extends Controller
      * @param  \App\Models\Footer  $footer
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        $edit = Footer::find(1);
+        $edit = Footer::find($id);
         return response()->json(['status'=>200,'edit'=>$edit]);
     }
 
@@ -86,25 +86,34 @@ class FooterController extends Controller
      * @param  \App\Models\Footer  $footer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Footer $footer, $id)
+    public function update(Request $request,$id)
     {
         // dd($request->all());
         $footerUpdate = Footer::find($id);
         $images = $request->file('image');
+
         if($images){
             $fileName = time().'.'.$images->extension();
             $images->move(public_path('back-end/img/footer'),$fileName);
+            return $fileName;
         }
+
+        // if($images !== null && $images !== undefined) {
+        //     // access object properties here
+        //     $fileName = time().'.'.$images->extension();
+        //     $images->move(public_path('back-end/img/footer'),$fileName);
+        //   }
+
         $footer = $footerUpdate->update([
             'title' => $request->title,
             'header' => $request->header,
-            'copy_right' => $request->copyRight,
-            'developer_name' => $request->developerName,
-            'icon_one' => $request->iconOne,
-            'icon_two' => $request->iconTwo,
-            'icon_three' => $request->iconThree,
-            'icon_four' => $request->iconFour,
-            'icon_five' => $request->iconFive,
+            'copy_right' => $request->copy_right,
+            'developer_name' => $request->developer_name,
+            'icon_one' => $request->icon_one,
+            'icon_two' => $request->icon_two,
+            'icon_three' => $request->icon_three,
+            'icon_four' => $request->icon_four,
+            'icon_five' => $request->icon_five,
             'image' => $fileName
         ]);
         return response()->json(['status'=>200,'footer'=>$footer]);

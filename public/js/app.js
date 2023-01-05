@@ -9137,7 +9137,7 @@ function WebBack() {
             path: "/admin-slider-add",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_back_end_admin_pages_slider_SliderAdd__WEBPACK_IMPORTED_MODULE_13__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
-            path: "/admin-footer-form",
+            path: "/admin-footer-form/:id",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_back_end_admin_pages_footer_FooterForm__WEBPACK_IMPORTED_MODULE_14__["default"], {})
           })]
         })]
@@ -10103,7 +10103,7 @@ var FooterForm = function FooterForm() {
               formData.append('iconFour', iconFour);
               formData.append('iconFive', iconFive);
               _context2.next = 15;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default().put("/footer/".concat(id), formData);
+              return axios__WEBPACK_IMPORTED_MODULE_1___default().post("/footer-update/".concat(id), formData);
             case 15:
               _context2.next = 20;
               break;
@@ -10148,12 +10148,10 @@ var FooterForm = function FooterForm() {
                       type: "text",
                       className: "form-control",
                       id: "exampleInputTitle",
-                      placeholder: "title",
                       name: "title",
                       onChange: function onChange(e) {
-                        return setTitle(e.target.value);
-                      },
-                      value: input && input.title
+                        return setIconOne(e.target.value);
+                      }
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                     className: "form-group",
@@ -10164,12 +10162,10 @@ var FooterForm = function FooterForm() {
                       type: "text",
                       className: "form-control",
                       id: "exampleInputHeader",
-                      placeholder: "header",
                       name: "header",
                       onChange: function onChange(e) {
                         return setHeader(e.target.value);
-                      },
-                      value: input && input.header
+                      }
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                     className: "form-group",
@@ -10180,12 +10176,10 @@ var FooterForm = function FooterForm() {
                       type: "text",
                       className: "form-control",
                       id: "exampleInputCopyRight",
-                      placeholder: "Copy Right",
-                      name: "copyRight",
+                      name: "copy_right",
                       onChange: function onChange(e) {
                         return setCopyRight(e.target.value);
-                      },
-                      value: input && input.copy_right
+                      }
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                     className: "form-group",
@@ -10196,12 +10190,10 @@ var FooterForm = function FooterForm() {
                       type: "text",
                       className: "form-control",
                       id: "exampleInputDesign",
-                      placeholder: "Desigenr's Name",
-                      name: "developerName",
+                      name: "developer_name",
                       onChange: function onChange(e) {
                         return setDeveloperName(e.target.value);
-                      },
-                      value: input && input.developer_name
+                      }
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                     className: "form-group",
@@ -10212,7 +10204,6 @@ var FooterForm = function FooterForm() {
                       type: "file",
                       className: "form-control",
                       id: "exampleInputImage",
-                      placeholder: "Footer Image",
                       name: "image",
                       onChange: imagePreviewFunction
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
@@ -10237,12 +10228,10 @@ var FooterForm = function FooterForm() {
                       type: "text",
                       className: "form-control",
                       id: "exampleInputIcon1",
-                      placeholder: "Icon One",
                       name: "icon_one",
                       onChange: function onChange(e) {
                         return setIconOne(e.target.value);
-                      },
-                      value: input && input.icon_one
+                      }
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
                       className: iconOne,
                       height: "15px",
@@ -10257,12 +10246,10 @@ var FooterForm = function FooterForm() {
                       type: "text",
                       className: "form-control",
                       id: "exampleInputIcon2",
-                      placeholder: "Icon Two",
                       name: "icon_two",
                       onChange: function onChange(e) {
                         return setIconTwo(e.target.value);
-                      },
-                      value: input && input.icon_two
+                      }
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
                       className: iconTwo,
                       height: "15px",
@@ -10277,12 +10264,10 @@ var FooterForm = function FooterForm() {
                       type: "text",
                       className: "form-control",
                       id: "exampleInputIcon3",
-                      placeholder: "Icon Three",
                       name: "icon_three",
                       onChange: function onChange(e) {
                         return setIconThree(e.target.value);
-                      },
-                      value: input && input.icon_three
+                      }
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
                       className: iconThree,
                       height: "15px",
@@ -10297,12 +10282,10 @@ var FooterForm = function FooterForm() {
                       type: "text",
                       className: "form-control",
                       id: "exampleInputIcon4",
-                      placeholder: "Icon Four",
                       name: "icon_four",
                       onChange: function onChange(e) {
                         return setIconFour(e.target.value);
-                      },
-                      value: input && input.icon_four
+                      }
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
                       className: iconFour,
                       height: "15px",
@@ -10317,12 +10300,10 @@ var FooterForm = function FooterForm() {
                       type: "text",
                       className: "form-control",
                       id: "exampleInputIcon5",
-                      placeholder: "Icon Five",
                       name: "icon_five",
                       onChange: function onChange(e) {
                         return setIconFive(e.target.value);
-                      },
-                      value: input && input.icon_five
+                      }
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
                       className: iconFive,
                       height: "15px",

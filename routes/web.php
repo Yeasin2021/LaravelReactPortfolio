@@ -38,6 +38,8 @@ Route::post('slider-update/{id}',[SliderController::class,'update']);
 
 Route::resource('footer', FooterController::class);
 
+Route::post('footer-update/{id}',[FooterController::class,'update']);
+
 
 // Route::get('image',function(){
 //     return view('image');
