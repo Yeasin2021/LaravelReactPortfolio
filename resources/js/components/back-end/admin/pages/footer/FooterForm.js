@@ -1,10 +1,16 @@
 import React from 'react'
 
 const FooterForm = () => {
+
+const formStyleOne = {
+    marginLeft: '300px',
+    marginTop: '4%',
+    }
+
   return (
     <div>
         <div className="container">
-            <div className="row">
+            <div className="row" style={ formStyleOne }>
                 <div className="col-sm">
                     One of three columns
                 </div>
