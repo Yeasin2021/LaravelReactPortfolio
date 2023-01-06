@@ -63,9 +63,11 @@ class FooterController extends Controller
      * @param  \App\Models\Footer  $footer
      * @return \Illuminate\Http\Response
      */
-    public function show(Footer $footer)
+    public function show()
     {
-        //
+        // $getImage = Footer::first();
+        // return response()->json(['status'=>200,'getImage'=>$getImage]);
+
     }
 
     /**

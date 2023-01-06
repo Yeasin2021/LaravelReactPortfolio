@@ -18,11 +18,11 @@ const Footer = () => {
   },[]);
   return (
     <div>
-      {/* style={{ backgroundImage: `url(${(Items[0].image)})` */}
-      <footer className='footer' style={{ backgroundImage: "url('frontend/assets/img/footer-bg.jpg')" }}>
+    {
+    items && items.map((item,index)=>(
+      <footer className='footer' style={{ backgroundImage: `url(back-end/img/footer/${(item.image)})` }}>
       <div className="container">
-      {
-        items && items.map((item,index)=>(
+
             <div key={index}>
               <h3>{item.title}</h3>
               <p>{item.header}</p>
@@ -39,14 +39,13 @@ const Footer = () => {
               </div>
               <div className="credits">
 
-              {item.developer_name} 
+              {item.developer_name}
               </div>
             </div>
+            </div>
+        </footer>
         ))
-      }
-
-    </div>
-  </footer>
+    }
     </div>
   )
 }
