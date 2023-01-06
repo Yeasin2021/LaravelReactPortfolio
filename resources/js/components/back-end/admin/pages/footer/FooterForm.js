@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import Music from '../sound/add1.wav';
 
 
 const FooterForm = () => {
@@ -62,6 +64,7 @@ const [developerName,setDeveloperName] = useState();
 const onSubmitForm = async(e) =>{
     e.preventDefault();
     try{
+        const audio = new Audio(Music);
         const formData = new FormData();
         formData.append('title',title);
         formData.append('header',header);
@@ -74,6 +77,8 @@ const onSubmitForm = async(e) =>{
         formData.append('iconFour',iconFour);
         formData.append('iconFive',iconFive);
         await axios.post(`/footer-update/${id}`,formData);
+        toast.success("Data Updated Successfully 😲 ")
+        audio.play();
         // await axios.post(`/footer-update/${id}`,input);
     }catch(error){
         console.log(error.message);
@@ -93,7 +98,7 @@ const onSubmitForm = async(e) =>{
                             <div className="card-body">
                                 <div className="form-group">
                                     <label htmlFor="exampleInputTitle">Footer Title</label>
-                                    <input type="text" className="form-control" id="exampleInputTitle"  name='title' onChange={(e)=>setIconOne(e.target.value)} />
+                                    <input type="text" className="form-control" id="exampleInputTitle"  name='title' onChange={(e)=>setTitle(e.target.value)} />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputHeader">Footer Header</label>
@@ -101,11 +106,11 @@ const onSubmitForm = async(e) =>{
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputCopyRight">Footer CopyRight</label>
-                                    <input type="text" className="form-control" id="exampleInputCopyRight"  name='copy_right' onChange={(e)=>setCopyRight(e.target.value)} />
+                                    <input type="text" className="form-control" id="exampleInputCopyRight"  name='copyRight' onChange={(e)=>setCopyRight(e.target.value)} />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputDesign">Desige By</label>
-                                    <input type="text" className="form-control" id="exampleInputDesign"  name="developer_name" onChange={(e)=>setDeveloperName(e.target.value)} />
+                                    <input type="text" className="form-control" id="exampleInputDesign"  name="developerName" onChange={(e)=>setDeveloperName(e.target.value)} />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputImage">Footer Back Ground Image</label>
@@ -120,27 +125,27 @@ const onSubmitForm = async(e) =>{
                             <div className="card-body">
                                 <div className="form-group">
                                     <label htmlFor="exampleInputIcon1">Footer Icon 1</label>
-                                    <input type="text" className="form-control" id="exampleInputIcon1"  name='icon_one' onChange={(e)=>setIconOne(e.target.value)} />
+                                    <input type="text" className="form-control" id="exampleInputIcon1"  name='iconOne' onChange={(e)=>setIconOne(e.target.value)} />
                                     <i className={iconOne} height="15px" width="15px"></i>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputIcon2">Footer Icon 2</label>
-                                    <input type="text" className="form-control" id="exampleInputIcon2"  name='icon_two'  onChange={(e)=>setIconTwo(e.target.value)} />
+                                    <input type="text" className="form-control" id="exampleInputIcon2"  name='iconTwo'  onChange={(e)=>setIconTwo(e.target.value)} />
                                     <i className={iconTwo} height="15px" width="15px"></i>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputIcon3">Footer Icon 3</label>
-                                    <input type="text" className="form-control" id="exampleInputIcon3"  name='icon_three' onChange={(e)=>setIconThree(e.target.value)} />
+                                    <input type="text" className="form-control" id="exampleInputIcon3"  name='iconThree' onChange={(e)=>setIconThree(e.target.value)} />
                                     <i className={iconThree} height="15px" width="15px"></i>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputIcon4">Footer Icon 4</label>
-                                    <input type="text" className="form-control" id="exampleInputIcon4"  name='icon_four' onChange={(e)=>setIconFour(e.target.value)} />
+                                    <input type="text" className="form-control" id="exampleInputIcon4"  name='iconFour' onChange={(e)=>setIconFour(e.target.value)} />
                                     <i className={iconFour} height="15px" width="15px"></i>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputIcon5">Footer Icon 5</label>
-                                    <input type="text" className="form-control" id="exampleInputIcon5"  name='icon_five' onChange={(e)=>setIconFive(e.target.value)} />
+                                    <input type="text" className="form-control" id="exampleInputIcon5"  name='iconFive' onChange={(e)=>setIconFive(e.target.value)} />
                                     <i className={iconFive} height="15px" width="15px"></i>
                                 </div>
                             </div>

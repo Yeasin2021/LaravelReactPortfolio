@@ -1,12 +1,20 @@
+import axios from 'axios';
 import React, {useState, useEffect} from 'react'
 // import Items from '../data/Footer.json'
 
 const Footer = () => {
   const [items,setItems] = useState(null);
+//   useEffect(()=>{
+//     fetch("http://localhost:8081/footer")
+//     .then(res => {return res.json()})
+//     .then(data => setItems(data))
+//   },[]);
   useEffect(()=>{
-    fetch("http://localhost:8081/footer")
-    .then(res => {return res.json()})
-    .then(data => setItems(data))
+    const dataShow = async () =>{
+        const data_response = await axios.get('footer')
+        .then((result)=>setItems(result.data.footer));
+    }
+    dataShow();
   },[]);
   return (
     <div>
@@ -16,22 +24,22 @@ const Footer = () => {
       {
         items && items.map((item,index)=>(
             <div key={index}>
-              <h3>{item.header}</h3>
-              <p>{item.title}</p>
+              <h3>{item.title}</h3>
+              <p>{item.header}</p>
               <div className='social-links'>
-                <a href="#" className="twitter"><i className={item.twitter}></i></a>
-                <a href="#" className="facebook"><i className={item.facebook}></i></a>
-                <a href="#" className="instagram"><i className={item.instagram}></i></a>
-                <a href="#" className="skype"><i className={item.skype}></i></a>
-                <a href="#" className="linkedin"><i className={item.linkedin}></i></a>
+                <a href="#" className="twitter"><i className={item.icon_one}></i></a>
+                <a href="#" className="facebook"><i className={item.icon_two}></i></a>
+                <a href="#" className="instagram"><i className={item.icon_three}></i></a>
+                <a href="#" className="skype"><i className={item.icon_four}></i></a>
+                <a href="#" className="linkedin"><i className={item.icon_five}></i></a>
               </div>
 
               <div className="copyright">
-                &copy; {item.copyrigt_one} <strong><span>{item.copyrigt_two}</span></strong>{item.copyrigt_three}
+                <strong><span>{item.copy_right}</span></strong>
               </div>
               <div className="credits">
 
-              {item.design_one} <a href="https://bootstrapmade.com/">{item.design_two}</a>
+              {item.developer_name} 
               </div>
             </div>
         ))
