@@ -15,6 +15,21 @@ class CreateAboutsTable extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
+            $table->string('header')->nullable();
+            $table->string('name')->nullable();
+            $table->integer('age')->nullable();
+            $table->string('website')->nullable();
+            $table->string('degree')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('city')->nullable();
+            $table->string('email')->nullable();
+            $table->string('job')->nullable();
+            $table->longText('descriptionOne')->nullable();
+            $table->longText('descriptionTwo')->nullable();
+            $table->longText('descriptionThree')->nullable();
+            $table->longText('descriptionFour')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

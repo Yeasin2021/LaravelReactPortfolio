@@ -9689,7 +9689,7 @@ var AboutForm = function AboutForm() {
               formData.append('descriptionFour', descriptionFour);
               formData.append('image', image);
               _context2.next = 21;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default().post("/footer-update/".concat(id), formData);
+              return axios__WEBPACK_IMPORTED_MODULE_1___default().post("/about/".concat(id), formData);
             case 21:
               react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast.success("Data Updated Successfully 😲 ");
               audio.play();
@@ -9824,6 +9824,20 @@ var AboutForm = function AboutForm() {
                       name: "degree",
                       onChange: function onChange(e) {
                         return setDegree(e.target.value);
+                      }
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                    className: "form-group",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+                      htmlFor: "exampleInputAge",
+                      children: "Age"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                      type: "text",
+                      className: "form-control",
+                      id: "exampleInputAge",
+                      name: "age",
+                      onChange: function onChange(e) {
+                        return setAge(e.target.value);
                       }
                     })]
                   })]

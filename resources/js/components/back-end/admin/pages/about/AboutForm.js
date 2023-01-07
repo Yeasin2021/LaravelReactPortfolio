@@ -91,7 +91,7 @@ const AboutForm = () => {
             formData.append('descriptionThree',descriptionThree);
             formData.append('descriptionFour',descriptionFour);
             formData.append('image',image);
-            await axios.post(`/footer-update/${id}`,formData);
+            await axios.post(`/about/${id}`,formData);
             toast.success("Data Updated Successfully 😲 ")
             audio.play();
             // await axios.post(`/footer-update/${id}`,input);
@@ -141,6 +141,10 @@ const AboutForm = () => {
                                     <div className="form-group">
                                         <label htmlFor="exampleInputDegree">Degree</label>
                                         <input type="text" className="form-control" id="exampleInputDegree"  name='degree' onChange={(e)=>setDegree(e.target.value)} />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputAge">Age</label>
+                                        <input type="text" className="form-control" id="exampleInputAge"  name='age' onChange={(e)=>setAge(e.target.value)} />
                                     </div>
                                 </div>
                             </div>
