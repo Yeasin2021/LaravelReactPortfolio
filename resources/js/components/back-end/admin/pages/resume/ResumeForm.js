@@ -67,7 +67,7 @@ const ResumeForm = () => {
     // const [email,setEmail] = useState();
     // const [city,setCity] = useState();
     // const [job,setJob] = useState();
-    // const [descriptionOne,setDescriptionOne] = useState();
+    const [descriptionOne,setDescriptionOne] = useState();
     // const [descriptionTwo,setDescriptionTwo] = useState();
     // const [descriptionThree,setDescriptionThree] = useState();
     // const [descriptionFour,setDescriptionFour] = useState();
@@ -88,7 +88,7 @@ const ResumeForm = () => {
             // formData.append('city',city);
             // formData.append('email',email);
             // formData.append('job',job);
-            // formData.append('descriptionOne',descriptionOne);
+            formData.append('descriptionOne',descriptionOne);
             // formData.append('descriptionTwo',descriptionTwo);
             // formData.append('descriptionThree',descriptionThree);
             // formData.append('descriptionFour',descriptionFour);
@@ -117,7 +117,7 @@ const ResumeForm = () => {
                                         <label htmlFor="exampleInputTitle">Title</label>
                                         <input type="text" className="form-control" id="exampleInputTitle"  name='title' onChange={(e)=>setTitle(e.target.value)} />
                                     </div>
-                                    <div className="form-group">
+                                    {/* <div className="form-group">
                                         <label htmlFor="exampleInputHeader">Header</label>
                                         <input type="text" className="form-control" id="exampleInputHeader"  name='header' onChange={(e)=>setHeader(e.target.value)} />
                                     </div>
@@ -128,7 +128,7 @@ const ResumeForm = () => {
                                     <div className="form-group">
                                         <label htmlFor="exampleInputWebsite">Website</label>
                                         <input type="text" className="form-control" id="exampleInputWebsite"  name="website" onChange={(e)=>setWebsite(e.target.value)} />
-                                    </div>
+                                    </div> */}
 
                                     {/* <div className="form-group">
                                         <label htmlFor="exampleInputCity">City</label>
@@ -158,8 +158,15 @@ const ResumeForm = () => {
 
                                     <div className="form-group">
                                         <label htmlFor="exampleInputdescriptionOne">DescriptionOne</label>
-                                        <input type="text" className="form-control" id="exampleInputdescriptionOne"  name='descriptionOne'  onChange={(e)=>setDescriptionOne(e.target.value)} />
+                                        {/* <input type="text" className="form-control" id="exampleInputdescriptionOne"  name='descriptionOne'  onChange={(e)=>setDescriptionOne(e.target.value)} /> */}
+                                        <CKEditor
+                                            editor={ClassicEditor}
+                                            onChange={ ( event, editor ) => {
+                                                setDescriptionOne(editor.getData())
+                                            } }
 
+                                        />
+                                        {/* <div>{descriptionOne}</div> */}
                                     </div>
 
                                     {/* <div className="form-group">

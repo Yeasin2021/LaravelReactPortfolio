@@ -8,6 +8,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ResumeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,10 @@ Route::post('footer-update/{id}',[FooterController::class,'update']);
 
 Route::resource('about', AboutController::class);
 Route::post('about/{id}', [AboutController::class,'update']);
+
+Route::resource('resume', ResumeController::class);
+Route::post('resume/{id}', [ResumeController::class,'update']);
+
 
 
 // Route::get('image',function(){
