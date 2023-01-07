@@ -17,14 +17,19 @@ const AboutForm = () => {
         {
             title:"",
             header:"",
-            copy_right:"",
-            developer_name:"",
-            icon_one:"",
-            icon_two:"",
-            icon_three:"",
-            icon_four:"",
-            icon_five:"",
-            // image:""
+            name:"",
+            age:"",
+            website:"",
+            degree:"",
+            phone:"",
+            email:"",
+            city:"",
+            job:"",
+            descriptionOne:"",
+            descriptionTwo:"",
+            descriptionThree:"",
+            descriptionFour:"",
+            image:"",
         }
     );
     useEffect(()=>{
@@ -50,16 +55,19 @@ const AboutForm = () => {
         setImage(e.target.files[0]);
     }
 
-    const [iconOne,setIconOne] = useState();
-    const [iconTwo,setIconTwo] = useState();
-    const [iconThree,setIconThree] = useState();
-    const [iconFour,setIconFour] = useState();
-    const [iconFive,setIconFive] = useState();
+    const [name,setName] = useState();
+    const [age,setAge] = useState();
+    const [website,setWebsite] = useState();
+    const [degree,setDegree] = useState();
+    const [phone,setPhone] = useState();
+    const [email,setEmail] = useState();
+    const [city,setCity] = useState();
+    const [job,setJob] = useState();
+    const [descriptionOne,setDescriptionOne] = useState();
+    const [descriptionTwo,setDescriptionTwo] = useState();
+    const [descriptionThree,setDescriptionThree] = useState();
+    const [descriptionFour,setDescriptionFour] = useState();
 
-    const [title,setTitle] = useState();
-    const [header,setHeader] = useState();
-    const [copyRight,setCopyRight] = useState();
-    const [developerName,setDeveloperName] = useState();
 
     const onSubmitForm = async(e) =>{
         e.preventDefault();
@@ -97,57 +105,81 @@ const AboutForm = () => {
                             <div className="card">
                                 <div className="card-body">
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputTitle">Footer Title</label>
+                                        <label htmlFor="exampleInputTitle">Title</label>
                                         <input type="text" className="form-control" id="exampleInputTitle"  name='title' onChange={(e)=>setTitle(e.target.value)} />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputHeader">Footer Header</label>
+                                        <label htmlFor="exampleInputHeader">Header</label>
                                         <input type="text" className="form-control" id="exampleInputHeader"  name='header' onChange={(e)=>setHeader(e.target.value)} />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputCopyRight">Footer CopyRight</label>
-                                        <input type="text" className="form-control" id="exampleInputCopyRight"  name='copyRight' onChange={(e)=>setCopyRight(e.target.value)} />
+                                        <label htmlFor="exampleInputName">Name</label>
+                                        <input type="text" className="form-control" id="exampleInputName"  name='name' onChange={(e)=>setName(e.target.value)} />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputDesign">Desige By</label>
-                                        <input type="text" className="form-control" id="exampleInputDesign"  name="developerName" onChange={(e)=>setDeveloperName(e.target.value)} />
+                                        <label htmlFor="exampleInputWebsite">Website</label>
+                                        <input type="text" className="form-control" id="exampleInputWebsite"  name="website" onChange={(e)=>setWebsite(e.target.value)} />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputCity">City</label>
+                                        <input type="text" className="form-control" id="exampleInputCityl"  name='city' onChange={(e)=>setCity(e.target.value)} />
+
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputImage">Footer Back Ground Image</label>
-                                        <input type="file" className="form-control" id="exampleInputImage"  name="image" onChange={imagePreviewFunction}/>
-                                        <img src={file} className="mt-1"/>
+                                        <label htmlFor="exampleInputJob">Job</label>
+                                        <input type="text" className="form-control" id="exampleInputJob"  name='job' onChange={(e)=>setJob(e.target.value)} />
+
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputDegree">Degree</label>
+                                        <input type="text" className="form-control" id="exampleInputDegree"  name='degree' onChange={(e)=>setDegree(e.target.value)} />
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div className="col">
                             <div className="card">
                                 <div className="card-body">
+
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputIcon1">Footer Icon 1</label>
-                                        <input type="text" className="form-control" id="exampleInputIcon1"  name='iconOne' onChange={(e)=>setIconOne(e.target.value)} />
-                                        <i className={iconOne} height="15px" width="15px"></i>
+                                        <label htmlFor="exampleInputdescriptionOne">DescriptionOne</label>
+                                        <input type="text" className="form-control" id="exampleInputdescriptionOne"  name='descriptionOne'  onChange={(e)=>setDescriptionOne(e.target.value)} />
+
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputDescriptionTwo">DescriptionTwo</label>
+                                        <input type="text" className="form-control" id="exampleInputDescriptionTwo"  name='descriptionTwo' onChange={(e)=>setDescriptionTwo(e.target.value)} />
+
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputIcon2">Footer Icon 2</label>
-                                        <input type="text" className="form-control" id="exampleInputIcon2"  name='iconTwo'  onChange={(e)=>setIconTwo(e.target.value)} />
-                                        <i className={iconTwo} height="15px" width="15px"></i>
+                                        <label htmlFor="exampleInputDescriptionThree">DescriptionThree</label>
+                                        <input type="text" className="form-control" id="exampleInputDescriptionThree"  name='descriptionThree' onChange={(e)=>setDescriptionThree(e.target.value)} />
+
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputIcon3">Footer Icon 3</label>
-                                        <input type="text" className="form-control" id="exampleInputIcon3"  name='iconThree' onChange={(e)=>setIconThree(e.target.value)} />
-                                        <i className={iconThree} height="15px" width="15px"></i>
+                                        <label htmlFor="exampleInputDescriptionFour">DescriptionFour</label>
+                                        <input type="text" className="form-control" id="exampleInputDescriptionFour"  name='descriptionFour' onChange={(e)=>setDescriptionFour(e.target.value)} />
+
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputIcon4">Footer Icon 4</label>
-                                        <input type="text" className="form-control" id="exampleInputIcon4"  name='iconFour' onChange={(e)=>setIconFour(e.target.value)} />
-                                        <i className={iconFour} height="15px" width="15px"></i>
+                                        <label htmlFor="exampleInputPhone">Phone</label>
+                                        <input type="text" className="form-control" id="exampleInputPhone"  name='phone' onChange={(e)=>setPhone(e.target.value)} />
+
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputIcon5">Footer Icon 5</label>
-                                        <input type="text" className="form-control" id="exampleInputIcon5"  name='iconFive' onChange={(e)=>setIconFive(e.target.value)} />
-                                        <i className={iconFive} height="15px" width="15px"></i>
+                                        <label htmlFor="exampleInputEmail">Email</label>
+                                        <input type="text" className="form-control" id="exampleInputEmail"  name='email' onChange={(e)=>setEmail(e.target.value)} />
+
                                     </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputImage">Image</label>
+                                        <input type="file" className="form-control" id="exampleInputImage"  name="image" onChange={imagePreviewFunction}/>
+                                        <img src={file} className="mt-1"/>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

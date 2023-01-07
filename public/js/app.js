@@ -9546,14 +9546,19 @@ var AboutForm = function AboutForm() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       title: "",
       header: "",
-      copy_right: "",
-      developer_name: "",
-      icon_one: "",
-      icon_two: "",
-      icon_three: "",
-      icon_four: "",
-      icon_five: ""
-      // image:""
+      name: "",
+      age: "",
+      website: "",
+      degree: "",
+      phone: "",
+      email: "",
+      city: "",
+      job: "",
+      descriptionOne: "",
+      descriptionTwo: "",
+      descriptionThree: "",
+      descriptionFour: "",
+      image: ""
     }),
     _useState2 = _slicedToArray(_useState, 2),
     input = _useState2[0],
@@ -9603,40 +9608,52 @@ var AboutForm = function AboutForm() {
   };
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState8 = _slicedToArray(_useState7, 2),
-    iconOne = _useState8[0],
-    setIconOne = _useState8[1];
+    name = _useState8[0],
+    setName = _useState8[1];
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState10 = _slicedToArray(_useState9, 2),
-    iconTwo = _useState10[0],
-    setIconTwo = _useState10[1];
+    age = _useState10[0],
+    setAge = _useState10[1];
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState12 = _slicedToArray(_useState11, 2),
-    iconThree = _useState12[0],
-    setIconThree = _useState12[1];
+    website = _useState12[0],
+    setWebsite = _useState12[1];
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState14 = _slicedToArray(_useState13, 2),
-    iconFour = _useState14[0],
-    setIconFour = _useState14[1];
+    degree = _useState14[0],
+    setDegree = _useState14[1];
   var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState16 = _slicedToArray(_useState15, 2),
-    iconFive = _useState16[0],
-    setIconFive = _useState16[1];
+    phone = _useState16[0],
+    setPhone = _useState16[1];
   var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState18 = _slicedToArray(_useState17, 2),
-    title = _useState18[0],
-    setTitle = _useState18[1];
+    email = _useState18[0],
+    setEmail = _useState18[1];
   var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState20 = _slicedToArray(_useState19, 2),
-    header = _useState20[0],
-    setHeader = _useState20[1];
+    city = _useState20[0],
+    setCity = _useState20[1];
   var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState22 = _slicedToArray(_useState21, 2),
-    copyRight = _useState22[0],
-    setCopyRight = _useState22[1];
+    job = _useState22[0],
+    setJob = _useState22[1];
   var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState24 = _slicedToArray(_useState23, 2),
-    developerName = _useState24[0],
-    setDeveloperName = _useState24[1];
+    descriptionOne = _useState24[0],
+    setDescriptionOne = _useState24[1];
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState26 = _slicedToArray(_useState25, 2),
+    descriptionTwo = _useState26[0],
+    setDescriptionTwo = _useState26[1];
+  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState28 = _slicedToArray(_useState27, 2),
+    descriptionThree = _useState28[0],
+    setDescriptionThree = _useState28[1];
+  var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState30 = _slicedToArray(_useState29, 2),
+    descriptionFour = _useState30[0],
+    setDescriptionFour = _useState30[1];
   var onSubmitForm = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
       var audio, formData;
@@ -9702,7 +9719,7 @@ var AboutForm = function AboutForm() {
                     className: "form-group",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
                       htmlFor: "exampleInputTitle",
-                      children: "Footer Title"
+                      children: "Title"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                       type: "text",
                       className: "form-control",
@@ -9716,7 +9733,7 @@ var AboutForm = function AboutForm() {
                     className: "form-group",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
                       htmlFor: "exampleInputHeader",
-                      children: "Footer Header"
+                      children: "Header"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                       type: "text",
                       className: "form-control",
@@ -9729,45 +9746,72 @@ var AboutForm = function AboutForm() {
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "form-group",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                      htmlFor: "exampleInputCopyRight",
-                      children: "Footer CopyRight"
+                      htmlFor: "exampleInputName",
+                      children: "Name"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                       type: "text",
                       className: "form-control",
-                      id: "exampleInputCopyRight",
-                      name: "copyRight",
+                      id: "exampleInputName",
+                      name: "name",
                       onChange: function onChange(e) {
-                        return setCopyRight(e.target.value);
+                        return setName(e.target.value);
                       }
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "form-group",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                      htmlFor: "exampleInputDesign",
-                      children: "Desige By"
+                      htmlFor: "exampleInputWebsite",
+                      children: "Website"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                       type: "text",
                       className: "form-control",
-                      id: "exampleInputDesign",
-                      name: "developerName",
+                      id: "exampleInputWebsite",
+                      name: "website",
                       onChange: function onChange(e) {
-                        return setDeveloperName(e.target.value);
+                        return setWebsite(e.target.value);
                       }
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "form-group",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                      htmlFor: "exampleInputImage",
-                      children: "Footer Back Ground Image"
+                      htmlFor: "exampleInputCity",
+                      children: "City"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-                      type: "file",
+                      type: "text",
                       className: "form-control",
-                      id: "exampleInputImage",
-                      name: "image",
-                      onChange: imagePreviewFunction
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-                      src: file,
-                      className: "mt-1"
+                      id: "exampleInputCityl",
+                      name: "city",
+                      onChange: function onChange(e) {
+                        return setCity(e.target.value);
+                      }
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                    className: "form-group",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+                      htmlFor: "exampleInputJob",
+                      children: "Job"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                      type: "text",
+                      className: "form-control",
+                      id: "exampleInputJob",
+                      name: "job",
+                      onChange: function onChange(e) {
+                        return setJob(e.target.value);
+                      }
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                    className: "form-group",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+                      htmlFor: "exampleInputDegree",
+                      children: "Degree"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                      type: "text",
+                      className: "form-control",
+                      id: "exampleInputDegree",
+                      name: "degree",
+                      onChange: function onChange(e) {
+                        return setDegree(e.target.value);
+                      }
                     })]
                   })]
                 })
@@ -9781,92 +9825,101 @@ var AboutForm = function AboutForm() {
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "form-group",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                      htmlFor: "exampleInputIcon1",
-                      children: "Footer Icon 1"
+                      htmlFor: "exampleInputdescriptionOne",
+                      children: "DescriptionOne"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                       type: "text",
                       className: "form-control",
-                      id: "exampleInputIcon1",
-                      name: "iconOne",
+                      id: "exampleInputdescriptionOne",
+                      name: "descriptionOne",
                       onChange: function onChange(e) {
-                        return setIconOne(e.target.value);
+                        return setDescriptionOne(e.target.value);
                       }
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
-                      className: iconOne,
-                      height: "15px",
-                      width: "15px"
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "form-group",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                      htmlFor: "exampleInputIcon2",
-                      children: "Footer Icon 2"
+                      htmlFor: "exampleInputDescriptionTwo",
+                      children: "DescriptionTwo"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                       type: "text",
                       className: "form-control",
-                      id: "exampleInputIcon2",
-                      name: "iconTwo",
+                      id: "exampleInputDescriptionTwo",
+                      name: "descriptionTwo",
                       onChange: function onChange(e) {
-                        return setIconTwo(e.target.value);
+                        return setDescriptionTwo(e.target.value);
                       }
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
-                      className: iconTwo,
-                      height: "15px",
-                      width: "15px"
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "form-group",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                      htmlFor: "exampleInputIcon3",
-                      children: "Footer Icon 3"
+                      htmlFor: "exampleInputDescriptionThree",
+                      children: "DescriptionThree"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                       type: "text",
                       className: "form-control",
-                      id: "exampleInputIcon3",
-                      name: "iconThree",
+                      id: "exampleInputDescriptionThree",
+                      name: "descriptionThree",
                       onChange: function onChange(e) {
-                        return setIconThree(e.target.value);
+                        return setDescriptionThree(e.target.value);
                       }
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
-                      className: iconThree,
-                      height: "15px",
-                      width: "15px"
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "form-group",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                      htmlFor: "exampleInputIcon4",
-                      children: "Footer Icon 4"
+                      htmlFor: "exampleInputDescriptionFour",
+                      children: "DescriptionFour"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                       type: "text",
                       className: "form-control",
-                      id: "exampleInputIcon4",
-                      name: "iconFour",
+                      id: "exampleInputDescriptionFour",
+                      name: "descriptionFour",
                       onChange: function onChange(e) {
-                        return setIconFour(e.target.value);
+                        return setDescriptionFour(e.target.value);
                       }
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
-                      className: iconFour,
-                      height: "15px",
-                      width: "15px"
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "form-group",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                      htmlFor: "exampleInputIcon5",
-                      children: "Footer Icon 5"
+                      htmlFor: "exampleInputPhone",
+                      children: "Phone"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                       type: "text",
                       className: "form-control",
-                      id: "exampleInputIcon5",
-                      name: "iconFive",
+                      id: "exampleInputPhone",
+                      name: "phone",
                       onChange: function onChange(e) {
-                        return setIconFive(e.target.value);
+                        return setPhone(e.target.value);
                       }
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
-                      className: iconFive,
-                      height: "15px",
-                      width: "15px"
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                    className: "form-group",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+                      htmlFor: "exampleInputEmail",
+                      children: "Email"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                      type: "text",
+                      className: "form-control",
+                      id: "exampleInputEmail",
+                      name: "email",
+                      onChange: function onChange(e) {
+                        return setEmail(e.target.value);
+                      }
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                    className: "form-group",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+                      htmlFor: "exampleInputImage",
+                      children: "Image"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                      type: "file",
+                      className: "form-control",
+                      id: "exampleInputImage",
+                      name: "image",
+                      onChange: imagePreviewFunction
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                      src: file,
+                      className: "mt-1"
                     })]
                   })]
                 })
