@@ -9608,52 +9608,60 @@ var AboutForm = function AboutForm() {
   };
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState8 = _slicedToArray(_useState7, 2),
-    name = _useState8[0],
-    setName = _useState8[1];
+    title = _useState8[0],
+    setTitle = _useState8[1];
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState10 = _slicedToArray(_useState9, 2),
-    age = _useState10[0],
-    setAge = _useState10[1];
+    header = _useState10[0],
+    setHeader = _useState10[1];
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState12 = _slicedToArray(_useState11, 2),
-    website = _useState12[0],
-    setWebsite = _useState12[1];
+    name = _useState12[0],
+    setName = _useState12[1];
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState14 = _slicedToArray(_useState13, 2),
-    degree = _useState14[0],
-    setDegree = _useState14[1];
+    age = _useState14[0],
+    setAge = _useState14[1];
   var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState16 = _slicedToArray(_useState15, 2),
-    phone = _useState16[0],
-    setPhone = _useState16[1];
+    website = _useState16[0],
+    setWebsite = _useState16[1];
   var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState18 = _slicedToArray(_useState17, 2),
-    email = _useState18[0],
-    setEmail = _useState18[1];
+    degree = _useState18[0],
+    setDegree = _useState18[1];
   var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState20 = _slicedToArray(_useState19, 2),
-    city = _useState20[0],
-    setCity = _useState20[1];
+    phone = _useState20[0],
+    setPhone = _useState20[1];
   var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState22 = _slicedToArray(_useState21, 2),
-    job = _useState22[0],
-    setJob = _useState22[1];
+    email = _useState22[0],
+    setEmail = _useState22[1];
   var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState24 = _slicedToArray(_useState23, 2),
-    descriptionOne = _useState24[0],
-    setDescriptionOne = _useState24[1];
+    city = _useState24[0],
+    setCity = _useState24[1];
   var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState26 = _slicedToArray(_useState25, 2),
-    descriptionTwo = _useState26[0],
-    setDescriptionTwo = _useState26[1];
+    job = _useState26[0],
+    setJob = _useState26[1];
   var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState28 = _slicedToArray(_useState27, 2),
-    descriptionThree = _useState28[0],
-    setDescriptionThree = _useState28[1];
+    descriptionOne = _useState28[0],
+    setDescriptionOne = _useState28[1];
   var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState30 = _slicedToArray(_useState29, 2),
-    descriptionFour = _useState30[0],
-    setDescriptionFour = _useState30[1];
+    descriptionTwo = _useState30[0],
+    setDescriptionTwo = _useState30[1];
+  var _useState31 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState32 = _slicedToArray(_useState31, 2),
+    descriptionThree = _useState32[0],
+    setDescriptionThree = _useState32[1];
+  var _useState33 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState34 = _slicedToArray(_useState33, 2),
+    descriptionFour = _useState34[0],
+    setDescriptionFour = _useState34[1];
   var onSubmitForm = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
       var audio, formData;
@@ -9667,32 +9675,37 @@ var AboutForm = function AboutForm() {
               formData = new FormData();
               formData.append('title', title);
               formData.append('header', header);
-              formData.append('copyRight', copyRight);
-              formData.append('developerName', developerName);
+              formData.append('name', name);
+              formData.append('age', age);
+              formData.append('website', website);
+              formData.append('degree', degree);
+              formData.append('phone', phone);
+              formData.append('city', city);
+              formData.append('email', email);
+              formData.append('job', job);
+              formData.append('descriptionOne', descriptionOne);
+              formData.append('descriptionTwo', descriptionTwo);
+              formData.append('descriptionThree', descriptionThree);
+              formData.append('descriptionFour', descriptionFour);
               formData.append('image', image);
-              formData.append('iconOne', iconOne);
-              formData.append('iconTwo', iconTwo);
-              formData.append('iconThree', iconThree);
-              formData.append('iconFour', iconFour);
-              formData.append('iconFive', iconFive);
-              _context2.next = 16;
+              _context2.next = 21;
               return axios__WEBPACK_IMPORTED_MODULE_1___default().post("/footer-update/".concat(id), formData);
-            case 16:
+            case 21:
               react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast.success("Data Updated Successfully 😲 ");
               audio.play();
               // await axios.post(`/footer-update/${id}`,input);
-              _context2.next = 23;
+              _context2.next = 28;
               break;
-            case 20:
-              _context2.prev = 20;
+            case 25:
+              _context2.prev = 25;
               _context2.t0 = _context2["catch"](1);
               console.log(_context2.t0.message);
-            case 23:
+            case 28:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[1, 20]]);
+      }, _callee2, null, [[1, 25]]);
     }));
     return function onSubmitForm(_x2) {
       return _ref2.apply(this, arguments);

@@ -55,6 +55,8 @@ const AboutForm = () => {
         setImage(e.target.files[0]);
     }
 
+    const [title,setTitle] = useState();
+    const [header,setHeader] = useState();
     const [name,setName] = useState();
     const [age,setAge] = useState();
     const [website,setWebsite] = useState();
@@ -76,14 +78,19 @@ const AboutForm = () => {
             const formData = new FormData();
             formData.append('title',title);
             formData.append('header',header);
-            formData.append('copyRight',copyRight);
-            formData.append('developerName',developerName);
+            formData.append('name',name);
+            formData.append('age',age);
+            formData.append('website',website);
+            formData.append('degree',degree);
+            formData.append('phone',phone);
+            formData.append('city',city);
+            formData.append('email',email);
+            formData.append('job',job);
+            formData.append('descriptionOne',descriptionOne);
+            formData.append('descriptionTwo',descriptionTwo);
+            formData.append('descriptionThree',descriptionThree);
+            formData.append('descriptionFour',descriptionFour);
             formData.append('image',image);
-            formData.append('iconOne',iconOne);
-            formData.append('iconTwo',iconTwo);
-            formData.append('iconThree',iconThree);
-            formData.append('iconFour',iconFour);
-            formData.append('iconFive',iconFive);
             await axios.post(`/footer-update/${id}`,formData);
             toast.success("Data Updated Successfully 😲 ")
             audio.play();
