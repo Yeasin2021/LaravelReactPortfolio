@@ -16,6 +16,7 @@ import SliderEdit from './back-end/admin/pages/slider/SliderEdit';
 import SliderAdd from './back-end/admin/pages/slider/SliderAdd';
 import FooterForm from './back-end/admin/pages/footer/FooterForm';
 import AboutForm from './back-end/admin/pages/about/AboutForm';
+import ResumeForm from './back-end/admin/pages/resume/ResumeForm';
 
 
 
@@ -43,6 +44,7 @@ function WebBack() {
                         <Route path='/admin-footer-form/:id' element={<FooterForm />} />
 
                         <Route path='/admin-about/:id' element={<AboutForm />} />
+                        <Route path='/admin-resume/:id' element={<ResumeForm />} />
 
 
                     </Route>
