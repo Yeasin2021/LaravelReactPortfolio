@@ -105,7 +105,7 @@ const AboutForm = () => {
         <div>
             <div className="container">
                 <div className="row" style={ formStyleOne }>
-
+                <ToastContainer />
                     <form onSubmit={onSubmitForm} encType="multipart/form-data">
                         <div className="row">
                         <div className="col">

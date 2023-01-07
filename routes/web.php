@@ -43,6 +43,7 @@ Route::post('footer-update/{id}',[FooterController::class,'update']);
 
 
 Route::resource('about', AboutController::class);
+Route::post('about/{id}', [AboutController::class,'update']);
 
 
 // Route::get('image',function(){

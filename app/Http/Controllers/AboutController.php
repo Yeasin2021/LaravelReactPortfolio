@@ -67,9 +67,36 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request,$id)
     {
-        //
+        // dd($request->all());
+        $about = About::find($id);
+
+        $images = $request->file('image');
+        if($images){
+            $fileName = time().'.'.$images->extension();
+            $images->move(public_path('back-end/img/about'),$fileName);
+
+        }
+
+        $aboutUpdate = $about->update([
+            'title' => $request->title,
+            'header' => $request->header,
+            'name' => $request->name,
+            'age' => $request->age,
+            'website' => $request->website,
+            'degree' => $request->degree,
+            'phone' => $request->phone,
+            'city' => $request->city,
+            'email' => $request->email,
+            'job' => $request->job,
+            'descriptionOne' => $request->descriptionOne,
+            'descriptionTwo' => $request->descriptionTwo,
+            'descriptionThree' => $request->descriptionThree,
+            'descriptionFour' => $request->descriptionFour,
+            'image' => $fileName
+        ]);
+        return response()->json(['status'=>200,'aboutUpdate'=>$aboutUpdate]);
     }
 
     /**

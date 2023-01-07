@@ -42,7 +42,7 @@ function WebBack() {
                         <Route path='/admin-slider-add' element={<SliderAdd />} />
                         <Route path='/admin-footer-form/:id' element={<FooterForm />} />
 
-                        <Route path='/admin-about' element={<AboutForm />} />
+                        <Route path='/admin-about/:id' element={<AboutForm />} />
 
 
                     </Route>
