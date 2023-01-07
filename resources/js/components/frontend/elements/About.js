@@ -64,7 +64,7 @@ useEffect(()=>{
                       <div className="count-box">
                         <i className="bi bi-emoji-smile" style={{ color: "#20b38e" }}></i>
                         <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" className="purecounter"></span>
-                        <p><strong>{item.descriptionOne}</strong> {item.descriptionTwo}</p>
+                        <p><strong>{item.descriptionOne}</strong> {item.descriptionOne}</p>
                       </div>
                     </div>
 
@@ -72,7 +72,7 @@ useEffect(()=>{
                       <div className="count-box">
                         <i className="bi bi-journal-richtextr" style={{ color: "#8a1ac2" }}></i>
                         <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" className="purecounter"></span>
-                        <p><strong>{item.descriptionThree}</strong> {item.descriptionFour}</p>
+                        <p><strong>{item.descriptionTwo}</strong> {item.descriptionTwo}</p>
                       </div>
                     </div>
 
@@ -80,7 +80,7 @@ useEffect(()=>{
                       <div className="count-box">
                         <i className="bi bi-clock" style={{ color: "#2cbdee" }}></i>
                         <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" className="purecounter"></span>
-                        {/* <p><strong>{item.experienceOne}</strong> {item.experienceOne}</p> */}
+                        <p><strong>{item.descriptionThree}</strong> {item.descriptionThree}</p>
                       </div>
                     </div>
 
@@ -88,7 +88,7 @@ useEffect(()=>{
                       <div className="count-box">
                         <i className="bi bi-award" style={{ color: "#ffb459" }}></i>
                         <span data-purecounter-start="0" data-purecounter-end="16" data-purecounter-duration="1" className="purecounter"></span>
-                        {/* <p><strong>{item.awardsOne}</strong> {item.awardsTwo}</p> */}
+                        <p><strong>{item.descriptionFour}</strong> {item.descriptionFour}</p>
                       </div>
                     </div>
                   </div>

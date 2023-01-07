@@ -13691,7 +13691,7 @@ var About = function About() {
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
                           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
                             children: item.descriptionOne
-                          }), " ", item.descriptionTwo]
+                          }), " ", item.descriptionOne]
                         })]
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -13710,8 +13710,8 @@ var About = function About() {
                           className: "purecounter"
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
                           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
-                            children: item.descriptionThree
-                          }), " ", item.descriptionFour]
+                            children: item.descriptionTwo
+                          }), " ", item.descriptionTwo]
                         })]
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -13728,6 +13728,10 @@ var About = function About() {
                           "data-purecounter-end": "18",
                           "data-purecounter-duration": "1",
                           className: "purecounter"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
+                            children: item.descriptionThree
+                          }), " ", item.descriptionThree]
                         })]
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -13744,6 +13748,10 @@ var About = function About() {
                           "data-purecounter-end": "16",
                           "data-purecounter-duration": "1",
                           className: "purecounter"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
+                            children: item.descriptionFour
+                          }), " ", item.descriptionFour]
                         })]
                       })
                     })]
