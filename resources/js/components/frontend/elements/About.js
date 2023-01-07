@@ -3,14 +3,22 @@ import React , {useState,useEffect} from 'react'
 const About = () => {
   const [items, setItems] = useState(null);
 
-  useEffect(()=>{
-    fetch("http://localhost:8081/about")
-    .then((res)=>{ return res.json()})
-    .then((data)=>{
-      setItems(data)
-      // console.log(data)
-    })
-  },[])
+//   useEffect(()=>{
+//     fetch("http://localhost:8081/about")
+//     .then((res)=>{ return res.json()})
+//     .then((data)=>{
+//       setItems(data)
+//       // console.log(data)
+//     })
+//   },[])
+
+useEffect(()=>{
+    const dataShow = async () =>{
+        const data_response = await axios.get('about')
+        .then((result)=>setItems(result.data.about));
+    }
+    dataShow();
+  },[]);
 
   return (
     <div>
@@ -21,15 +29,15 @@ const About = () => {
           return(
             <div key={index}>
             <div className="section-title">
-              <span>{item.header}</span>
-              <h2>{item.header}</h2>
-              <p>{item.title}</p>
+              <span>{item.title}</span>
+              <h2>{item.title}</h2>
+              <p>{item.header}</p>
             </div>
 
             <div className="row">
             {/* style={{ background:`url(${(item.image)})` }} */}
               <div className="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
-                <img src={item.image} style={{ width:'100%',height:'auto' }} alt="" />
+                <img src={`back-end/img/about/${item.image}`} style={{ width:'100%',height:'auto' }} alt="" />
               </div>
               <div className="col-lg-8 d-flex flex-column align-items-stretch">
                 <div className="content ps-lg-4 d-flex flex-column justify-content-center">
@@ -46,8 +54,8 @@ const About = () => {
                       <ul>
                         <li><i className="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{item.age}</span></li>
                         <li><i className="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>{item.degree}</span></li>
-                        <li><i className="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>{item.PhEmailone}</span></li>
-                        <li><i className="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>{item.Freelance}</span></li>
+                        <li><i className="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>{item.email}</span></li>
+                        <li><i className="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>{item.job}</span></li>
                       </ul>
                     </div>
                   </div>
@@ -56,7 +64,7 @@ const About = () => {
                       <div className="count-box">
                         <i className="bi bi-emoji-smile" style={{ color: "#20b38e" }}></i>
                         <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" className="purecounter"></span>
-                        <p><strong>{item.happyClientOne}</strong> {item.happyClientTwo}</p>
+                        <p><strong>{item.descriptionOne}</strong> {item.descriptionTwo}</p>
                       </div>
                     </div>
 
@@ -64,7 +72,7 @@ const About = () => {
                       <div className="count-box">
                         <i className="bi bi-journal-richtextr" style={{ color: "#8a1ac2" }}></i>
                         <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" className="purecounter"></span>
-                        <p><strong>{item.projectOne}</strong> {item.projectTwo}</p>
+                        <p><strong>{item.descriptionThree}</strong> {item.descriptionFour}</p>
                       </div>
                     </div>
 
@@ -72,7 +80,7 @@ const About = () => {
                       <div className="count-box">
                         <i className="bi bi-clock" style={{ color: "#2cbdee" }}></i>
                         <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" className="purecounter"></span>
-                        <p><strong>{item.experienceOne}</strong> {item.experienceOne}</p>
+                        {/* <p><strong>{item.experienceOne}</strong> {item.experienceOne}</p> */}
                       </div>
                     </div>
 
@@ -80,7 +88,7 @@ const About = () => {
                       <div className="count-box">
                         <i className="bi bi-award" style={{ color: "#ffb459" }}></i>
                         <span data-purecounter-start="0" data-purecounter-end="16" data-purecounter-duration="1" className="purecounter"></span>
-                        <p><strong>{item.awardsOne}</strong> {item.awardsTwo}</p>
+                        {/* <p><strong>{item.awardsOne}</strong> {item.awardsTwo}</p> */}
                       </div>
                     </div>
                   </div>

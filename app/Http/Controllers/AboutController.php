@@ -14,7 +14,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        $about = About::all();
+        return response()->json(['status'=>200,'about'=>$about]);
     }
 
     /**
