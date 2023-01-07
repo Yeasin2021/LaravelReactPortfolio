@@ -68,9 +68,9 @@ const ResumeForm = () => {
     // const [city,setCity] = useState();
     // const [job,setJob] = useState();
     const [descriptionOne,setDescriptionOne] = useState();
-    // const [descriptionTwo,setDescriptionTwo] = useState();
-    // const [descriptionThree,setDescriptionThree] = useState();
-    // const [descriptionFour,setDescriptionFour] = useState();
+    const [descriptionTwo,setDescriptionTwo] = useState();
+    const [descriptionThree,setDescriptionThree] = useState();
+    const [descriptionFour,setDescriptionFour] = useState();
 
 
     const onSubmitForm = async(e) =>{
@@ -89,11 +89,11 @@ const ResumeForm = () => {
             // formData.append('email',email);
             // formData.append('job',job);
             formData.append('descriptionOne',descriptionOne);
-            // formData.append('descriptionTwo',descriptionTwo);
-            // formData.append('descriptionThree',descriptionThree);
-            // formData.append('descriptionFour',descriptionFour);
+            formData.append('descriptionTwo',descriptionTwo);
+            formData.append('descriptionThree',descriptionThree);
+            formData.append('descriptionFour',descriptionFour);
             // formData.append('image',image);
-            await axios.post(`/about/${id}`,formData);
+            await axios.post(`/resume/${id}`,formData);
             toast.success("Data Updated Successfully 😲 ")
             audio.play();
             // await axios.post(`/footer-update/${id}`,input);
@@ -110,12 +110,28 @@ const ResumeForm = () => {
                 <ToastContainer />
                     <form onSubmit={onSubmitForm} encType="multipart/form-data">
                         <div className="row">
-                        <div className="col">
+                        <div className="col-md-6">
                             <div className="card">
                                 <div className="card-body">
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputTitle">Title</label>
-                                        <input type="text" className="form-control" id="exampleInputTitle"  name='title' onChange={(e)=>setTitle(e.target.value)} />
+                                        <label htmlFor="exampleInputTitle">Description One</label>
+                                        <CKEditor
+                                            editor={ClassicEditor}
+                                            onChange={ ( editor ) => {
+                                                setDescriptionTwo(editor.getData())
+                                            } }
+
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputTitle">Description Two</label>
+                                        <CKEditor
+                                            editor={ClassicEditor}
+                                            onChange={ ( editor ) => {
+                                                setDescriptionTwo(editor.getData())
+                                            } }
+
+                                        />
                                     </div>
                                     {/* <div className="form-group">
                                         <label htmlFor="exampleInputHeader">Header</label>
@@ -152,17 +168,27 @@ const ResumeForm = () => {
                             </div>
                         </div>
 
-                        <div className="col">
+                        <div className="col-md-6">
                             <div className="card">
                                 <div className="card-body">
 
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputdescriptionOne">DescriptionOne</label>
-                                        {/* <input type="text" className="form-control" id="exampleInputdescriptionOne"  name='descriptionOne'  onChange={(e)=>setDescriptionOne(e.target.value)} /> */}
+                                        <label htmlFor="exampleInputdescriptionOne">Description Three</label>
                                         <CKEditor
                                             editor={ClassicEditor}
-                                            onChange={ ( event, editor ) => {
-                                                setDescriptionOne(editor.getData())
+                                            onChange={ ( editor ) => {
+                                                setDescriptionThree(editor.getData())
+                                            } }
+
+                                        />
+                                        {/* <div>{descriptionOne}</div> */}
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputdescriptionOne">Description Four</label>
+                                        <CKEditor
+                                            editor={ClassicEditor}
+                                            onChange={ (  editor ) => {
+                                                setDescriptionFour(editor.getData())
                                             } }
 
                                         />
