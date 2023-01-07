@@ -7,6 +7,7 @@ import Music from '../sound/add1.wav';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
+
 const ResumeForm = () => {
 
     const formStyleOne = {
@@ -68,9 +69,9 @@ const ResumeForm = () => {
     // const [city,setCity] = useState();
     // const [job,setJob] = useState();
     const [descriptionOne,setDescriptionOne] = useState();
-    const [descriptionTwo,setDescriptionTwo] = useState();
-    const [descriptionThree,setDescriptionThree] = useState();
-    const [descriptionFour,setDescriptionFour] = useState();
+    // const [descriptionTwo,setDescriptionTwo] = useState();
+    // const [descriptionThree,setDescriptionThree] = useState();
+    // const [descriptionFour,setDescriptionFour] = useState();
 
 
     const onSubmitForm = async(e) =>{
@@ -89,9 +90,9 @@ const ResumeForm = () => {
             // formData.append('email',email);
             // formData.append('job',job);
             formData.append('descriptionOne',descriptionOne);
-            formData.append('descriptionTwo',descriptionTwo);
-            formData.append('descriptionThree',descriptionThree);
-            formData.append('descriptionFour',descriptionFour);
+            // formData.append('descriptionTwo',descriptionTwo);
+            // formData.append('descriptionThree',descriptionThree);
+            // formData.append('descriptionFour',descriptionFour);
             // formData.append('image',image);
             await axios.post(`/resume/${id}`,formData);
             toast.success("Data Updated Successfully 😲 ")
@@ -110,10 +111,10 @@ const ResumeForm = () => {
                 <ToastContainer />
                     <form onSubmit={onSubmitForm} encType="multipart/form-data">
                         <div className="row">
-                        <div className="col-md-6">
+                        <div className="col">
                             <div className="card">
                                 <div className="card-body">
-                                    <div className="form-group">
+                                    {/* <div className="form-group">
                                         <label htmlFor="exampleInputTitle">Description One</label>
                                         <CKEditor
                                             editor={ClassicEditor}
@@ -122,26 +123,17 @@ const ResumeForm = () => {
                                             } }
 
                                         />
-                                    </div>
+                                    </div> */}
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputTitle">Description Two</label>
-                                        <CKEditor
-                                            editor={ClassicEditor}
-                                            onChange={ ( editor ) => {
-                                                setDescriptionTwo(editor.getData())
-                                            } }
-
-                                        />
-                                    </div>
-                                    {/* <div className="form-group">
                                         <label htmlFor="exampleInputHeader">Header</label>
                                         <input type="text" className="form-control" id="exampleInputHeader"  name='header' onChange={(e)=>setHeader(e.target.value)} />
+
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="exampleInputName">Name</label>
                                         <input type="text" className="form-control" id="exampleInputName"  name='name' onChange={(e)=>setName(e.target.value)} />
                                     </div>
-                                    <div className="form-group">
+                                    {/* <div className="form-group">
                                         <label htmlFor="exampleInputWebsite">Website</label>
                                         <input type="text" className="form-control" id="exampleInputWebsite"  name="website" onChange={(e)=>setWebsite(e.target.value)} />
                                     </div> */}
@@ -168,31 +160,24 @@ const ResumeForm = () => {
                             </div>
                         </div>
 
-                        <div className="col-md-6">
+                        <div className="col">
                             <div className="card">
                                 <div className="card-body">
 
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputdescriptionOne">Description Three</label>
+                                        <label htmlFor="exampleInputdescriptionOne">Description One</label>
                                         <CKEditor
                                             editor={ClassicEditor}
-                                            onChange={ ( editor ) => {
-                                                setDescriptionThree(editor.getData())
+                                            onChange={ ( event, editor ) => {
+                                                setDescriptionOne(editor.getData())
                                             } }
 
-                                        />
-                                        {/* <div>{descriptionOne}</div> */}
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="exampleInputdescriptionOne">Description Four</label>
-                                        <CKEditor
-                                            editor={ClassicEditor}
-                                            onChange={ (  editor ) => {
-                                                setDescriptionFour(editor.getData())
-                                            } }
+                                            name="descriptionOne"
 
                                         />
-                                        {/* <div>{descriptionOne}</div> */}
+
+                                        <p dangerouslySetInnerHTML={{ __html:descriptionOne }}></p>
+
                                     </div>
 
                                     {/* <div className="form-group">
