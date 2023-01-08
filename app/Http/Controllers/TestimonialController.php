@@ -14,7 +14,8 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        //
+        $testimonial  = Testimonial::all();
+        return response()->json(['ststus'=>200,'testimonial'=>$testimonial]);
     }
 
     /**
@@ -67,9 +68,10 @@ class TestimonialController extends Controller
      * @param  \App\Models\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function edit(Testimonial $testimonial)
+    public function edit($id)
     {
-        //
+        $edit  = Testimonial::find($id);
+        return response()->json(['ststus'=>200,'edit'=>$edit]);
     }
 
     /**
@@ -79,9 +81,21 @@ class TestimonialController extends Controller
      * @param  \App\Models\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Testimonial $testimonial)
+    public function update(Request $request, $id)
     {
-        //
+        $testimonialUpdate  = Testimonial::find($id);
+        $images = $request->file('image');
+        if($images){
+            $fileName = $request->name.'_'.time().'_'.$request->job.'.'.$images->extension();
+            $images->move(public_path('back-end/img/testimonial'),$fileName);
+        }
+        $testimonialUpdate->update([
+            'name' => $request->name,
+            'occupation' => $request->job,
+            'description' => $request->description,
+            'image' => $fileName,
+        ]);
+        return response()->json(['status'=>200,'testimonialUpdate'=>$testimonialUpdate]);
     }
 
     /**
