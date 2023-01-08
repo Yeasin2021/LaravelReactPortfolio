@@ -3,6 +3,8 @@ import React,{useState,useEffect} from 'react'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import Music from '../sound/add1.wav';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const TestimonialForm = () => {
     const formStyleOne = {
@@ -68,7 +70,16 @@ const TestimonialForm = () => {
                                 <div className="card-body">
                                     <div className="form-group">
                                         <label htmlFor="exampleInputdescriptionOne">Description</label>
-                                        <input type="text" className="form-control" id="exampleInputdescriptionOne"  name='description'  onChange={(e)=>setDescription(e.target.value)} />
+                                        <CKEditor
+                                            editor={ClassicEditor}
+                                            onChange={ ( event, editor ) => {
+                                                setDescription(editor.getData())
+                                            } }
+
+                                            name="description"
+
+                                        />
+                                        {/* <input type="text" className="form-control" id="exampleInputdescriptionOne"  name='description'  onChange={(e)=>setDescription(e.target.value)} /> */}
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="exampleInputImage">Image</label>

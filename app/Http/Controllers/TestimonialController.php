@@ -35,13 +35,19 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+
+        $images = $request->file('image');
+        if($images){
+            $fileName = $request->name.'_'.time().'_'.$request->job.'.'.$images->extension();
+            $images->move(public_path('back-end/img/testimonial'),$fileName);
+        }
         $testimonial = Testimonial::create([
             'name' => $request->name,
             'occupation' => $request->job,
             'description' => $request->description,
-            'image' => $request->image,
+            'image' => $fileName,
         ]);
+        return response()->json(['status'=>200,'testimonial'=>$testimonial]);
     }
 
     /**
