@@ -18,6 +18,7 @@ import FooterForm from './back-end/admin/pages/footer/FooterForm';
 import AboutForm from './back-end/admin/pages/about/AboutForm';
 import ResumeForm from './back-end/admin/pages/resume/ResumeForm';
 import TestimonialForm from './back-end/admin/pages/testimonial/TestimonialForm';
+import TestimonialView from './back-end/admin/pages/testimonial/TestimonialView';
 
 
 
@@ -47,6 +48,7 @@ function WebBack() {
                         <Route path='/admin-about/:id' element={<AboutForm />} />
                         <Route path='/admin-resume/:id' element={<ResumeForm />} />
                         <Route path='/admin-testimonial' element={<TestimonialForm />} />
+                        <Route path='/admin-testimonial-view' element={<TestimonialView />} />
 
 
                     </Route>
