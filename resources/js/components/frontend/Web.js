@@ -18,7 +18,7 @@ const Web = () => {
     <Header />
         <div className='main'>
             <About />
-            <Resume />
+            {/* <Resume /> */}
             <Service />
             <Testimonial />
             <Portfolio />

@@ -106,12 +106,12 @@ const ResumeForm = () => {
 
       return (
         <div>
-            <div className="container">
-                <div className="row" style={ formStyleOne }>
+          <div className="container">
+            <div className="row" style={ formStyleOne }>
                 <ToastContainer />
                     <form onSubmit={onSubmitForm} encType="multipart/form-data">
                         <div className="row">
-                        <div className="col">
+                        <div className="col-md-4">
                             <div className="card">
                                 <div className="card-body">
                                     {/* <div className="form-group">
@@ -130,8 +130,8 @@ const ResumeForm = () => {
 
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputName">Name</label>
-                                        <input type="text" className="form-control" id="exampleInputName"  name='name' onChange={(e)=>setName(e.target.value)} />
+                                        <label htmlFor="exampleInputName">Title</label>
+                                        <input type="text" className="form-control" id="exampleInputName"  name='title' onChange={(e)=>setTitle(e.target.value)} />
                                     </div>
                                     {/* <div className="form-group">
                                         <label htmlFor="exampleInputWebsite">Website</label>
@@ -160,7 +160,7 @@ const ResumeForm = () => {
                             </div>
                         </div>
 
-                        <div className="col">
+                        <div className="col-md-8">
                             <div className="card">
                                 <div className="card-body">
 
@@ -176,7 +176,7 @@ const ResumeForm = () => {
 
                                         />
 
-                                        <p dangerouslySetInnerHTML={{ __html:descriptionOne }}></p>
+                                        {/* <p dangerouslySetInnerHTML={{ __html:descriptionOne }}></p> */}
 
                                     </div>
 
@@ -211,6 +211,16 @@ const ResumeForm = () => {
                                         <img src={file} className="mt-1"/>
                                     </div> */}
 
+                                    {/* <input name="content0" className="ck_editor_txt" id="ckeditor0" /> */}
+
+                                    {/* <textarea name="content2" className="ck_editor_txt" id="ckeditor2">How to use multiple textarea with CKEditor 5</textarea> */}
+
+                                    {/* <div className="form-group">
+                                        <label htmlFor="exampleInputdescriptionOne">Description One</label>
+                                        <textarea name="content1" className="ck_editor_txt" id="ckeditor1" onChange={(e)=>{ setDescriptionOne(e.target.value)}}></textarea>
+                                        <p dangerouslySetInnerHTML={{ __html:descriptionOne }}></p>
+
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
@@ -221,6 +231,7 @@ const ResumeForm = () => {
                     </form>
                 </div>
             </div>
+            
         </div>
       )
     }

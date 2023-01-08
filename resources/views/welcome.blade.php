@@ -49,6 +49,9 @@
 
 		<link rel="stylesheet" href="{{ asset('back-end/css/style1.css') }}" />
 		<link rel="stylesheet" href="{{ asset('back-end/css/colors/default.css') }}" id="colorSkinCSS" />
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>
+        
     <title>Document</title>
 </head>
 <body>
@@ -168,6 +171,13 @@
                 } else {
                     result.innerHTML = "Geolocation failed due to unknown error.";
                 }
+            }
+        </script>
+
+        <script>
+            var allEditors = document.querySelectorAll('.ck_editor_txt');
+            for (var i = 0; i < allEditors.length; ++i) {
+            ClassicEditor.create(allEditors[i]);
             }
         </script>
 
