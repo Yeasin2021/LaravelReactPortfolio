@@ -9,6 +9,7 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ResumeController;
+use App\Http\Controllers\TestimonialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,10 @@ Route::post('about/{id}', [AboutController::class,'update']);
 
 Route::resource('resume', ResumeController::class);
 Route::post('resume/{id}', [ResumeController::class,'update']);
+
+
+Route::resource('testimonial', TestimonialController::class);
+Route::post('testimonial/{id}', [TestimonialController::class,'update']);
 
 
 
