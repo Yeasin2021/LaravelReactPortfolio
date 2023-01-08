@@ -1,7 +1,7 @@
 
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import Music from '../sound/add1.wav';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -15,6 +15,7 @@ const TestimonialEdit = () => {
 
 
     const {id} = useParams();
+    const navigate = useNavigate();
     const [file,setFile] = useState();
     const [image,setImage] = useState();
     const imagePreviewFunction = (e) =>{
@@ -36,9 +37,10 @@ const TestimonialEdit = () => {
             formData.append('job',job);
             formData.append('description',description);
             formData.append('image',image);
-            await axios.post(`testimonial/${id}`,formData);
+            await axios.post(`testimonial-update/${id}`,formData);
             toast.success("Data Updated Successfully 😲 ")
             audio.play();
+            navigate("/admin-testimonial-view");
         }catch(error){
             console.log(error.message);
         }

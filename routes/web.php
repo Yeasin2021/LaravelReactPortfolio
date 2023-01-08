@@ -52,7 +52,7 @@ Route::post('resume/{id}', [ResumeController::class,'update']);
 
 
 Route::resource('testimonial', TestimonialController::class);
-Route::post('testimonial/{id}', [TestimonialController::class,'update']);
+Route::post('testimonial-update/{id}', [TestimonialController::class,'update']);
 
 
 

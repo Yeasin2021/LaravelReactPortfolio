@@ -47,7 +47,7 @@ const formStyleOne = {
                                                             <td><p dangerouslySetInnerHTML={{ __html:item.description }}></p></td>
                                                             <td><img src={`back-end/img/testimonial/${item.image}`} /></td>
                                                             <td>
-                                                                <Link to='#'><i className="bi bi-pencil"></i></Link>
+                                                                {/* <Link to={`testimonial/${item.id}/edit`}><i className="bi bi-pencil"></i></Link> */}
                                                                 <Link to='#'><i className="bi bi-trash3"></i></Link>
                                                             </td>
                                                         </tr>
