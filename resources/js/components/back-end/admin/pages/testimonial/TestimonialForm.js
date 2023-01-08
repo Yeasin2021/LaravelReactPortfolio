@@ -32,7 +32,7 @@ const TestimonialForm = () => {
             formData.append('job',job);
             formData.append('description',description);
             formData.append('image',image);
-            // await axios.post(`/about/${id}`,formData);
+            await axios.post(`testimonial`,formData);
             toast.success("Data Updated Successfully 😲 ")
             audio.play();
         }catch(error){

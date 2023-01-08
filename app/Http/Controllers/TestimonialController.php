@@ -35,7 +35,13 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        $testimonial = Testimonial::create([
+            'name' => $request->name,
+            'occupation' => $request->job,
+            'description' => $request->description,
+            'image' => $request->image,
+        ]);
     }
 
     /**
