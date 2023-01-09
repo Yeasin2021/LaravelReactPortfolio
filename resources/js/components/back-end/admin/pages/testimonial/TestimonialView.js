@@ -4,6 +4,8 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import Music from '../sound/add1.wav';
 import { Link } from 'react-router-dom';
+import MusicEdit from '../sound/edit.wav';
+import MusicDelete from '../sound/delete.wav';
 
 const TestimonialView = () => {
 const formStyleOne = {
@@ -18,6 +20,30 @@ const formStyleOne = {
         }
         dataShow();
         },[]);
+
+        const editSound = () =>{
+            const audioEdit = new Audio(MusicEdit);
+            toast.info("Edit page open")
+            audioEdit.play();
+          }
+
+        const deleteUser = async (id) =>{
+
+            if(window.confirm("Delete this Item") == true){
+                const audioDel = new Audio(MusicDelete);
+                await axios.delete(`testimonials/${id}`);
+                const newItems = items.filter((item)=>{
+                return item.id !== id;
+                });
+                toast.warning("Data Deleted Successfully");
+                audioDel.play();
+                setItems(newItems);
+            }else{
+                toast.success("Data not Deleted from this Record");
+            }
+
+          }
+
   return (
         <div class="container">
             <div class="row" style={ formStyleOne }>
@@ -45,10 +71,10 @@ const formStyleOne = {
                                                             <td scope="row">{item.name}</td>
                                                             <td>{item.occupation}</td>
                                                             <td><p dangerouslySetInnerHTML={{ __html:item.description }}></p></td>
-                                                            <td><img src={`back-end/img/testimonial/${item.image}`} /></td>
+                                                            <td><img src={`back-end/img/testimonial/${item.image}`} height="250px" width="250px"/></td>
                                                             <td>
-                                                                <Link to={`/admin-testimonials/${item.id}`}><i className="bi bi-pencil"></i></Link>
-                                                                <Link to='#'><i className="bi bi-trash3"></i></Link>
+                                                                <Link to={`/admin-testimonials/${item.id}`}><button className='btn btn-primary' onClick={editSound}><i className="bi bi-pencil"></i></button></Link>
+                                                                <button onClick={()=> deleteUser(item.id)}  className='btn btn-danger ms-3'><i className="bi bi-trash3"></i></button>
                                                             </td>
                                                         </tr>
                                                 )
