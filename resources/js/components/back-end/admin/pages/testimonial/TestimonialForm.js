@@ -1,10 +1,12 @@
 
 import React,{useState,useEffect} from 'react'
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import Music from '../sound/add1.wav';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 
 const TestimonialForm = () => {
     const formStyleOne = {
@@ -12,7 +14,7 @@ const TestimonialForm = () => {
         marginTop: '4%',
         }
 
-
+    const navigate = useNavigate();
     const [file,setFile] = useState();
     const [image,setImage] = useState();
     const imagePreviewFunction = (e) =>{
@@ -34,9 +36,10 @@ const TestimonialForm = () => {
             formData.append('job',job);
             formData.append('description',description);
             formData.append('image',image);
-            await axios.post(`testimonial`,formData);
+            await axios.post('testimonials',formData);
             toast.success("Data Updated Successfully 😲 ")
             audio.play();
+            navigate("/admin-testimonial-view");
         }catch(error){
             console.log(error.message);
         }
@@ -46,6 +49,7 @@ const TestimonialForm = () => {
       return (
         <div>
             <div className="container">
+
                 <div className="row" style={ formStyleOne }>
                 <ToastContainer />
                     <form onSubmit={onSubmitForm} encType="multipart/form-data">

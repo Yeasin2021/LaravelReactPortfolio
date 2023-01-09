@@ -46,6 +46,17 @@ const formStyleOne = {
 
   return (
         <div class="container">
+        <div className="row"  style={ formStyleOne }>
+                <div className="col">
+                <div className="card">
+                <div className="card-body">
+                    <h5 className="card-title">Testimonial Form Page</h5>
+                    <Link to={'/admin-testimonial-form'}><button type="button" className="btn btn-primary">Add New</button></Link>
+                </div>
+                </div>
+                </div>
+            </div>
+            
             <div class="row" style={ formStyleOne }>
                 <div class="col">
                     <div class="card">

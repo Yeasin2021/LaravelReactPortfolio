@@ -38,6 +38,7 @@ const TestimonialEdit = () => {
             formData.append('description',description);
             formData.append('image',image);
             await axios.post(`/testimonials-update/${id}`,formData);
+            // await axios.put(`/testimonials/${id}`,formData);
             toast.success("Data Updated Successfully 😲 ")
             audio.play();
             navigate("/admin-testimonial-view");
