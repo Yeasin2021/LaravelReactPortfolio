@@ -50,8 +50,8 @@ function WebBack() {
                         <Route path='/admin-resume/:id' element={<ResumeForm />} />
 
                         <Route path='/admin-testimonial-form' element={<TestimonialForm />} />
-                        <Route path='/admin-testimonial' element={<TestimonialView />} />
-                        <Route path='/admin-testimonial/:id' element={<TestimonialEdit />} />
+                        <Route path='/admin-testimonial-view' element={<TestimonialView />} />
+                        <Route path='/admin-testimonials/:id' element={<TestimonialEdit />} />
 
 
                     </Route>
