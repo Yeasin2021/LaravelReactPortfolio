@@ -172,8 +172,9 @@ useEffect(()=>{
                                         <h4>{item.occupation}</h4>
                                         <p>
                                         <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        {item.description}
+                                        {/* {item.description} */}
                                         {/* <p dangerouslySetInnerHTML={{ __html:item.description }}></p> */}
+                                        <p dangerouslySetInnerHTML={{ __html:item.description }}></p>
                                         <i className="bx bxs-quote-alt-right quote-icon-right"></i>
                                         </p>
                                     </div>
