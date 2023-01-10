@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     console.log("not working !!!!");
@@ -55,7 +56,11 @@ const Sidebar = () => {
                 </div>
             </a>
             <ul>
-                <li><a href="editor.html">editor</a></li>
+                {/* <li><a href="editor.html">editor</a></li>
+                <li><a href="mail_box.html">Mail Box</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="faq.html">FAQ</a></li> */}
+                <li><Link to='admin-testimonial-view'>Testimonial List</Link></li>
                 <li><a href="mail_box.html">Mail Box</a></li>
                 <li><a href="chat.html">Chat</a></li>
                 <li><a href="faq.html">FAQ</a></li>
