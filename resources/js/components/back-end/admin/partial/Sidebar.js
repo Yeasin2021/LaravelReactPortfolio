@@ -61,6 +61,7 @@ const Sidebar = () => {
                 <li><a href="chat.html">Chat</a></li>
                 <li><a href="faq.html">FAQ</a></li> */}
                 <li><Link to='admin-slider'>Slider</Link></li>
+                <li><Link to='admin-about/1'>About</Link></li>
                 <li><Link to='admin-testimonial-view'>Testimonial List</Link></li>
 
                 <li><a href="mail_box.html">Mail Box</a></li>
