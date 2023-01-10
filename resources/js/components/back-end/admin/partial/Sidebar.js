@@ -65,6 +65,7 @@ const Sidebar = () => {
                 <li><Link to='admin-testimonial-view'>Testimonial List</Link></li>
                 <li><Link to='pricing-index'>Pricing</Link></li>
                 <li><Link to='contacts'>Contacts</Link></li>
+                <li><Link to='/admin-footer-form/1'>Footer</Link></li>
 
                 <li><a href="mail_box.html">Mail Box</a></li>
                 <li><a href="chat.html">Chat</a></li>
