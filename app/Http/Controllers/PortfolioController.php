@@ -103,8 +103,10 @@ class PortfolioController extends Controller
      * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Portfolio $portfolio)
+    public function destroy($id)
     {
-        //
+        $delete = Portfolio::find($id);
+        $delete->delete();
+        return response()->json(['status'=>200]);
     }
 }
