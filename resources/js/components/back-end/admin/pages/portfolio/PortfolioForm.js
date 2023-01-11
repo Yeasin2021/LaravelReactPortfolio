@@ -23,21 +23,21 @@ const PortfolioForm = () => {
     }
 
 
-    const [name,setName] = useState();
-    const [job,setJob] = useState();
-    const [description,setDescription] = useState();
+    const [titleOne,setTitleOne] = useState();
+    const [titleTwo,setTitleTwo] = useState();
+    const [link,setLink] = useState();
 
     const onSubmitForm = async(e) =>{
         e.preventDefault();
         try{
             const audio = new Audio(Music);
             const formData = new FormData();
-            formData.append('name',name);
-            formData.append('job',job);
-            formData.append('description',description);
+            formData.append('title_one',titleOne);
+            formData.append('title_two',titleTwo);
+            formData.append('link',link);
             formData.append('image',image);
-            await axios.post('testimonials',formData);
-            toast.success("Data Updated Successfully 😲 ")
+            await axios.post('portfolios',formData);
+            toast.success("Data added Successfully 😲 ")
             audio.play();
             navigate("/admin-testimonial-view");
         }catch(error){
@@ -58,12 +58,16 @@ const PortfolioForm = () => {
                             <div className="card">
                                 <div className="card-body">
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputName">Name</label>
-                                        <input type="text" className="form-control" id="exampleInputName"  name='name' onChange={(e)=>setName(e.target.value)} />
+                                        <label htmlFor="exampleInputName">Title One</label>
+                                        <input type="text" className="form-control" id="exampleInputName"  name='title_one' onChange={(e)=>setTitleOne(e.target.value)} />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="exampleInputJob">Job</label>
-                                        <input type="text" className="form-control" id="exampleInputJob"  name='job' onChange={(e)=>setJob(e.target.value)} />
+                                        <label htmlFor="exampleInputJob">Title Two</label>
+                                        <input type="text" className="form-control" id="exampleInputJob"  name='title_two' onChange={(e)=>setTitleTwo(e.target.value)} />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputJob">Link</label>
+                                        <input type="text" className="form-control" id="exampleInputJob"  name='link' onChange={(e)=>setLink(e.target.value)} />
                                     </div>
                                 </div>
                             </div>
@@ -72,20 +76,6 @@ const PortfolioForm = () => {
                         <div className="col">
                             <div className="card">
                                 <div className="card-body">
-                                    <div className="form-group">
-                                        <label htmlFor="exampleInputdescriptionOne">Description</label>
-                                        <CKEditor
-                                            editor={ClassicEditor}
-
-                                            onChange={ ( event, editor ) => {
-                                                setDescription(editor.getData())
-                                            } }
-
-                                            name="description"
-
-                                        />
-                                        {/* <input type="text" className="form-control" id="exampleInputdescriptionOne"  name='description'  onChange={(e)=>setDescription(e.target.value)} /> */}
-                                    </div>
                                     <div className="form-group">
                                         <label htmlFor="exampleInputImage">Image</label>
                                         <input type="file" className="form-control" id="exampleInputImage"  name="image" onChange={imagePreviewFunction}/>
