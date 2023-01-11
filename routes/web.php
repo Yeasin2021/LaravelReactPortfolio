@@ -10,6 +10,8 @@ use App\Http\Controllers\FooterController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\PortfolioController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +57,12 @@ Route::resource('testimonials', TestimonialController::class); //route parameter
 // Route::post('testimonial-update/{id}', [TestimonialController::class,'update']);
 
 Route::post('testimonials-update/{id}',[TestimonialController::class,'update']);
+
+
+
+Route::resource('portfolios', PortfolioController::class);
+
+Route::post('portfolios-update/{id}',[PortfolioController::class,'update']);
 
 
 
