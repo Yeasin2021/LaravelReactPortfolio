@@ -50,8 +50,8 @@ const [items,setItems] = useState();
                       <h4>{item.title_one}</h4>
                       <p>{item.title_two}</p>
                       <a href="{{asset('frontend/assets/img/portfolio/portfolio-1.jpg')}}" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 1"><i className="bx bx-plus"></i></a>
-                      {/* <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a> */}
-                      <Link to={item.link} className="details-link" title="More Details"><i className="bx bx-link"></i></Link>
+                      <a href={item.link} target="_blank" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
+                      {/* <Link to={item.link} className="details-link" title="More Details" target='_blank'><i className="bx bx-link"></i></Link> */}
                     </div>
                   </div>
 
