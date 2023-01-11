@@ -1,14 +1,24 @@
 import React,{useState,useEffect} from 'react'
+import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
-  const [items,setItems]  = useState([]);
-  useEffect(()=>{
-    const url = "http://localhost:8081/portfolio";
-    fetch(url)
-    .then(res=>{return res.json()})
-    .then(data => setItems(data))
-    .catch(error => console.warn(error))
-  },[])
+//   const [items,setItems]  = useState([]);
+//   useEffect(()=>{
+//     const url = "http://localhost:8081/portfolio";
+//     fetch(url)
+//     .then(res=>{return res.json()})
+//     .then(data => setItems(data))
+//     .catch(error => console.warn(error))
+//   },[])
+
+const [items,setItems] = useState();
+    useEffect(()=>{
+        const dataShow = async () =>{
+            const data_response = await axios.get('portfolios')
+            .then((result)=>setItems(result.data.portfolio));
+        }
+        dataShow();
+        },[]);
 
   return (
     <div>
@@ -35,16 +45,17 @@ const Portfolio = () => {
 
 
                   <div className="col-lg-4 col-md-6 portfolio-item filter-app" >
-                    <div className="portfolio-img"><img src={item.image} className="img-fluid" alt="" /></div>
+                    <div className="portfolio-img"><img  className="img-fluid" alt=""  src={`back-end/img/portfolio/${item.image}`}/></div>
                     <div className="portfolio-info">
-                      <h4>{item.header}</h4>
-                      <p>{item.title}</p>
+                      <h4>{item.title_one}</h4>
+                      <p>{item.title_two}</p>
                       <a href="{{asset('frontend/assets/img/portfolio/portfolio-1.jpg')}}" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 1"><i className="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
+                      {/* <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a> */}
+                      <Link to={item.link} className="details-link" title="More Details"><i className="bx bx-link"></i></Link>
                     </div>
                   </div>
 
-                  <div className="col-lg-4 col-md-6 portfolio-item filter-web">
+                  {/* <div className="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div className="portfolio-img"><img src={item.image_1} className="img-fluid" alt="" /></div>
                     <div className="portfolio-info">
                       <h4>{item.header_1}</h4>
@@ -52,9 +63,9 @@ const Portfolio = () => {
                       <a href="frontend/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 3"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <div className="col-lg-4 col-md-6 portfolio-item filter-app">
+                  {/* <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div className="portfolio-img"><img src={item.image_2} className="img-fluid" alt="" /></div>
                     <div className="portfolio-info">
                       <h4>{item.header_2}</h4>
@@ -62,9 +73,9 @@ const Portfolio = () => {
                       <a href="frontend/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 2"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <div className="col-lg-4 col-md-6 portfolio-item filter-card">
+                  {/* <div className="col-lg-4 col-md-6 portfolio-item filter-card">
                     <div className="portfolio-img"><img src={item.image_3} className="img-fluid" alt="" /></div>
                     <div className="portfolio-info">
                       <h4>{item.header_3}</h4>
@@ -72,9 +83,9 @@ const Portfolio = () => {
                       <a href="frontend/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 2"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <div className="col-lg-4 col-md-6 portfolio-item filter-web">
+                  {/* <div className="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div className="portfolio-img"><img src={item.image_4} className="img-fluid" alt="" /></div>
                     <div className="portfolio-info">
                       <h4>{item.header_4}</h4>
@@ -82,9 +93,9 @@ const Portfolio = () => {
                       <a href="frontend/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 2"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <div className="col-lg-4 col-md-6 portfolio-item filter-app">
+                  {/* <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div className="portfolio-img"><img src={item.image_5} className="img-fluid" alt="" /></div>
                     <div className="portfolio-info">
                       <h4>{item.header_5}</h4>
@@ -92,9 +103,9 @@ const Portfolio = () => {
                       <a href="frontend/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 3"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <div className="col-lg-4 col-md-6 portfolio-item filter-card">
+                  {/* <div className="col-lg-4 col-md-6 portfolio-item filter-card">
                     <div className="portfolio-img"><img src={item.image_6} className="img-fluid" alt="" /></div>
                     <div className="portfolio-info">
                       <h4>{item.header_6}</h4>
@@ -102,9 +113,9 @@ const Portfolio = () => {
                       <a href="frontend/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 1"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <div className="col-lg-4 col-md-6 portfolio-item filter-card">
+                  {/* <div className="col-lg-4 col-md-6 portfolio-item filter-card">
                     <div className="portfolio-img"><img src={item.image_7} className="img-fluid" alt="" /></div>
                     <div className="portfolio-info">
                       <h4>{item.header_7}</h4>
@@ -112,9 +123,9 @@ const Portfolio = () => {
                       <a href="frontend/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 3"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <div className="col-lg-4 col-md-6 portfolio-item filter-web">
+                  {/* <div className="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div className="portfolio-img"><img src={item.image_8} className="img-fluid" alt="" /></div>
                     <div className="portfolio-info">
                       <h4>{item.header_8}</h4>
@@ -122,7 +133,7 @@ const Portfolio = () => {
                       <a href="frontend/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 3"><i className="bx bx-plus"></i></a>
                       <a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
                     </div>
-                  </div>
+                  </div> */}
 
                 </div>
 
