@@ -36,7 +36,18 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $images = $request->file('image');
+        if($images){
+            $fileName = $request->name.'_'.time().'_'.$request->job.'.'.$images->extension();
+            $images->move(public_path('back-end/img/portfolio'),$fileName);
+        }
+        $portfolio = Portfolio::create([
+            'title_one' => $request->title_one,
+            'title_two' => $request->title_two,
+            'link' => $request->link,
+            'image' => $fileName,
+        ]);
+        return response()->json(['status'=>200,'portfolio'=>$portfolio]);
     }
 
     /**

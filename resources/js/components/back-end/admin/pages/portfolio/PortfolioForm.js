@@ -39,7 +39,7 @@ const PortfolioForm = () => {
             await axios.post('portfolios',formData);
             toast.success("Data added Successfully 😲 ")
             audio.play();
-            navigate("/admin-testimonial-view");
+            navigate("/admin-portfolio-list");
         }catch(error){
             console.log(error.message);
         }
