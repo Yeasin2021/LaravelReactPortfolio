@@ -31,7 +31,7 @@ const formStyleOne = {
 
             if(window.confirm("Delete this Item") == true){
                 const audioDel = new Audio(MusicDelete);
-                await axios.delete(`testimonials/${id}`);
+                await axios.delete(`portfolios/${id}`);
                 const newItems = items.filter((item)=>{
                 return item.id !== id;
                 });
