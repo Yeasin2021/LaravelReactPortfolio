@@ -56,20 +56,12 @@ const Sidebar = () => {
                 </div>
             </a>
             <ul>
-                {/* <li><a href="editor.html">editor</a></li>
-                <li><a href="mail_box.html">Mail Box</a></li>
-                <li><a href="chat.html">Chat</a></li>
-                <li><a href="faq.html">FAQ</a></li> */}
                 <li><Link to='admin-slider'>Slider</Link></li>
                 <li><Link to='admin-about/1'>About</Link></li>
                 <li><Link to='admin-testimonial-view'>Testimonial List</Link></li>
                 <li><Link to='pricing-index'>Pricing</Link></li>
                 <li><Link to='contacts'>Contacts</Link></li>
                 <li><Link to='/admin-footer-form/1'>Footer</Link></li>
-
-                <li><a href="mail_box.html">Mail Box</a></li>
-                <li><a href="chat.html">Chat</a></li>
-                <li><a href="faq.html">FAQ</a></li>
             </ul>
         </li>
         <li className="x">
