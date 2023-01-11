@@ -14,7 +14,8 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        //
+        $portfolio  = Portfolio::all();
+        return response()->json(['ststus'=>200,'portfolio'=>$portfolio]);
     }
 
     /**

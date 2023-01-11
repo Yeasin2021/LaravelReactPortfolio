@@ -15,8 +15,8 @@ const formStyleOne = {
     const [items,setItems] = useState();
     useEffect(()=>{
         const dataShow = async () =>{
-            const data_response = await axios.get('testimonials')
-            .then((result)=>setItems(result.data.testimonial));
+            const data_response = await axios.get('portfolios')
+            .then((result)=>setItems(result.data.portfolio));
         }
         dataShow();
         },[]);
@@ -50,7 +50,7 @@ const formStyleOne = {
                 <div className="col">
                 <div className="card">
                 <div className="card-body">
-                    <h5 className="card-title">Testimonial Form Page</h5>
+                    <h5 className="card-title">Portfolio Form Page</h5>
                     <Link to={'/admin-testimonial-form'}><button type="button" className="btn btn-primary">Add New</button></Link>
                 </div>
                 </div>
@@ -65,9 +65,9 @@ const formStyleOne = {
                                 <thead>
                                     <tr>
                                     <th scope="col">SN</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Profession</th>
-                                    <th scope="col">Description</th>
+                                    <th scope="col">Title One</th>
+                                    <th scope="col">Title Two</th>
+                                    <th scope="col">Link</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Action</th>
                                     </tr>
@@ -79,9 +79,10 @@ const formStyleOne = {
                                                 return(
                                                         <tr  key={index}>
                                                             <td scope="row">{++index}</td>
-                                                            <td scope="row">{item.name}</td>
-                                                            <td>{item.occupation}</td>
-                                                            <td><p dangerouslySetInnerHTML={{ __html:item.description }}></p></td>
+                                                            <td scope="row">{item.title_one}</td>
+                                                            <td>{item.title_two}</td>
+                                                            <td>{item.link}</td>
+                                                            {/* <td><p dangerouslySetInnerHTML={{ __html:item.description }}></p></td> */}
                                                             <td><img src={`back-end/img/testimonial/${item.image}`} height="250px" width="250px"/></td>
                                                             <td>
                                                                 <Link to={`/admin-testimonials/${item.id}`}><button className='btn btn-primary' onClick={editSound}><i className="bi bi-pencil"></i></button></Link>
