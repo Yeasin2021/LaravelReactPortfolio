@@ -67,9 +67,10 @@ class PortfolioController extends Controller
      * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function edit(Portfolio $portfolio)
+    public function edit($id)
     {
-        //
+        $edit  = Portfolio::find($id);
+        return response()->json(['status'=>200,'edit'=>$edit]);
     }
 
     /**
