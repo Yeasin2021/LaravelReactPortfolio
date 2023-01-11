@@ -57,6 +57,7 @@ function WebBack() {
 
                         <Route path='/admin-portfolio-list' element={<PortfolioList />} />
                         <Route path='/admin-portfolio-form' element={<PortfolioForm />} />
+                        <Route path='/admin-portfolio/:id' element={<PortfolioForm />} />
 
 
                     </Route>

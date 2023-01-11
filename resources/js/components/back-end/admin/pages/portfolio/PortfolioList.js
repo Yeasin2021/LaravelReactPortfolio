@@ -85,7 +85,7 @@ const formStyleOne = {
                                                             {/* <td><p dangerouslySetInnerHTML={{ __html:item.description }}></p></td> */}
                                                             <td><img src={`back-end/img/portfolio/${item.image}`} height="250px" width="250px"/></td>
                                                             <td>
-                                                                <Link to={`/admin-testimonials/${item.id}`}><button className='btn btn-primary' onClick={editSound}><i className="bi bi-pencil"></i></button></Link>
+                                                                <Link to={`/admin-portfolio/${item.id}`}><button className='btn btn-primary' onClick={editSound}><i className="bi bi-pencil"></i></button></Link>
                                                                 <button onClick={()=> deleteUser(item.id)}  className='btn btn-danger ms-3'><i className="bi bi-trash3"></i></button>
                                                             </td>
                                                         </tr>
