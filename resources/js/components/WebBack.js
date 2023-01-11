@@ -20,6 +20,7 @@ import ResumeForm from './back-end/admin/pages/resume/ResumeForm';
 import TestimonialForm from './back-end/admin/pages/testimonial/TestimonialForm';
 import TestimonialView from './back-end/admin/pages/testimonial/TestimonialView';
 import TestimonialEdit from './back-end/admin/pages/testimonial/TestimonialEdit';
+import PortfolioList from './back-end/admin/pages/portfolio/PortfolioList';
 
 
 
@@ -52,6 +53,8 @@ function WebBack() {
                         <Route path='/admin-testimonial-form' element={<TestimonialForm />} />
                         <Route path='/admin-testimonial-view' element={<TestimonialView />} />
                         <Route path='/admin-testimonials/:id' element={<TestimonialEdit />} />
+
+                        <Route path='/admin-portfolio-list' element={<PortfolioList />} />
 
 
                     </Route>
