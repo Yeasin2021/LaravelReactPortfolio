@@ -22,6 +22,7 @@ import TestimonialView from './back-end/admin/pages/testimonial/TestimonialView'
 import TestimonialEdit from './back-end/admin/pages/testimonial/TestimonialEdit';
 import PortfolioList from './back-end/admin/pages/portfolio/PortfolioList';
 import PortfolioForm from './back-end/admin/pages/portfolio/PortfolioForm';
+import PortfolioEdit from './back-end/admin/pages/portfolio/PortfolioEdit';
 
 
 
@@ -57,7 +58,7 @@ function WebBack() {
 
                         <Route path='/admin-portfolio-list' element={<PortfolioList />} />
                         <Route path='/admin-portfolio-form' element={<PortfolioForm />} />
-                        <Route path='/admin-portfolio/:id' element={<PortfolioForm />} />
+                        <Route path='/admin-portfolio/:id' element={<PortfolioEdit />} />
 
 
                     </Route>

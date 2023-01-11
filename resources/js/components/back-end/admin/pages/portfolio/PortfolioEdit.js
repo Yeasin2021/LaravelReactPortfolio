@@ -35,8 +35,8 @@ const PortfolioEdit = () => {
             formData.append('title_two',titleTwo);
             formData.append('link',link);
             formData.append('image',image);
-            await axios.post('portfolios',formData);
-            toast.success("Data added Successfully 😲 ")
+            await axios.post(`/portfolios-update/${id}`,formData);
+            toast.success("Data Updated Successfully 😲 ")
             audio.play();
             navigate("/admin-portfolio-list");
         }catch(error){
