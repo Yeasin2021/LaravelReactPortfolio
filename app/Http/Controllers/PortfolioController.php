@@ -80,9 +80,21 @@ class PortfolioController extends Controller
      * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Portfolio $portfolio)
+    public function update(Request $request,$id)
     {
-        //
+        $portfolioUpdate  = Portfolio::find($id);
+        $images = $request->file('image');
+        if($images){
+            $fileName = $request->name.'_'.time().'_'.$request->job.'.'.$images->extension();
+            $images->move(public_path('back-end/img/portfolio'),$fileName);
+        }
+        $portfolioUpdate->update([
+            'title_one' => $request->title_one,
+            'title_two' => $request->title_two,
+            'link' => $request->link,
+            'image' => $fileName,
+        ]);
+        return response()->json(['status'=>200,'portfolioUpdate'=>$portfolioUpdate]);
     }
 
     /**
