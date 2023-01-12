@@ -69,6 +69,14 @@ const PortfolioForm = () => {
                                         <label htmlFor="exampleInputJob">Link</label>
                                         <input type="text" className="form-control" id="exampleInputJob"  name='link' onChange={(e)=>setLink(e.target.value)} />
                                     </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputJob">Project Type</label>
+                                        <div>
+                                            <input type="radio" value="filter-app"   name='type' onChange={(e)=>setLink(e.target.value)} />App
+                                            <input type="radio" value="filter-card"   name='type' onChange={(e)=>setLink(e.target.value)} style={{ marginLeft:'10px' }}/>Card
+                                            <input type="radio" value="filter-web"    name='type' onChange={(e)=>setLink(e.target.value)} style={{ marginLeft:'10px' }}/>Web
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
