@@ -60,8 +60,10 @@ const Sidebar = () => {
                 <li><Link to='admin-about/1'>About</Link></li>
                 <li><Link to='admin-testimonial-view'>Testimonial List</Link></li>
                 <li><Link to='pricing-index'>Pricing</Link></li>
+                <li><Link to='admin-portfolio-list'>Portfolio</Link></li>
                 <li><Link to='contacts'>Contacts</Link></li>
                 <li><Link to='/admin-footer-form/1'>Footer</Link></li>
+                <li><Link to='/message-list'>Message</Link></li>
             </ul>
         </li>
         <li className="x">

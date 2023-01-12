@@ -51,7 +51,7 @@ const formStyleOne = {
                 <div className="card">
                 <div className="card-body">
                     <h5 className="card-title">Portfolio Form Page</h5>
-                    <Link to={'/admin-testimonial-form'}><button type="button" className="btn btn-primary">Add New</button></Link>
+                    <Link to={'/admin-portfolio-form'}><button type="button" className="btn btn-primary">Add New</button></Link>
                 </div>
                 </div>
                 </div>
