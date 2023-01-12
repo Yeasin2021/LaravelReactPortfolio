@@ -93,6 +93,7 @@ class PortfolioController extends Controller
             'title_one' => $request->title_one,
             'title_two' => $request->title_two,
             'link' => $request->link,
+            'type' => $request->type,
             'image' => $fileName,
         ]);
         return response()->json(['status'=>200,'portfolioUpdate'=>$portfolioUpdate]);

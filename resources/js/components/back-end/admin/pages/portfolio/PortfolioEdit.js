@@ -25,6 +25,7 @@ const PortfolioEdit = () => {
     const [titleOne,setTitleOne] = useState();
     const [titleTwo,setTitleTwo] = useState();
     const [link,setLink] = useState();
+    const [type,setType] = useState();
 
     const onSubmitForm = async(e) =>{
         e.preventDefault();
@@ -34,6 +35,7 @@ const PortfolioEdit = () => {
             formData.append('title_one',titleOne);
             formData.append('title_two',titleTwo);
             formData.append('link',link);
+            formData.append('type',type);
             formData.append('image',image);
             await axios.post(`/portfolios-update/${id}`,formData);
             toast.success("Data Updated Successfully 😲 ")
@@ -67,6 +69,13 @@ const PortfolioEdit = () => {
                                     <div className="form-group">
                                         <label htmlFor="exampleInputJob">Link</label>
                                         <input type="text" className="form-control" id="exampleInputJob"  name='link' onChange={(e)=>setLink(e.target.value)} />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputJob">Type</label>
+                                        {/* <input type="radio"  value="filter-card"  name='type' onChange={(e)=>setType(e.target.value)} checked={true}/>Card */}
+                                        <input type="radio"  value="filter-app"  name='type' onChange={(e)=>setType(e.target.value)} />App
+                                        <input type="radio"  value="filter-card"  name='type' onChange={(e)=>setType(e.target.value)} />Card
+                                        <input type="radio"  value="filter-web"  name='type' onChange={(e)=>setType(e.target.value)} />Web
                                     </div>
                                 </div>
                             </div>
