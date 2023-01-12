@@ -44,7 +44,7 @@ const [items,setItems] = useState();
               <div className="row portfolio-container" key={index}>
 
 
-                  <div className="col-lg-4 col-md-6 portfolio-item filter-app" >
+                  <div className={`col-lg-4 col-md-6 portfolio-item ${item.type}`}  >
                     <div className="portfolio-img"><img  className="img-fluid" alt=""  src={`back-end/img/portfolio/${item.image}`}/></div>
                     <div className="portfolio-info">
                       <h4>{item.title_one}</h4>

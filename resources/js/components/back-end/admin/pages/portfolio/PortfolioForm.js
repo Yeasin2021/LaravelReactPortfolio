@@ -26,6 +26,7 @@ const PortfolioForm = () => {
     const [titleOne,setTitleOne] = useState();
     const [titleTwo,setTitleTwo] = useState();
     const [link,setLink] = useState();
+    const [type,setType] = useState();
 
     const onSubmitForm = async(e) =>{
         e.preventDefault();
@@ -35,6 +36,7 @@ const PortfolioForm = () => {
             formData.append('title_one',titleOne);
             formData.append('title_two',titleTwo);
             formData.append('link',link);
+            formData.append('type',type);
             formData.append('image',image);
             await axios.post('portfolios',formData);
             toast.success("Data added Successfully 😲 ")
@@ -72,9 +74,9 @@ const PortfolioForm = () => {
                                     <div className="form-group">
                                         <label htmlFor="exampleInputJob">Project Type</label>
                                         <div>
-                                            <input type="radio" value="filter-app"   name='type' onChange={(e)=>setLink(e.target.value)} />App
-                                            <input type="radio" value="filter-card"   name='type' onChange={(e)=>setLink(e.target.value)} style={{ marginLeft:'10px' }}/>Card
-                                            <input type="radio" value="filter-web"    name='type' onChange={(e)=>setLink(e.target.value)} style={{ marginLeft:'10px' }}/>Web
+                                            <input type="radio" value="filter-app"   name='type' onChange={(e)=>setType(e.target.value)} />App
+                                            <input type="radio" value="filter-card"   name='type' onChange={(e)=>setType(e.target.value)} style={{ marginLeft:'10px' }}/>Card
+                                            <input type="radio" value="filter-web"    name='type' onChange={(e)=>setType(e.target.value)} style={{ marginLeft:'10px' }}/>Web
                                         </div>
                                     </div>
                                 </div>
