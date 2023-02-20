@@ -67,6 +67,7 @@ Route::post('portfolios-update/{id}',[PortfolioController::class,'update']);
 
 
 Route::post('/login',[AuthenticationController::class,'login']);
+Route::post('/logout',[AuthenticationController::class,'logOut']);
 
 
 

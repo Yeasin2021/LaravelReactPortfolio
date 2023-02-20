@@ -1,6 +1,13 @@
 import React from 'react'
+import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Header = () => {
+const navigate = useNavigate();
+function handleLogout(){
+    axios.post('/logout');
+    navigate("/login");
+}
   return (
     <div className="header_iner d-flex justify-content-between align-items-center">
                 <div className="sidebar_icon d-lg-none">
@@ -120,7 +127,10 @@ const Header = () => {
                             <div className="profile_info_details">
                                 <a href="#">My Profile </a>
                                 <a href="#">Settings</a>
-                                <a href="#">Log Out </a>
+                                {/* <a href="#">Log Out </a> */}
+                                {/* <a href="#">Log Out </a> */}
+                                {/* <Link to="/logout">Log Out</Link> */}
+                                <button onClick={handleLogout}> Logout</button>
                             </div>
                         </div>
                     </div>
