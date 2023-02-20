@@ -23,6 +23,7 @@ import TestimonialEdit from './back-end/admin/pages/testimonial/TestimonialEdit'
 import PortfolioList from './back-end/admin/pages/portfolio/PortfolioList';
 import PortfolioForm from './back-end/admin/pages/portfolio/PortfolioForm';
 import PortfolioEdit from './back-end/admin/pages/portfolio/PortfolioEdit';
+import Login from './login/Login';
 
 
 
@@ -34,6 +35,7 @@ function WebBack() {
             <Router>
                 <Routes>
                     <Route path='/' element={<Web />} />
+                    <Route path='/login' element={<Login />} />
                     <Route element={<Dashboard />}>
                         {/* <Route path='/dashboard' element={<Dashboard />} /> */}
                         <Route path='/dashboard' element={<ServiceForm />} />
