@@ -11,6 +11,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\AuthenticationController;
 
 
 /*
@@ -63,6 +64,9 @@ Route::post('testimonials-update/{id}',[TestimonialController::class,'update']);
 Route::resource('portfolios', PortfolioController::class);
 
 Route::post('portfolios-update/{id}',[PortfolioController::class,'update']);
+
+
+Route::post('/login',[AuthenticationController::class,'login']);
 
 
 

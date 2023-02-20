@@ -1,16 +1,32 @@
 
 import React, { useState } from "react";
+import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
 import './login.css';
 
 
 const Login = (props) => {
+
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
+    const [password, setPass] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email);
-        console.log(pass);
+        try{
+            // const audio = new Audio(Music);
+            const formData = new FormData();
+            formData.append('email',email);
+            formData.append('password',password);
+            axios.post('/login',formData);
+            toast.success("Login Successfully 😲 ")
+            navigate("/dashboard");
+        }catch(error){
+            console.log(error.message);
+        }
+        // console.log(email);
+        // console.log(pass);
     }
 
      return (
@@ -20,7 +36,7 @@ const Login = (props) => {
                 <label htmlFor="email">email</label>
                 <input value={email} onChange={(e) => setEmail(e.target.value)}type="email" placeholder="youremail@gmail.com" id="email" name="email" />
                 <label htmlFor="password">password</label>
-                <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
+                <input value={password} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
                 <button type="submit">Log In</button>
             </form>
             <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button>
