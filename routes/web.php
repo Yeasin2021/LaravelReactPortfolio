@@ -13,6 +13,8 @@ use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AuthenticationController;
 
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +27,13 @@ use App\Http\Controllers\AuthenticationController;
 |
 */
 
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 Route::resource('service', ServiceController::class);
 
@@ -66,8 +71,11 @@ Route::resource('portfolios', PortfolioController::class);
 Route::post('portfolios-update/{id}',[PortfolioController::class,'update']);
 
 
+
 Route::post('/login',[AuthenticationController::class,'login']);
 Route::post('/logout',[AuthenticationController::class,'logOut']);
+
+
 
 
 
@@ -78,10 +86,40 @@ Route::post('/logout',[AuthenticationController::class,'logOut']);
 
 // Route::resource('service', ServiceController::class);
 
+
+
+
 // any route setup without home (/) route; is called base Route
+
+// Route::get('/{path?}/{paths?}', function () {
+//     // $loggedIn = '';
+//     if (Auth::check()) {
+//         // return response()->json(['loggedIn' => true]);
+//         return view('welcome')->with('loggedIn', $loggedIn->toJson(['loggedIn' => true]));
+//     } else {
+//         // return response()->json(['loggedIn' => false]);
+//         return view('welcome')->with('loggedIn', $loggedIn->toJson(['loggedIn' => false]));
+//     }
+//     return view('welcome');
+// });
+
+
+
 Route::get('/{path?}/{paths?}', function () {
+
     return view('welcome');
+    
 });
+
+
+// Route::group(['middleware' => 'authuser'],function () {
+
+//     Route::get('/{path?}/{paths?}', function () {
+//         return view('welcome');
+//     });
+
+// });
+
 
 // Route::get('/{path?}', function () {
 //     return view('welcome');

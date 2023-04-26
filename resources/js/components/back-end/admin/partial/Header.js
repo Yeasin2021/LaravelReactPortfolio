@@ -127,9 +127,6 @@ function handleLogout(){
                             <div className="profile_info_details">
                                 <a href="#">My Profile </a>
                                 <a href="#">Settings</a>
-                                {/* <a href="#">Log Out </a> */}
-                                {/* <a href="#">Log Out </a> */}
-                                {/* <Link to="/logout">Log Out</Link> */}
                                 <button onClick={handleLogout}> Logout</button>
                             </div>
                         </div>

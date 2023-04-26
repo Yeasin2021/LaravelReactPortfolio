@@ -1,6 +1,7 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router , Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router , Routes, Route, Redirect, Link } from "react-router-dom";
+import axios from 'axios';
 import Contact from './back-end/admin/pages/contact/Contact';
 import Dashboard from './back-end/admin/Dashboard';
 import Pricing from './back-end/admin/pages/pricing/Pricing';
@@ -24,10 +25,24 @@ import PortfolioList from './back-end/admin/pages/portfolio/PortfolioList';
 import PortfolioForm from './back-end/admin/pages/portfolio/PortfolioForm';
 import PortfolioEdit from './back-end/admin/pages/portfolio/PortfolioEdit';
 import Login from './login/Login';
+import Protected from './Protected';
 
 
 
 function WebBack() {
+
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    useEffect(() => {
+        axios.get('${path}/${paths}')
+          .then(response => {
+            setLoggedIn(response.data.loggedIn);
+            console.log(loggedIn)
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }, []);
 
     return (
         <div>
@@ -35,10 +50,13 @@ function WebBack() {
             <Router>
                 <Routes>
                     <Route path='/' element={<Web />} />
+
                     <Route path='/login' element={<Login />} />
                     <Route element={<Dashboard />}>
                         {/* <Route path='/dashboard' element={<Dashboard />} /> */}
                         <Route path='/dashboard' element={<ServiceForm />} />
+                        {/* <Route path='/dashboard' element={<Protected isLoggedIn={isLoggedIn}><ServiceForm /></Protected>} /> */}
+                        {/* <Route path='/dashboard' element={<Protected><ServiceForm /></Protected>} /> */}
                         <Route path='/service/:id' element={<Edit />} />
                         <Route path='/pricing-index' element={<Pricing />} />
                         <Route path='/price/:id' element={<PricingEdit />} />
