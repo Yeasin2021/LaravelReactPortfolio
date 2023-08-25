@@ -32,7 +32,8 @@ import Protected from './Protected';
 function WebBack() {
 
     const [loggedIn, setLoggedIn] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    
     useEffect(() => {
         axios.get('${path}/${paths}')
           .then(response => {
@@ -54,8 +55,8 @@ function WebBack() {
                     <Route path='/login' element={<Login />} />
                     <Route element={<Dashboard />}>
                         {/* <Route path='/dashboard' element={<Dashboard />} /> */}
-                        <Route path='/dashboard' element={<ServiceForm />} />
-                        {/* <Route path='/dashboard' element={<Protected isLoggedIn={isLoggedIn}><ServiceForm /></Protected>} /> */}
+                        {/* <Route path='/dashboard' element={<ServiceForm />} /> */}
+                        <Route path='/dashboard' element={<Protected isLoggedIn={isLoggedIn}><ServiceForm /></Protected>} />
                         {/* <Route path='/dashboard' element={<Protected><ServiceForm /></Protected>} /> */}
                         <Route path='/service/:id' element={<Edit />} />
                         <Route path='/pricing-index' element={<Pricing />} />

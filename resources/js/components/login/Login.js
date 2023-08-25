@@ -42,14 +42,16 @@ const Login = (props) => {
             const { access_token } = response.data;
 
             // Store access token in local storage or cookie
-            localStorage.setItem('access_token', access_token);
+            localStorage.setItem('access_token', JSON.stringify(access_token));
+
+            console.log(access_token);
 
             // Redirect or perform other actions upon successful login
             toast.success("Login Successfully 😲 ")
             navigate("/dashboard");
         } catch (error) {
             // Handle login error
-            toast.error("Email or Password not match 😲 ");
+            toast.success("Email or Password not match 😲 ");
             console.log(error.message);
         }
     }
@@ -64,9 +66,13 @@ const Login = (props) => {
                 <input  onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
                 <button type="submit">Log In</button>
             </form>
-            <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button>
+            {/* <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button> */}
         </div>
     )
 }
 
 export default Login
+
+
+
+

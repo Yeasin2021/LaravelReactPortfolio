@@ -56,9 +56,9 @@ const formStyleOne = {
                 </div>
                 </div>
             </div>
-            
+
             <div class="row" style={ formStyleOne }>
-                <div class="col">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
                             <table class="table">
@@ -83,9 +83,9 @@ const formStyleOne = {
                                                             <td>{item.occupation}</td>
                                                             <td><p dangerouslySetInnerHTML={{ __html:item.description }}></p></td>
                                                             <td><img src={`back-end/img/testimonial/${item.image}`} height="250px" width="250px"/></td>
-                                                            <td>
+                                                            <td height="100px" width="100px">
                                                                 <Link to={`/admin-testimonials/${item.id}`}><button className='btn btn-primary' onClick={editSound}><i className="bi bi-pencil"></i></button></Link>
-                                                                <button onClick={()=> deleteUser(item.id)}  className='btn btn-danger ms-3'><i className="bi bi-trash3"></i></button>
+                                                                <button onClick={()=> deleteUser(item.id)}  className='btn btn-danger'><i className="bi bi-trash3"></i></button>
                                                             </td>
                                                         </tr>
                                                 )

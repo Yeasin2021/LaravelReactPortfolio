@@ -6,6 +6,7 @@ const Header = () => {
 const navigate = useNavigate();
 function handleLogout(){
     axios.post('/logout');
+    localStorage.removeItem('access_token');
     navigate("/login");
 }
   return (
