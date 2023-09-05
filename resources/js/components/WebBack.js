@@ -33,7 +33,7 @@ function WebBack() {
 
     const [loggedIn, setLoggedIn] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(true);
-    
+
     useEffect(() => {
         axios.get('${path}/${paths}')
           .then(response => {
@@ -58,28 +58,28 @@ function WebBack() {
                         {/* <Route path='/dashboard' element={<ServiceForm />} /> */}
                         <Route path='/dashboard' element={<Protected isLoggedIn={isLoggedIn}><ServiceForm /></Protected>} />
                         {/* <Route path='/dashboard' element={<Protected><ServiceForm /></Protected>} /> */}
-                        <Route path='/service/:id' element={<Edit />} />
-                        <Route path='/pricing-index' element={<Pricing />} />
-                        <Route path='/price/:id' element={<PricingEdit />} />
-                        <Route path='/contacts' element={<Contact />} />
-                        <Route path='/contacts/:id' element={<EditContact />} />
-                        <Route path='/message-list' element={<Message />} />
-                        <Route path='/admin-slider' element={<Slider />} />
-                        <Route path='/admin-slider/:id' element={<SliderEdit />} />
+                        <Route path='/service/:id' element={<Protected isLoggedIn={isLoggedIn}><Edit /></Protected> } />
+                        <Route path='/pricing-index' element={<Protected isLoggedIn={isLoggedIn}><Pricing /></Protected>} />
+                        <Route path='/price/:id' element={ <Protected isLoggedIn={isLoggedIn}><PricingEdit /></Protected>} />
+                        <Route path='/contacts' element={ <Protected isLoggedIn={isLoggedIn}><Contact /></Protected>} />
+                        <Route path='/contacts/:id' element={ <Protected isLoggedIn={isLoggedIn}><EditContact /></Protected> } />
+                        <Route path='/message-list' element={ <Protected isLoggedIn={isLoggedIn}><Message /></Protected>} />
+                        <Route path='/admin-slider' element={ <Protected isLoggedIn={isLoggedIn}><Slider /></Protected> } />
+                        <Route path='/admin-slider/:id' element={ <Protected isLoggedIn={isLoggedIn}><SliderEdit /></Protected>}  />
 
-                        <Route path='/admin-slider-add' element={<SliderAdd />} />
-                        <Route path='/admin-footer-form/:id' element={<FooterForm />} />
+                        <Route path='/admin-slider-add' element={ <Protected isLoggedIn={isLoggedIn}><SliderAdd /></Protected>} />
+                        <Route path='/admin-footer-form/:id' element={<Protected isLoggedIn={isLoggedIn}><FooterForm /></Protected> } />
 
-                        <Route path='/admin-about/:id' element={<AboutForm />} />
-                        <Route path='/admin-resume/:id' element={<ResumeForm />} />
+                        <Route path='/admin-about/:id' element={<Protected isLoggedIn={isLoggedIn}><AboutForm /></Protected>} />
+                        <Route path='/admin-resume/:id' element={ <Protected isLoggedIn={isLoggedIn}><ResumeForm /></Protected>} />
 
-                        <Route path='/admin-testimonial-form' element={<TestimonialForm />} />
-                        <Route path='/admin-testimonial-view' element={<TestimonialView />} />
-                        <Route path='/admin-testimonials/:id' element={<TestimonialEdit />} />
+                        <Route path='/admin-testimonial-form' element={<Protected isLogedIn={isLoggedIn}><TestimonialForm /></Protected>} />
+                        <Route path='/admin-testimonial-view' element={<Protected isLogedIn={isLoggedIn}><TestimonialView /></Protected>} />
+                        <Route path='/admin-testimonials/:id' element={<Protected isLogedIn={isLoggedIn}><TestimonialEdit /></Protected>} />
 
-                        <Route path='/admin-portfolio-list' element={<PortfolioList />} />
-                        <Route path='/admin-portfolio-form' element={<PortfolioForm />} />
-                        <Route path='/admin-portfolio/:id' element={<PortfolioEdit />} />
+                        <Route path='/admin-portfolio-list' element={<Protected isLogedIn={isLoggedIn}><PortfolioList /></Protected>} />
+                        <Route path='/admin-portfolio-form' element={<Protected isLogedIn={isLoggedIn}><PortfolioForm /></Protected>} />
+                        <Route path='/admin-portfolio/:id' element={<Protected isLogedIn={isLoggedIn}><PortfolioEdit /></Protected>} />
 
 
                     </Route>

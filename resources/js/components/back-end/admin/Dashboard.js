@@ -10,12 +10,10 @@ const Dashboard = () => {
   return (
     <div>
         <ToastContainer />
-
         <Sidebar />
-
         <Header />
         <Outlet />
-       
+
     </div>
   )
 }
